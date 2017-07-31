@@ -1,0 +1,6 @@
+framework module Pods_Futsteps {
+  umbrella header "Pods-Futsteps-umbrella.h"
+
+  export *
+  module * { export * }
+}
