@@ -8,8 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		B370A9AE1F27970B00197D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B370A9AD1F27970B00197D04 /* MapKit.framework */; };
-		B3AF1AEB1F2F91440017A8EE /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B3A6A6FF1F2F8D5B00A0B155 /* Base.lproj */; };
-		B3AF1AEC1F2F91440017A8EE /* Storyboards in Resources */ = {isa = PBXBuildFile; fileRef = B3A6A7031F2F8D5B00A0B155 /* Storyboards */; };
+		B3AF1AFC1F2FA5630017A8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */; };
+		B3AF1B011F2FA56C0017A8EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */; };
+		B3AF1B021F2FA56C0017A8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */; };
+		B3AF1B051F2FA57E0017A8EE /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B031F2FA57E0017A8EE /* Member.swift */; };
+		B3AF1B061F2FA57E0017A8EE /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B041F2FA57E0017A8EE /* Organization.swift */; };
+		B3AF1B0A1F2FA5920017A8EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B071F2FA5920017A8EE /* Constants.swift */; };
+		B3AF1B0B1F2FA5920017A8EE /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B081F2FA5920017A8EE /* Storyboard+Utility.swift */; };
+		B3AF1B0C1F2FA5920017A8EE /* ViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B091F2FA5920017A8EE /* ViewController+Utility.swift */; };
+		B3AF1B101F2FA5A10017A8EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B0D1F2FA5A10017A8EE /* AuthService.swift */; };
+		B3AF1B111F2FA5A10017A8EE /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B0E1F2FA5A10017A8EE /* MemberService.swift */; };
+		B3AF1B121F2FA5A10017A8EE /* OrganizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B0F1F2FA5A10017A8EE /* OrganizationService.swift */; };
+		B3AF1B141F2FA5AF0017A8EE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1B131F2FA5AF0017A8EE /* Login.storyboard */; };
+		B3AF1B171F2FA5BD0017A8EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1B151F2FA5BD0017A8EE /* GoogleService-Info.plist */; };
+		B3AF1B201F2FA5C80017A8EE /* ChooseUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */; };
+		B3AF1B211F2FA5C80017A8EE /* CreateMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1A1F2FA5C80017A8EE /* CreateMemberViewController.swift */; };
+		B3AF1B221F2FA5C80017A8EE /* CreateOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */; };
+		B3AF1B231F2FA5C80017A8EE /* MemberLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */; };
+		B3AF1B241F2FA5C80017A8EE /* OrganizationLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */; };
+		B3AF1B251F2FA5C80017A8EE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1E1F2FA5C80017A8EE /* SearchTableViewController.swift */; };
+		B3AF1B261F2FA5C80017A8EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */; };
+		B3AF1B2E1F2FA6BE0017A8EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */; };
 		D4810BE7D2DBBB76841CA7D9 /* Pods_Futsteps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6043ACFFD8B2B59F85D7633 /* Pods_Futsteps.framework */; };
 /* End PBXBuildFile section */
 
@@ -17,16 +36,29 @@
 		468E4E901B2CB846ABDD99A9 /* Pods-Futsteps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Futsteps.release.xcconfig"; path = "Pods/Target Support Files/Pods-Futsteps/Pods-Futsteps.release.xcconfig"; sourceTree = "<group>"; };
 		56B30D846B5DCDEC0072B15F /* Pods-Futsteps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Futsteps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Futsteps/Pods-Futsteps.debug.xcconfig"; sourceTree = "<group>"; };
 		B370A9871F26291300197D04 /* Futsteps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Futsteps.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B370A9911F26291300197D04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B370A9AD1F27970B00197D04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		B3A6A6FE1F2F8D5B00A0B155 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		B3A6A6FF1F2F8D5B00A0B155 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = SOURCE_ROOT; };
-		B3A6A7001F2F8D5B00A0B155 /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Extensions; sourceTree = SOURCE_ROOT; };
-		B3A6A7011F2F8D5B00A0B155 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = SOURCE_ROOT; };
-		B3A6A7021F2F8D5B00A0B155 /* Services */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Services; sourceTree = SOURCE_ROOT; };
-		B3A6A7031F2F8D5B00A0B155 /* Storyboards */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Storyboards; sourceTree = SOURCE_ROOT; };
-		B3A6A7041F2F8D5B00A0B155 /* Support */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Support; sourceTree = SOURCE_ROOT; };
-		B3A6A7051F2F8D5B00A0B155 /* View Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "View Controllers"; sourceTree = SOURCE_ROOT; };
+		B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		B3AF1AFE1F2FA56C0017A8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		B3AF1B001F2FA56C0017A8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		B3AF1B031F2FA57E0017A8EE /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Member.swift; path = Models/Member.swift; sourceTree = SOURCE_ROOT; };
+		B3AF1B041F2FA57E0017A8EE /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Organization.swift; path = Models/Organization.swift; sourceTree = SOURCE_ROOT; };
+		B3AF1B071F2FA5920017A8EE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Extensions/Constants.swift; sourceTree = SOURCE_ROOT; };
+		B3AF1B081F2FA5920017A8EE /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard+Utility.swift"; path = "Extensions/Storyboard+Utility.swift"; sourceTree = SOURCE_ROOT; };
+		B3AF1B091F2FA5920017A8EE /* ViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ViewController+Utility.swift"; path = "Extensions/ViewController+Utility.swift"; sourceTree = SOURCE_ROOT; };
+		B3AF1B0D1F2FA5A10017A8EE /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = SOURCE_ROOT; };
+		B3AF1B0E1F2FA5A10017A8EE /* MemberService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberService.swift; path = Services/MemberService.swift; sourceTree = SOURCE_ROOT; };
+		B3AF1B0F1F2FA5A10017A8EE /* OrganizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationService.swift; path = Services/OrganizationService.swift; sourceTree = SOURCE_ROOT; };
+		B3AF1B131F2FA5AF0017A8EE /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = SOURCE_ROOT; };
+		B3AF1B151F2FA5BD0017A8EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Support/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B3AF1B161F2FA5BD0017A8EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Support/Info.plist; sourceTree = SOURCE_ROOT; };
+		B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseUserViewController.swift; path = "View Controllers/ChooseUserViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B3AF1B1A1F2FA5C80017A8EE /* CreateMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateMemberViewController.swift; path = "View Controllers/CreateMemberViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateOrganization.swift; path = "View Controllers/CreateOrganization.swift"; sourceTree = SOURCE_ROOT; };
+		B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberLoginViewController.swift; path = "View Controllers/MemberLoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationLoginViewController.swift; path = "View Controllers/OrganizationLoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B3AF1B1E1F2FA5C80017A8EE /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = "View Controllers/SearchTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "View Controllers/ViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		F6043ACFFD8B2B59F85D7633 /* Pods_Futsteps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Futsteps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,17 +96,78 @@
 		B370A9891F26291300197D04 /* Futsteps */ = {
 			isa = PBXGroup;
 			children = (
-				B3A6A6FE1F2F8D5B00A0B155 /* AppDelegate.swift */,
-				B3A6A6FF1F2F8D5B00A0B155 /* Base.lproj */,
-				B3A6A7001F2F8D5B00A0B155 /* Extensions */,
-				B3A6A7011F2F8D5B00A0B155 /* Models */,
-				B3A6A7021F2F8D5B00A0B155 /* Services */,
-				B3A6A7031F2F8D5B00A0B155 /* Storyboards */,
-				B3A6A7041F2F8D5B00A0B155 /* Support */,
-				B3A6A7051F2F8D5B00A0B155 /* View Controllers */,
-				B370A9911F26291300197D04 /* Assets.xcassets */,
+				B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */,
+				B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */,
+				B3AF1B281F2FA5E40017A8EE /* Models */,
+				B3AF1B291F2FA5EA0017A8EE /* Services */,
+				B3AF1B271F2FA5D90017A8EE /* View Controllers */,
+				B3AF1B2A1F2FA6010017A8EE /* Support */,
+				B3AF1B2B1F2FA6090017A8EE /* Storyboards */,
+				B3AF1B2C1F2FA6110017A8EE /* Utility */,
 			);
 			path = Futsteps;
+			sourceTree = "<group>";
+		};
+		B3AF1B271F2FA5D90017A8EE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */,
+				B3AF1B1A1F2FA5C80017A8EE /* CreateMemberViewController.swift */,
+				B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */,
+				B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */,
+				B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */,
+				B3AF1B1E1F2FA5C80017A8EE /* SearchTableViewController.swift */,
+				B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B3AF1B281F2FA5E40017A8EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3AF1B031F2FA57E0017A8EE /* Member.swift */,
+				B3AF1B041F2FA57E0017A8EE /* Organization.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B3AF1B291F2FA5EA0017A8EE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B3AF1B0D1F2FA5A10017A8EE /* AuthService.swift */,
+				B3AF1B0E1F2FA5A10017A8EE /* MemberService.swift */,
+				B3AF1B0F1F2FA5A10017A8EE /* OrganizationService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		B3AF1B2A1F2FA6010017A8EE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B3AF1B151F2FA5BD0017A8EE /* GoogleService-Info.plist */,
+				B3AF1B161F2FA5BD0017A8EE /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		B3AF1B2B1F2FA6090017A8EE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B3AF1B131F2FA5AF0017A8EE /* Login.storyboard */,
+				B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */,
+				B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		B3AF1B2C1F2FA6110017A8EE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B3AF1B071F2FA5920017A8EE /* Constants.swift */,
+				B3AF1B081F2FA5920017A8EE /* Storyboard+Utility.swift */,
+				B3AF1B091F2FA5920017A8EE /* ViewController+Utility.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		DFFF123AA12A64D30F9A3552 /* Frameworks */ = {
@@ -164,8 +257,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3AF1AEB1F2F91440017A8EE /* Base.lproj in Resources */,
-				B3AF1AEC1F2F91440017A8EE /* Storyboards in Resources */,
+				B3AF1B141F2FA5AF0017A8EE /* Login.storyboard in Resources */,
+				B3AF1B021F2FA56C0017A8EE /* Main.storyboard in Resources */,
+				B3AF1B171F2FA5BD0017A8EE /* GoogleService-Info.plist in Resources */,
+				B3AF1B011F2FA56C0017A8EE /* LaunchScreen.storyboard in Resources */,
+				B3AF1B2E1F2FA6BE0017A8EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,10 +320,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3AF1B121F2FA5A10017A8EE /* OrganizationService.swift in Sources */,
+				B3AF1AFC1F2FA5630017A8EE /* AppDelegate.swift in Sources */,
+				B3AF1B201F2FA5C80017A8EE /* ChooseUserViewController.swift in Sources */,
+				B3AF1B211F2FA5C80017A8EE /* CreateMemberViewController.swift in Sources */,
+				B3AF1B061F2FA57E0017A8EE /* Organization.swift in Sources */,
+				B3AF1B231F2FA5C80017A8EE /* MemberLoginViewController.swift in Sources */,
+				B3AF1B051F2FA57E0017A8EE /* Member.swift in Sources */,
+				B3AF1B251F2FA5C80017A8EE /* SearchTableViewController.swift in Sources */,
+				B3AF1B0C1F2FA5920017A8EE /* ViewController+Utility.swift in Sources */,
+				B3AF1B0A1F2FA5920017A8EE /* Constants.swift in Sources */,
+				B3AF1B221F2FA5C80017A8EE /* CreateOrganization.swift in Sources */,
+				B3AF1B0B1F2FA5920017A8EE /* Storyboard+Utility.swift in Sources */,
+				B3AF1B101F2FA5A10017A8EE /* AuthService.swift in Sources */,
+				B3AF1B111F2FA5A10017A8EE /* MemberService.swift in Sources */,
+				B3AF1B261F2FA5C80017A8EE /* ViewController.swift in Sources */,
+				B3AF1B241F2FA5C80017A8EE /* OrganizationLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3AF1AFE1F2FA56C0017A8EE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3AF1B001F2FA56C0017A8EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B370A9971F26291400197D04 /* Debug */ = {
@@ -333,7 +464,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlikejuAdejo.Futsteps;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = Futsteps;
+				PRODUCT_NAME = Futsteps;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -349,7 +481,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlikejuAdejo.Futsteps;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = Futsteps;
+				PRODUCT_NAME = Futsteps;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

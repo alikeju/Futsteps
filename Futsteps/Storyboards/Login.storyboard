@@ -12,7 +12,7 @@
         <!--Choose User View Controller-->
         <scene sceneID="Omq-tw-ZH5">
             <objects>
-                <viewController id="AI4-fu-S6z" customClass="ChooseUserViewController" sceneMemberID="viewController">
+                <viewController id="AI4-fu-S6z" customClass="ChooseUserViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="caW-hl-rYO"/>
                         <viewControllerLayoutGuide type="bottom" id="at2-hG-Pje"/>
