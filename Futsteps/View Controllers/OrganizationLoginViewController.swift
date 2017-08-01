@@ -26,7 +26,7 @@ class OrganizationLoginViewController: UIViewController{
     
     @IBAction func enterButton(_ sender: Any) {
         guard let email = emailTextField.text,
-               let password = passwordTextField.text else{
+            let password = passwordTextField.text else{
                 return
         }
         AuthService.signIn(controller: self, email: email, password: password) { (org) in
@@ -46,7 +46,7 @@ class OrganizationLoginViewController: UIViewController{
                     print("error: User does not exist!")
                     return
                 }
-        
+                
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
                 print("Organization was logged in.")
                 self.view.window?.rootViewController = initialViewController

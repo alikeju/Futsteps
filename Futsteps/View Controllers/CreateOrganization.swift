@@ -45,13 +45,14 @@ class CreateOrganization: UIViewController{
                 return
         }
         
+        print(self)
+        
         AuthService.createUser(controller: self, email: email, password: password) { (authOrg) in
             guard let firOrg = authOrg else {
-                //^^LINE ABOVE IS GIVING ISSUES
                 return
             }
             
-            OrganizationService.create(firOrg, email: email, organization: organization, password: password) { (user) in
+            OrganizationService.create(firOrg, email: email, organization_name: organization, password: password) { (user) in
                 guard let user = user else {
                     return
                 }
@@ -70,7 +71,6 @@ class CreateOrganization: UIViewController{
 
 extension CreateOrganization{
     func configureView(){
-        //        applyKeyboardPush()
         applyKeyboardDismisser()
     }
 }
