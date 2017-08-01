@@ -16,8 +16,6 @@ class CreateMemberViewController: UIViewController{
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -47,21 +45,6 @@ class CreateMemberViewController: UIViewController{
                 print("Please fill all fields!")
                 return
         }
-        
-//        AuthService.createUser(controller: self, email: email, password: password) { (authUser) in
-//            guard let firMember = authUser
-//                else {
-//                    return
-//            }
-//            
-//            
-//            MemberService.create(firMember, email: email, username: username, password: password) { (member) in
-//                guard let member = member else {
-//                    return
-//                }
-//                
-//                Member.setCurrent(member, writeToUserDefaults: true)
-
         
         self.performSegue(withIdentifier: Constants.Segue.toSearchOrg, sender: self)
         
