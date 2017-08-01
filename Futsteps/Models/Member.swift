@@ -21,35 +21,35 @@ class Member: NSObject{
     
     let uid: String
     var username: String
-    var organization: Organization
+    //var organization: Organization
     
     
-    init(uid: String, username: String, organization: Organization){
+    init(uid: String, username: String){
         self.uid = uid
         self.username = username
-        self.organization = organization
+        //self.organization = organization
     }
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-            let username = dict["username"] as? String,
-            let organization = dict["organization"] as? Organization
+            let username = dict["username"] as? String
+           // let organization = dict["organization"] as? Organization
             else { return nil }
         
         self.uid = snapshot.key
         self.username = username
-        self.organization = organization
+        //self.organization = organization
     }
     
     required init?(coder aDecoder: NSCoder) {
         guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String,
-            let username = aDecoder.decodeObject(forKey: Constants.UserDefaults.user) as? String,
-            let organization = aDecoder.decodeObject(forKey: Constants.UserDefaults.user) as? Organization
+            let username = aDecoder.decodeObject(forKey: Constants.UserDefaults.user) as? String
+           // let organization = aDecoder.decodeObject(forKey: Constants.UserDefaults.user) as? Organization
             else { return nil }
         
         self.uid = uid
         self.username = username
-        self.organization = organization
+        //self.organization = organization
         
         super.init()
     }
@@ -71,7 +71,7 @@ class Member: NSObject{
     class func setCurrent(_ member: Member, writeToUserDefaults: Bool = false) {
         // Checking if the boolean value for writeToUserDefaults is true.
         //If so, we write the user object to UserDefaults.
-        if writeToUserDefaults {
+        if writeToUserDefaults{
             // We use NSKeyedArchiver to turn our user object into Data. We needed to implement the NSCoding protocol and inherit from NSObject to use NSKeyedArchiver.
             let data = NSKeyedArchiver.archivedData(withRootObject: member)
             
@@ -88,6 +88,6 @@ extension Member: NSCoding {
     //Using NSCoding to enable user to keep the info on their phone when they leave the app and come back.
     func encode(with aCoder: NSCoder) {
         aCoder.encode(uid, forKey: Constants.UserDefaults.uid)
-        aCoder.encode(organization, forKey: Constants.UserDefaults.user)
+        //aCoder.encode(organization, forKey: Constants.UserDefaults.user)
     }
 }
