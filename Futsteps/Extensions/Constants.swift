@@ -15,6 +15,7 @@ import Foundation
 struct Constants {
     struct Segue {
         static let toCreateUser = "toCreateUser"
+        static let toSearchOrg = "toSearchOrg"
     }
     
     struct UserDefaults {
