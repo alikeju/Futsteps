@@ -4,7 +4,7 @@
 //
 //  Created by Alikeju Adejo on 7/27/17.
 //  Copyright © 2017 Alikeju Adejo. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
@@ -48,24 +48,27 @@ class CreateMemberViewController: UIViewController{
                 return
         }
         
-        AuthService.createUser(controller: self, email: email, password: password) { (authUser) in
-            guard let firMember = authUser
-                  else {
-                    return
-            }
-            
-            
-            MemberService.create(firMember, email: email, username: username, password: password) { (member) in
-                guard let member = member else {
-                    return
-                }
-                
-                Member.setCurrent(member, writeToUserDefaults: true)
-                
-            }
-        }
+//        AuthService.createUser(controller: self, email: email, password: password) { (authUser) in
+//            guard let firMember = authUser
+//                else {
+//                    return
+//            }
+//            
+//            
+//            MemberService.create(firMember, email: email, username: username, password: password) { (member) in
+//                guard let member = member else {
+//                    return
+//                }
+//                
+//                Member.setCurrent(member, writeToUserDefaults: true)
+
+        
+        self.performSegue(withIdentifier: Constants.Segue.toSearchOrg, sender: self)
+        
+        
     }
 }
+
 
 extension CreateMemberViewController{
     func configureView(){
