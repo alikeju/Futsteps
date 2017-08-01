@@ -11,8 +11,8 @@ import FirebaseAuth.FIRUser
 import FirebaseDatabase
 
 struct OrganizationService {
-    static func create(_ firOrganization: FIRUser, email: String, organization: String, password: String, completion: @escaping (Organization?)-> Void){
-        let orgAttrs = ["organization": organization]
+    static func create(_ firOrganization: FIRUser, email: String, organization_name: String, password: String, completion: @escaping (Organization?)-> Void){
+        let orgAttrs = ["organization_name": organization_name]
         
         let ref = Database.database().reference().child("organizations").child(firOrganization.uid)
         ref.setValue(orgAttrs) { (error, ref) in

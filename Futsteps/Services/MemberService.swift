@@ -11,45 +11,13 @@ import FirebaseAuth.FIRUser
 import FirebaseDatabase
 
 struct MemberService{
-    
-//    static func create(_ firOrganization: FIRUser, username: String, organization: Organization,  completion: @escaping (Member?)-> Void) {
-//    
-//        let currentOrg = Organization.current
-//        // 2
-//        let username = Member(firOrganization, username, organization)
-//        // 3
-//        let dict = member.dictValue
-//        
-//        // 4
-//        let memberRef = Database.database().reference().child("members").child(currentOrg.uid).childByAutoId()
-//        //5
-//        memberRef.updateChildValues(dict)
-//    }
-
     static func create(_ firMember: FIRUser, email: String, username: String, password: String, completion: @escaping (Member?)-> Void){
-        
-        let currentOrg = Organization.current
         let memberAttrs = ["username": username]
         
-//        // 1
-//        let currentUser = User.current
-//        // 2
-//        let post = Post(imageURL: urlString, imageHeight: aspectHeight)
-//        // 3
-//        let dict = post.dictValue
-//        
-//        // 4
-//        let postRef = Database.database().reference().child("posts").child(currentUser.uid).childByAutoId()
-//        //5
-//        postRef.updateChildValues(dict)
-
-        let ref = Database.database().reference().child("members").child(currentOrg.uid).child(firMember.uid).childByAutoId()
-        //let memRef = Database.database().reference().child("member").child(currentMember.uid)
+        let currentOrg = Organization.current
+        let ref = Database.database().reference().child("member_profiles").child(currentOrg.uid).child(firMember.uid)
         
-        
-
-        
-        ref.setValue(memberAttrs) { (error, memRef) in
+        ref.setValue(memberAttrs) { (error, ref) in
             if let error = error{
                 assertionFailure(error.localizedDescription)
                 return completion(nil)
@@ -64,7 +32,7 @@ struct MemberService{
     }
     
     static func show(forUID uid: String, completion: @escaping (Member?) -> Void) {
-        let ref = Database.database().reference().child("organizations").child(uid).child("member").child(uid)
+        let ref = Database.database().reference().child("member_profiles").child(uid)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let member = Member(snapshot: snapshot) else {
                 return completion(nil)
@@ -74,20 +42,6 @@ struct MemberService{
         })
     }
     
-    static func deleteMembers(forUID uid: String, success: @escaping (Bool) -> Void) {
-        let ref = Database.database().reference().child("organization").child(uid).child("member").child(uid)
-        let object = [uid : NSNull()]
-        ref.updateChildValues(object) { (error, memRef) -> Void in
-            if let error = error {
-                print("error : \(error.localizedDescription)")
-                return success(false)
-            }
-            return success(true)
-        }
-        
-    }
-
-
 }
 
 
