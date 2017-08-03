@@ -19,5 +19,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+          dismiss(animated: true, completion: nil)
+          performSegue(withIdentifier: "unwindToChooserUser", sender: self)
+    }
+    
+    
+//    @IBAction func backButtonAction(_ sender: Any) {
+//        //dismiss(animated: true, completion: nil)
+//        performSegue(withIdentifier: "unwindSegueToChooseUser", sender: self)
+//    }
+    
+ 
 }
 
