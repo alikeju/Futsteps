@@ -78,11 +78,10 @@ class CreateMemberViewController: UIViewController {
     }
     
     @IBAction func enterButtonAction(_ sender: Any) {
-        
-        let orgsRef = "Members/\(self.otherOrg?["uid"] as! String)/\(self.otherOrg?["uid"] as? String ?? "Empty")"
-        
+        let orgsRef = "Organizations/\(self.otherOrg?["uid"] as! String)/\(self.otherOrg?["uid"] as? String ?? "Empty")"
+        print(orgsRef)
         let members = "Members" + (self.otherOrg?["uid"] as! String) + "/" + (self.otherOrg?["uid"] as! String) + "/" + (self.otherOrg?["uid"] as! String)
-        
+        print(members)
         if (self.enterButton.titleLabel?.text == "Enter"){
             
             let orgData = ["name":self.loggedInOrgData?["name"] as! String]
