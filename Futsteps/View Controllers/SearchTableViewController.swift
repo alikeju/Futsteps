@@ -16,7 +16,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     
     var orgArray = [NSDictionary?]()
     var filteredOrgs = [NSDictionary?]()
-    var loggedInOrg:FIRUser?
+    var otherOrg:NSDictionary?
     
     var databaseRef = Database.database().reference()
     override func viewDidLoad() {
@@ -32,13 +32,17 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
             let key = snapshot.key
             let snapshot = snapshot.value as? NSDictionary
             snapshot?.setValue(key, forKey: "uid")
+            
+            //Saving dictionary value into otherOrg
+            self.otherOrg = snapshot
+            print(self.otherOrg ?? "Returns nil")
+
+            
             self.orgArray.append(snapshot)
-            
-//Check 15:40 in the video just in case I actually need to add line
-            
-            //inserting the rows
-            
+            print(self.orgArray)
             self.searchOrgTableView.insertRows(at: [IndexPath(row:self.orgArray.count-1,section:0)], with: UITableViewRowAnimation.automatic)
+            //inserting the rows
+
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -83,7 +87,6 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
             org = self.orgArray[indexPath.row]
         }
         cell.textLabel?.text = org?["organization"] as? String
-        cell.detailTextLabel?.text = org?["handle"] as? String
         
         return cell
     }
@@ -106,12 +109,17 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let showCreateViewController = segue.destination as! CreateViewController
-        showCreateViewController.loggedInOrg = self.loggedInOrg
-        
-        if let indexPath = tableView.indexPathForSelectedRow{
-            let org = orgArray[indexPath.row]
-            showCreateViewController.org = org
+        if segue.identifier == "toCreateAccount"
+        {
+            let showCreateViewController = segue.destination as! CreateMemberViewController
+            print(self.otherOrg ?? "NIL")
+            
+            showCreateViewController.otherOrg = self.otherOrg
+            
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let org = orgArray[indexPath.row]
+                showCreateViewController.org = org
+            }
         }
     }
     
