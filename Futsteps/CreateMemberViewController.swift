@@ -9,10 +9,8 @@
 import UIKit
 import Firebase
 
-class CreateViewController: UIViewController {
+class CreateMemberViewController: UIViewController {
     
-    
-    var loggedInOrg : FIRUser?
     var otherOrg:NSDictionary?
     var databaseRef:DatabaseReference!
     var loggedInOrgData:NSDictionary?
@@ -22,17 +20,19 @@ class CreateViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var organizationLabel: UILabel!
+    @IBOutlet weak var orgName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         
         self.databaseRef = Database.database().reference()
-        
-        databaseRef.child("organizations").child(self.loggedInOrg!.uid).observe(.value, with: { (snapshot) in
+        print(self.otherOrg?["uid"] ?? "NIL")
+        databaseRef.child("organizations").child((self.otherOrg?["uid"] as? String)!).observe(.value, with: { (snapshot) in
             self.loggedInOrgData = snapshot.value as? NSDictionary
-            
-            self.loggedInOrgData?.setValue(self.loggedInOrg!.uid, forKey: "uid")
+            print(self.loggedInOrgData ?? "Returns empty")
+            self.loggedInOrgData?.setValue(self.otherOrg?["uid"] as? String, forKey: "uid")
             
         }) { (error) in
             print(error.localizedDescription)
@@ -43,12 +43,13 @@ class CreateViewController: UIViewController {
             
             let uid = self.otherOrg?["uid"] as! String
             self.otherOrg = snapshot.value as? NSDictionary
+            self.orgName.text = self.otherOrg?["organization"] as? String
             self.otherOrg?.setValue(uid, forKey: "uid")
         }) {(error) in
             print(error.localizedDescription)
         }
         
-        databaseRef.child("organizations").child(self.loggedInOrg!.uid).child(self.otherOrg?["uid"] as! String).observe(.value, with: {(snapshot) in
+        databaseRef.child("organizations").child(self.otherOrg?["uid"] as! String).child(self.otherOrg?["uid"] as! String).observe(.value, with: {(snapshot) in
             if (snapshot.exists()){
                 self.enterButton.setTitle("Delete", for: .normal)
             } else{
@@ -59,7 +60,7 @@ class CreateViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-        //self.name.text = self.otherOrg?["name"] as? String
+//        self.orgName.text = self.otherOrg?["orgName"] as? String
         
     }
     
@@ -77,9 +78,10 @@ class CreateViewController: UIViewController {
     }
     
     @IBAction func enterButtonAction(_ sender: Any) {
-        let orgsRef = "Members/\(self.otherOrg?["uid"] as! String)/\(self.loggedInOrgData?["uid"] as! String)"
         
-        let members = "Members" + (self.loggedInOrgData?["uid"] as! String) + "/" + (self.otherOrg?["uid"] as! String) + "/" + (self.otherOrg?["uid"] as! String)
+        let orgsRef = "Members/\(self.otherOrg?["uid"] as! String)/\(self.otherOrg?["uid"] as? String ?? "Empty")"
+        
+        let members = "Members" + (self.otherOrg?["uid"] as! String) + "/" + (self.otherOrg?["uid"] as! String) + "/" + (self.otherOrg?["uid"] as! String)
         
         if (self.enterButton.titleLabel?.text == "Enter"){
             
@@ -111,7 +113,6 @@ class CreateViewController: UIViewController {
                         return
                 }
                 
-                
                 MemberService.create(firMember, email: email, username: username, password: password) { (member) in
                     guard let member = member else {
                         return
@@ -121,15 +122,15 @@ class CreateViewController: UIViewController {
                     
                     let initialViewController = UIStoryboard.initialViewController(for: .main)
                     self.view.window?.rootViewController = initialViewController
+                 
                     self.view.window?.makeKeyAndVisible()
                 }
             }
-            
         }
     }
 }
 
-extension CreateViewController{
+extension CreateMemberViewController{
     func configureView(){
         applyKeyboardDismisser()
     }
