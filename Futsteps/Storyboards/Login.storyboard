@@ -159,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="1295.6521739130435" y="467.11956521739137"/>
         </scene>
-        <!--Find Organizations-->
+        <!--Find Organization-->
         <scene sceneID="SYf-5l-XtT">
             <objects>
                 <tableViewController id="db2-dr-oBN" customClass="FindOrgsTableViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,21 +168,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="ftY-EW-fYM" detailTextLabel="7h5-WX-8D2" style="IBUITableViewCellStyleSubtitle" id="iur-7B-4jF" userLabel="Cell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="fqy-nf-kdG" detailTextLabel="Uqn-V2-beG" style="IBUITableViewCellStyleSubtitle" id="iur-7B-4jF" userLabel="Cell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iur-7B-4jF" id="a8c-ho-93l">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ftY-EW-fYM">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fqy-nf-kdG">
                                             <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7h5-WX-8D2">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uqn-V2-beG">
                                             <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -198,7 +198,10 @@
                             <outlet property="delegate" destination="db2-dr-oBN" id="nzi-J2-9CX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Find Organizations" id="Yrn-hs-xrp"/>
+                    <navigationItem key="navigationItem" title="Find Organization" id="Yrn-hs-xrp"/>
+                    <connections>
+                        <outlet property="findOrgsTableView" destination="F9t-Z1-wVG" id="Zxt-By-l2H"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pu-7z-0jv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
