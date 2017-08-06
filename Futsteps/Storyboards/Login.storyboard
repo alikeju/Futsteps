@@ -198,16 +198,7 @@
                             <outlet property="delegate" destination="db2-dr-oBN" id="nzi-J2-9CX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Find Organizations" id="Yrn-hs-xrp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="AI2-fe-eAz">
-                            <connections>
-                                <action selector="dismissOrgViewTableView:" destination="db2-dr-oBN" id="2lZ-j4-MCG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="searchOrgTableView" destination="F9t-Z1-wVG" id="qrw-iB-A2Z"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Find Organizations" id="Yrn-hs-xrp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pu-7z-0jv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
