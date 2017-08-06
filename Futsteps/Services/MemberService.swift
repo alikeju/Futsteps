@@ -14,8 +14,7 @@ struct MemberService{
     static func create(_ firMember: FIRUser, email: String, username: String, password: String, completion: @escaping (Member?)-> Void){
         let memberAttrs = ["username": username]
         
-        let currentOrg = Organization.current
-        let ref = Database.database().reference().child("member_profiles").child(currentOrg.uid).child(firMember.uid)
+        let ref = Database.database().reference().child("member_profiles").child(firMember.uid)
         
         ref.setValue(memberAttrs) { (error, ref) in
             if let error = error{
