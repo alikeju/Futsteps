@@ -123,7 +123,7 @@
                                             <color key="titleColor" red="0.14361806213855743" green="0.33500972390174866" blue="0.5647926926612854" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <segue destination="S59-wr-B6W" kind="show" id="SzF-8r-eLF"/>
+                                            <segue destination="Qra-1q-YLK" kind="show" id="4X8-Rh-epn"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -162,7 +162,7 @@
         <!--Find Organizations-->
         <scene sceneID="SYf-5l-XtT">
             <objects>
-                <tableViewController id="db2-dr-oBN" customClass="SearchTableViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="db2-dr-oBN" customClass="FindOrgsTableViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="F9t-Z1-wVG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,9 +191,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Qra-1q-YLK" kind="show" identifier="toCreateAccount" id="VqV-cc-U1d"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -214,12 +211,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pu-7z-0jv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3193" y="466"/>
+            <point key="canvasLocation" x="4279" y="466"/>
         </scene>
-        <!--Create View Controller-->
+        <!--Create Member View Controller-->
         <scene sceneID="lMd-gf-uG2">
             <objects>
-                <viewController id="Qra-1q-YLK" customClass="CreateViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qra-1q-YLK" customClass="CreateMemberViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sPa-8V-3fr"/>
                         <viewControllerLayoutGuide type="bottom" id="dpc-5Z-SgS"/>
@@ -261,7 +258,8 @@
                                             <color key="titleColor" red="0.14727814495563507" green="0.33895030617713928" blue="0.56871390342712402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="enterButtonAction:" destination="Qra-1q-YLK" eventType="touchUpInside" id="ux5-Ka-Wrh"/>
+                                            <action selector="enterButton:" destination="Qra-1q-YLK" eventType="touchUpInside" id="tnL-oK-zen"/>
+                                            <segue destination="S59-wr-B6W" kind="show" id="KxB-cO-fKg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -279,15 +277,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="hrZ-p3-FUf" id="2bP-ma-vHn"/>
-                        <outlet property="enterButton" destination="ALy-82-QNO" id="iAz-vY-wa9"/>
-                        <outlet property="passwordTextField" destination="C8f-xj-sgs" id="AYj-Fz-bex"/>
-                        <outlet property="usernameTextField" destination="xOa-Re-xCl" id="BUa-zn-gAT"/>
+                        <outlet property="emailTextField" destination="hrZ-p3-FUf" id="9dN-i3-nK8"/>
+                        <outlet property="enterButton" destination="ALy-82-QNO" id="8xm-jW-rbL"/>
+                        <outlet property="passwordTextField" destination="C8f-xj-sgs" id="Oq9-7Y-0ae"/>
+                        <outlet property="usernameTextField" destination="xOa-Re-xCl" id="Nzl-2p-38k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5At-fS-t9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4196" y="466"/>
+            <point key="canvasLocation" x="2297" y="466"/>
         </scene>
         <!--Organization Login View Controller-->
         <scene sceneID="sly-p0-fR0">
@@ -491,7 +489,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LP9-Im-Bzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2217" y="466"/>
+            <point key="canvasLocation" x="3257" y="466"/>
         </scene>
     </scenes>
     <resources>
