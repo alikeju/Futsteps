@@ -12,6 +12,10 @@ import UIKit
 
 class Organization: NSObject {
     
+    var isAdded = false
+    
+    var orgs = [Organization]()
+    
     // MARK: - Properties
     
     let uid: String
@@ -49,18 +53,18 @@ class Organization: NSObject {
     // MARK: - Singleton
     
     //Creating a private static variable to hold our currently logged user.
-    private static var _current: Organization?
-    
-    static var current: Organization {
-        
-        // Checking that  _current is of type Organization? Isn't nil. If _current is nil, and current is being read, the guard statement will crash with fatalError().
-        guard let currentOrganization = _current else {
-            fatalError("Error: current user doesn't exist")
-        }
-        
-        // If _current isn't nil, it will be returned to the organization.
-        return currentOrganization
-    }
+//    private static var _current: Organization?
+//    
+//    static var current: Organization {
+//        
+//        // Checking that  _current is of type Organization? Isn't nil. If _current is nil, and current is being read, the guard statement will crash with fatalError().
+//        guard let currentOrganization = _current else {
+//            fatalError("Error: current user doesn't exist")
+//        }
+//        
+//        // If _current isn't nil, it will be returned to the organization.
+//        return currentOrganization
+//    }
     
     //MARK: - Class Methods
     
@@ -75,7 +79,15 @@ class Organization: NSObject {
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentUser)
         }
         
-        _current = organization
+       // _current = organization
+    }
+    
+    func configure(cell: AddOrgCell, atIndexPath indexPath: IndexPath) {
+        let org = orgs[indexPath.row]
+        
+        cell.orgNameLabel.text = org.organization
+        //DON'T KNOW ABOUT THIS LINE
+        cell.addButton.isSelected = self.isAdded
     }
 }
 
