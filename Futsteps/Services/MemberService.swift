@@ -41,6 +41,8 @@ struct MemberService{
         })
     }
     
+    //make a add organization method
+    
 }
 
 

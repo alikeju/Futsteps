@@ -38,6 +38,7 @@ struct OrganizationService {
             completion(organization)
         })
     }
+    //make add member method 
     
     static func members(for user: User, completion: @escaping ([Member]) -> Void) {
         let ref = Database.database().reference().child("members").child(user.uid)
@@ -49,6 +50,41 @@ struct OrganizationService {
             
             let members = snapshot.reversed().flatMap(Member.init)
             completion(members)
+        })
+    }
+    
+    static func orgsExcludingCurrentOrg(completion: @escaping ([Organization]) -> Void) {
+        let currentUser = Member.current
+        // 1
+        let ref = Database.database().reference().child("organizations")
+        
+        // 2
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+                else { return completion([]) }
+            
+            // 3
+            let orgs =
+                snapshot
+                    .flatMap(Organization.init)
+                    .filter { $0.uid != currentUser.uid }
+            
+            // 4
+            let dispatchGroup = DispatchGroup()
+            orgs.forEach { (org) in
+                dispatchGroup.enter()
+                
+                // 5
+                AddService.isOrgAdded(org) { (isAdded) in
+                    org.isAdded = isAdded
+                    dispatchGroup.leave()
+                }
+            }
+            
+            // 6
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(orgs)
+            })
         })
     }
     
