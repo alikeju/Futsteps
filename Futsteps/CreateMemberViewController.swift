@@ -9,17 +9,22 @@
 import UIKit
 import Firebase
 
+
 class CreateMemberViewController: UIViewController {
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var enterButton: UIButton!
-
+    
+    var loggedInUser:AnyObject?
+    var databaseRef = Database.database().reference()
+    var loggedInUserData:NSDictionary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loggedInUser = Auth.auth().currentUser
         configureView()
     }
     
@@ -27,13 +32,13 @@ class CreateMemberViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if let identifier = segue.identifier {
-    //            if identifier == "toSearchOrg" {
-    //                print("Back to Login screen!")
-    //            }
-    //        }
-    //    }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if (segue.identifier == "findOrgsSegue"){
+                let showFindOrgsTableViewController = segue.destination as! FindOrgsTableViewController
+                
+                showFindOrgsTableViewController.loggedInUser = self.loggedInUser as? FIRUser
+            }
+        }
     
     
     @IBAction func enterButton(_ sender: Any) {
@@ -68,8 +73,7 @@ class CreateMemberViewController: UIViewController {
                 print("Member was created.")
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
-                
-                
+            
             }
         }
     }
