@@ -21,7 +21,7 @@ class Member: NSObject{
     
     let uid: String
     var username: String
-    //var organization: Organization
+    var organization: Organization?
     
     
     init(uid: String, username: String){
