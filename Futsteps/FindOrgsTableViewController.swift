@@ -20,8 +20,6 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         //allows the class to know when the text inside the search bar is changed
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -32,11 +30,9 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
         
         databaseRef.child("organizations").queryOrdered(byChild: "organization").observe(.childAdded, with: { (snapshot) in
             self.orgArray.append(snapshot.value as? NSDictionary)
-            
-            //insert the rows
+
+      
             self.findOrgsTableView.insertRows(at: [IndexPath(row:self.orgArray.count-1, section:0)], with: UITableViewRowAnimation.automatic)
-            
-            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -80,6 +76,7 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
         }
         
         cell.textLabel?.text = org?["organization"] as? String
+        cell.detailTextLabel?.text = org?["description"] as? String
         
         return cell
     }
@@ -131,7 +128,7 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
      */
     
     func updateSearchResults(for searchController: UISearchController) {
-       filterContent(searchText: self.searchController.searchBar.text!)
+        filterContent(searchText: self.searchController.searchBar.text!)
         
     }
     
