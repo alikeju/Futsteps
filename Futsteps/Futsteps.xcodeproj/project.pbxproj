@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B31BF3F31F336C7E001E55F8 /* AddOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF3F21F336C7E001E55F8 /* AddOrganization.swift */; };
+		B31BF3F71F33727A001E55F8 /* AddOrgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF3F61F33727A001E55F8 /* AddOrgCell.swift */; };
+		B31BF3F91F337BC8001E55F8 /* AddOrganizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF3F81F337BC8001E55F8 /* AddOrganizationViewController.swift */; };
+		B31BF3FF1F36452F001E55F8 /* FindOrgsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF3FE1F36452F001E55F8 /* FindOrgsTableViewController.swift */; };
+		B31BF4101F369FDC001E55F8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31BF40F1F369FDC001E55F8 /* Login.storyboard */; };
 		B370A9AE1F27970B00197D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B370A9AD1F27970B00197D04 /* MapKit.framework */; };
 		B3AF1AFC1F2FA5630017A8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */; };
 		B3AF1B011F2FA56C0017A8EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */; };
@@ -19,22 +24,25 @@
 		B3AF1B101F2FA5A10017A8EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B0D1F2FA5A10017A8EE /* AuthService.swift */; };
 		B3AF1B111F2FA5A10017A8EE /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B0E1F2FA5A10017A8EE /* MemberService.swift */; };
 		B3AF1B121F2FA5A10017A8EE /* OrganizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B0F1F2FA5A10017A8EE /* OrganizationService.swift */; };
-		B3AF1B141F2FA5AF0017A8EE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1B131F2FA5AF0017A8EE /* Login.storyboard */; };
 		B3AF1B171F2FA5BD0017A8EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1B151F2FA5BD0017A8EE /* GoogleService-Info.plist */; };
 		B3AF1B201F2FA5C80017A8EE /* ChooseUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */; };
-		B3AF1B211F2FA5C80017A8EE /* CreateMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1A1F2FA5C80017A8EE /* CreateMemberViewController.swift */; };
 		B3AF1B221F2FA5C80017A8EE /* CreateOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */; };
 		B3AF1B231F2FA5C80017A8EE /* MemberLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */; };
 		B3AF1B241F2FA5C80017A8EE /* OrganizationLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */; };
-		B3AF1B251F2FA5C80017A8EE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1E1F2FA5C80017A8EE /* SearchTableViewController.swift */; };
 		B3AF1B261F2FA5C80017A8EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */; };
 		B3AF1B2E1F2FA6BE0017A8EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */; };
+		B3AF1B341F30249A0017A8EE /* CreateMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B331F30249A0017A8EE /* CreateMemberViewController.swift */; };
 		D4810BE7D2DBBB76841CA7D9 /* Pods_Futsteps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6043ACFFD8B2B59F85D7633 /* Pods_Futsteps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		468E4E901B2CB846ABDD99A9 /* Pods-Futsteps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Futsteps.release.xcconfig"; path = "Pods/Target Support Files/Pods-Futsteps/Pods-Futsteps.release.xcconfig"; sourceTree = "<group>"; };
 		56B30D846B5DCDEC0072B15F /* Pods-Futsteps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Futsteps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Futsteps/Pods-Futsteps.debug.xcconfig"; sourceTree = "<group>"; };
+		B31BF3F21F336C7E001E55F8 /* AddOrganization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrganization.swift; sourceTree = SOURCE_ROOT; };
+		B31BF3F61F33727A001E55F8 /* AddOrgCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrgCell.swift; sourceTree = SOURCE_ROOT; };
+		B31BF3F81F337BC8001E55F8 /* AddOrganizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrganizationViewController.swift; sourceTree = SOURCE_ROOT; };
+		B31BF3FE1F36452F001E55F8 /* FindOrgsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindOrgsTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		B31BF40F1F369FDC001E55F8 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = SOURCE_ROOT; };
 		B370A9871F26291300197D04 /* Futsteps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Futsteps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B370A9AD1F27970B00197D04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -48,17 +56,15 @@
 		B3AF1B0D1F2FA5A10017A8EE /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = SOURCE_ROOT; };
 		B3AF1B0E1F2FA5A10017A8EE /* MemberService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberService.swift; path = Services/MemberService.swift; sourceTree = SOURCE_ROOT; };
 		B3AF1B0F1F2FA5A10017A8EE /* OrganizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationService.swift; path = Services/OrganizationService.swift; sourceTree = SOURCE_ROOT; };
-		B3AF1B131F2FA5AF0017A8EE /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = SOURCE_ROOT; };
 		B3AF1B151F2FA5BD0017A8EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Support/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B3AF1B161F2FA5BD0017A8EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Support/Info.plist; sourceTree = SOURCE_ROOT; };
 		B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseUserViewController.swift; path = "View Controllers/ChooseUserViewController.swift"; sourceTree = SOURCE_ROOT; };
-		B3AF1B1A1F2FA5C80017A8EE /* CreateMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateMemberViewController.swift; path = "View Controllers/CreateMemberViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateOrganization.swift; path = "View Controllers/CreateOrganization.swift"; sourceTree = SOURCE_ROOT; };
 		B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberLoginViewController.swift; path = "View Controllers/MemberLoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationLoginViewController.swift; path = "View Controllers/OrganizationLoginViewController.swift"; sourceTree = SOURCE_ROOT; };
-		B3AF1B1E1F2FA5C80017A8EE /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = "View Controllers/SearchTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "View Controllers/ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		B3AF1B331F30249A0017A8EE /* CreateMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMemberViewController.swift; sourceTree = SOURCE_ROOT; };
 		F6043ACFFD8B2B59F85D7633 /* Pods_Futsteps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Futsteps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,28 +104,17 @@
 			children = (
 				B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */,
 				B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */,
+				B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */,
+				B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */,
+				B3AF1B301F2FBE210017A8EE /* Organization View Controllers */,
+				B3AF1B2F1F2FBDFA0017A8EE /* Member View Controllers */,
 				B3AF1B281F2FA5E40017A8EE /* Models */,
 				B3AF1B291F2FA5EA0017A8EE /* Services */,
-				B3AF1B271F2FA5D90017A8EE /* View Controllers */,
 				B3AF1B2A1F2FA6010017A8EE /* Support */,
 				B3AF1B2B1F2FA6090017A8EE /* Storyboards */,
 				B3AF1B2C1F2FA6110017A8EE /* Utility */,
 			);
 			path = Futsteps;
-			sourceTree = "<group>";
-		};
-		B3AF1B271F2FA5D90017A8EE /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */,
-				B3AF1B1A1F2FA5C80017A8EE /* CreateMemberViewController.swift */,
-				B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */,
-				B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */,
-				B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */,
-				B3AF1B1E1F2FA5C80017A8EE /* SearchTableViewController.swift */,
-				B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */,
-			);
-			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		B3AF1B281F2FA5E40017A8EE /* Models */ = {
@@ -134,9 +129,11 @@
 		B3AF1B291F2FA5EA0017A8EE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B31BF3F21F336C7E001E55F8 /* AddOrganization.swift */,
 				B3AF1B0D1F2FA5A10017A8EE /* AuthService.swift */,
 				B3AF1B0E1F2FA5A10017A8EE /* MemberService.swift */,
 				B3AF1B0F1F2FA5A10017A8EE /* OrganizationService.swift */,
+				B31BF3F61F33727A001E55F8 /* AddOrgCell.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -153,9 +150,9 @@
 		B3AF1B2B1F2FA6090017A8EE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				B3AF1B131F2FA5AF0017A8EE /* Login.storyboard */,
 				B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */,
 				B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */,
+				B31BF40F1F369FDC001E55F8 /* Login.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -168,6 +165,26 @@
 				B3AF1B091F2FA5920017A8EE /* ViewController+Utility.swift */,
 			);
 			name = Utility;
+			sourceTree = "<group>";
+		};
+		B3AF1B2F1F2FBDFA0017A8EE /* Member View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3AF1B331F30249A0017A8EE /* CreateMemberViewController.swift */,
+				B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */,
+				B31BF3F81F337BC8001E55F8 /* AddOrganizationViewController.swift */,
+				B31BF3FE1F36452F001E55F8 /* FindOrgsTableViewController.swift */,
+			);
+			name = "Member View Controllers";
+			sourceTree = "<group>";
+		};
+		B3AF1B301F2FBE210017A8EE /* Organization View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */,
+				B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */,
+			);
+			name = "Organization View Controllers";
 			sourceTree = "<group>";
 		};
 		DFFF123AA12A64D30F9A3552 /* Frameworks */ = {
@@ -257,9 +274,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3AF1B141F2FA5AF0017A8EE /* Login.storyboard in Resources */,
 				B3AF1B021F2FA56C0017A8EE /* Main.storyboard in Resources */,
 				B3AF1B171F2FA5BD0017A8EE /* GoogleService-Info.plist in Resources */,
+				B31BF4101F369FDC001E55F8 /* Login.storyboard in Resources */,
 				B3AF1B011F2FA56C0017A8EE /* LaunchScreen.storyboard in Resources */,
 				B3AF1B2E1F2FA6BE0017A8EE /* Assets.xcassets in Resources */,
 			);
@@ -322,17 +339,20 @@
 			files = (
 				B3AF1B121F2FA5A10017A8EE /* OrganizationService.swift in Sources */,
 				B3AF1AFC1F2FA5630017A8EE /* AppDelegate.swift in Sources */,
+				B3AF1B341F30249A0017A8EE /* CreateMemberViewController.swift in Sources */,
 				B3AF1B201F2FA5C80017A8EE /* ChooseUserViewController.swift in Sources */,
-				B3AF1B211F2FA5C80017A8EE /* CreateMemberViewController.swift in Sources */,
 				B3AF1B061F2FA57E0017A8EE /* Organization.swift in Sources */,
+				B31BF3F71F33727A001E55F8 /* AddOrgCell.swift in Sources */,
 				B3AF1B231F2FA5C80017A8EE /* MemberLoginViewController.swift in Sources */,
 				B3AF1B051F2FA57E0017A8EE /* Member.swift in Sources */,
-				B3AF1B251F2FA5C80017A8EE /* SearchTableViewController.swift in Sources */,
 				B3AF1B0C1F2FA5920017A8EE /* ViewController+Utility.swift in Sources */,
+				B31BF3FF1F36452F001E55F8 /* FindOrgsTableViewController.swift in Sources */,
+				B31BF3F91F337BC8001E55F8 /* AddOrganizationViewController.swift in Sources */,
 				B3AF1B0A1F2FA5920017A8EE /* Constants.swift in Sources */,
 				B3AF1B221F2FA5C80017A8EE /* CreateOrganization.swift in Sources */,
 				B3AF1B0B1F2FA5920017A8EE /* Storyboard+Utility.swift in Sources */,
 				B3AF1B101F2FA5A10017A8EE /* AuthService.swift in Sources */,
+				B31BF3F31F336C7E001E55F8 /* AddOrganization.swift in Sources */,
 				B3AF1B111F2FA5A10017A8EE /* MemberService.swift in Sources */,
 				B3AF1B261F2FA5C80017A8EE /* ViewController.swift in Sources */,
 				B3AF1B241F2FA5C80017A8EE /* OrganizationLoginViewController.swift in Sources */,
