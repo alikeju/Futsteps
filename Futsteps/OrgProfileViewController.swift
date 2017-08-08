@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class OrgProfileViewController: UIViewController {
     
     var loggedInUser:FIRUser?
@@ -23,7 +24,9 @@ class OrgProfileViewController: UIViewController {
         super.viewDidLoad()
         self.databaseRef = Database.database().reference()
         
+        
         //add an observer for the logged in user
+        //whenever the member profiles changes it is going to change the loggedInUserData
         databaseRef.child("member_profiles").child(self.loggedInUser!.uid).observe(.value, with: { (snapshot) in
             
             print("VALUE CHANGED IN MEMBER_PROFILES")
@@ -35,6 +38,7 @@ class OrgProfileViewController: UIViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
+        
         
         //add an observer for the org that is being viewed
         //When the followers count is changed, it is updated here!
@@ -83,12 +87,13 @@ class OrgProfileViewController: UIViewController {
     
     @IBAction func didTapAdd(_ sender: Any) {
         let addedRef = "added/" + (self.loggedInUserData?["uid"] as! String) + "/" + (self.orgProfile?["uid"] as! String)
-        
-        if(self.addButton.titleLabel?.text == "Add")
-        {
+        let memberValue = self.loggedInUserData?["member_profile"] as! String
+        let orgValue = self.orgProfile?["organization"] as! String
+        if(self.addButton.titleLabel?.text == "Add"){
             print("add org")
-            let memberValue = self.loggedInUserData?["member_profile"] as! String
-            let orgValue = self.orgProfile?["organization"] as! String
+            //            let orgValue = self.orgProfile?["organization"] as! String
+            //            let memberValue = self.loggedInUserData?["member_profile"] as! String
+            
             //set the organization
             
             let memberAddedData = ["organization_name": memberValue]
@@ -113,6 +118,6 @@ class OrgProfileViewController: UIViewController {
         }
         
         
-    
+        
     }
 }
