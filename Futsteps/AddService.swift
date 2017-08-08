@@ -27,9 +27,9 @@ struct AddService {
         }
     }
     
-    static func setIsAdded(_ isFollowing: Bool, fromCurrentUserTo followee: Organization, success: @escaping (Bool) -> Void) {
-        if isFollowing {
-            addOrg(followee, forCurrentUserWithSuccess: success)
+    static func setIsAdded(_ isAdded: Bool, fromCurrentUserTo addee: Organization, success: @escaping (Bool) -> Void) {
+        if isAdded {
+            addOrg(addee, forCurrentUserWithSuccess: success)
         } 
     }
     
