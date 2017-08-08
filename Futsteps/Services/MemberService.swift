@@ -11,7 +11,7 @@ import FirebaseAuth.FIRUser
 import FirebaseDatabase
 
 struct MemberService{
-    static func create(_ firMember: FIRUser, email: String, username: String, password: String, completion: @escaping (Member?)-> Void){
+    static func create(firMember: FIRUser, email: String, username: String, password: String, completion: @escaping (Member?)-> Void){
         let memberAttrs = ["username": username]
         
         let ref = Database.database().reference().child("member_profiles").child(firMember.uid)
@@ -26,6 +26,7 @@ struct MemberService{
                 let member = Member(snapshot: snapshot)
                 completion(member)
             })
+            print("Wassup")
             
         }
     }
@@ -44,5 +45,14 @@ struct MemberService{
     //make a add organization method
     
 }
+
+// parameter naming stuff
+//func yoWassup (inside : String){
+//    //print(outside)
+//    print(inside)
+//}
+//
+////yoWassup("Hey")
+////yoWassup(inside: "Hey")
 
 
