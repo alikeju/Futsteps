@@ -299,7 +299,6 @@
                                         </state>
                                         <connections>
                                             <action selector="enterButton:" destination="Qra-1q-YLK" eventType="touchUpInside" id="tnL-oK-zen"/>
-                                            <segue destination="db2-dr-oBN" kind="show" identifier="findOrgsSegue" id="LBB-jg-1tJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -321,6 +320,7 @@
                         <outlet property="enterButton" destination="ALy-82-QNO" id="8xm-jW-rbL"/>
                         <outlet property="passwordTextField" destination="C8f-xj-sgs" id="Oq9-7Y-0ae"/>
                         <outlet property="usernameTextField" destination="xOa-Re-xCl" id="Nzl-2p-38k"/>
+                        <segue destination="db2-dr-oBN" kind="show" identifier="findOrgsSegue" id="NY6-Ht-3I9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5At-fS-t9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
