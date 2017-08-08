@@ -27,6 +27,7 @@ class OrgProfileViewController: UIViewController {
         databaseRef.child("member_profiles").child(self.loggedInUser!.uid).observe(.value, with: { (snapshot) in
             
             print("VALUE CHANGED IN MEMBER_PROFILES")
+            //setting loggedInUserData
             self.loggedInUserData = snapshot.value as? NSDictionary
             //store the key in the users data variable
             self.loggedInUserData?.setValue(self.loggedInUser!.uid, forKey: "uid")
@@ -86,11 +87,15 @@ class OrgProfileViewController: UIViewController {
         if(self.addButton.titleLabel?.text == "Add")
         {
             print("add org")
-            let value = self.loggedInUserData?["organization_name"] as! String
+            let memberValue = self.loggedInUserData?["member_profile"] as! String
+            let orgValue = self.orgProfile?["organization"] as! String
+            //set the organization
             
-            let addedData = ["organization_name": value]
+            let memberAddedData = ["organization_name": memberValue]
+            let orgAddedData = ["member_profiles": orgValue]
             
-            let childUpdates = [addedRef:addedData]
+            let childUpdates = [addedRef:memberAddedData,
+                                addedRef:orgAddedData]
             
             databaseRef.updateChildValues(childUpdates)
             
@@ -106,6 +111,7 @@ class OrgProfileViewController: UIViewController {
         else{
             membersCount = self.orgProfile?["membersCount"] as! Int + 1
         }
+        
         
     
     }
