@@ -29,7 +29,6 @@ class Organization: NSObject {
         super.init()
     }
     
-    
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
             let organization = dict["organization_name"] as? String
@@ -67,12 +66,13 @@ class Organization: NSObject {
        // _current = organization
     }
     
-    func configure(cell: AddOrgCell, atIndexPath indexPath: IndexPath) {
-        let org = orgs[indexPath.row]
-        
-        cell.orgNameLabel.text = org.organization
-        cell.addButton.isSelected = org.isAdded
-    }
+//If something goes terribly wrong then uncomment. If not then delete.
+//    func configure(cell: AddOrgCell, atIndexPath indexPath: IndexPath) {
+//        let org = orgs[indexPath.row]
+//        
+//        cell.orgNameLabel.text = org.organization
+//        cell.addButton.isSelected = org.isAdded
+//    }
 }
 
 extension Organization: NSCoding {
