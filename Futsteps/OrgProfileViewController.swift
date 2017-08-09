@@ -8,12 +8,23 @@
 
 import UIKit
 import Firebase
+//: Telling the type
+//= Assigning the value
 
+protocol OrgProfileViewDelegate: class {
+    func didTapAdd()
+}
 
 class OrgProfileViewController: UIViewController {
     
+    weak var delegate: OrgProfileViewDelegate?
+
+    var organizations = [Organization]()
+    
+    //Create an instance of an org with the profile that I got. From that org use the isAdded function.
     var loggedInUser:FIRUser?
     var orgProfile:NSDictionary?
+    var orgProfile1: Organization?
     var databaseRef:DatabaseReference!
     var loggedInUserData:NSDictionary?
     
@@ -32,6 +43,10 @@ class OrgProfileViewController: UIViewController {
             print("VALUE CHANGED IN MEMBER_PROFILES")
             //setting loggedInUserData
             self.loggedInUserData = snapshot.value as? NSDictionary
+        
+            //creating instance of org
+            //self.orgProfile1 = Organization(snapshot: snapshot)
+            
             //store the key in the users data variable
             self.loggedInUserData?.setValue(self.loggedInUser!.uid, forKey: "uid")
             
@@ -39,13 +54,23 @@ class OrgProfileViewController: UIViewController {
             print(error.localizedDescription)
         }
         
+
         
         //add an observer for the org that is being viewed
         //When the followers count is changed, it is updated here!
+        //changed orgProfile to orgProfile1
+        
         databaseRef.child("organizations").child(self.orgProfile?["uid"] as! String).observe(.value, with: { (snapshot) in
             
+            
+            
             let uid = self.orgProfile?["uid"] as! String
+            let organization = self.orgProfile?["organization_name"] as! String
+            
             self.orgProfile = snapshot.value as? NSDictionary
+            
+            self.orgProfile1 = Organization(snapshot: snapshot)
+            //Put snapshot in
             //add the uid to the profile
             self.orgProfile?.setValue(uid, forKey: "uid")
             
@@ -86,38 +111,27 @@ class OrgProfileViewController: UIViewController {
     
     
     @IBAction func didTapAdd(_ sender: Any) {
-        let addedRef = "added/" + (self.loggedInUserData?["uid"] as! String) + "/" + (self.orgProfile?["uid"] as! String)
-        let memberValue = self.loggedInUserData?["member_profile"] as! String
-        let orgValue = self.orgProfile?["organization"] as! String
-        if(self.addButton.titleLabel?.text == "Add"){
-            print("add org")
-            //            let orgValue = self.orgProfile?["organization"] as! String
-            //            let memberValue = self.loggedInUserData?["member_profile"] as! String
+        addButton.isUserInteractionEnabled = false
+        let addee = orgProfile1!
+        //^^LINE FOUND TO BE NIL
+        
+        AddService.setIsAdded(!addee.isAdded, fromCurrentUserTo: addee) { (success) in
+            defer {
+                self.addButton.isUserInteractionEnabled = true
+            }
             
-            //set the organization
+            guard success else { return }
             
-            let memberAddedData = ["organization_name": memberValue]
-            let orgAddedData = ["member_profiles": orgValue]
+            addee.isAdded = !addee.isAdded
             
-            let childUpdates = [addedRef:memberAddedData,
-                                addedRef:orgAddedData]
+            let initialViewController = UIStoryboard.initialViewController(for: .main)
+            print("Organization was added.")
+            self.view.window?.rootViewController = initialViewController
+            self.view.window?.makeKeyAndVisible()
             
-            databaseRef.updateChildValues(childUpdates)
-            
-            print("data updated")
         }
-        
-        let membersCount:Int?
-        
-        if(self.orgProfile?["membersCount"] == nil){
-            //set the follower count to 1
-            membersCount=1
-        }
-        else{
-            membersCount = self.orgProfile?["membersCount"] as! Int + 1
-        }
-        
-        
-        
     }
 }
+
+
+
