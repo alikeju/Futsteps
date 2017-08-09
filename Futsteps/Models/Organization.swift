@@ -32,7 +32,7 @@ class Organization: NSObject {
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-            let organization = dict["organization"] as? String
+            let organization = dict["organization_name"] as? String
             else { return nil }
         
         self.uid = snapshot.key
