@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zjh-s4-Hbw">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="BEi-Ck-8pX">
             <objects>
                 <viewController id="tDw-ek-Laq" sceneMemberID="viewController">
@@ -18,34 +18,38 @@
                         <viewControllerLayoutGuide type="bottom" id="rmT-hk-rtH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Fu-s6-Lio">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" selectedImage="MembersIcon" id="gyS-3R-yUl"/>
+                    <tabBarItem key="tabBarItem" title="" image="MembersIcon" id="gyS-3R-yUl">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bf-mE-uvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="382"/>
+            <point key="canvasLocation" x="-471" y="812"/>
         </scene>
-        <!--View Controller-->
+        <!--Item 3-->
         <scene sceneID="cbP-2F-ual">
             <objects>
-                <viewController id="whR-yG-bEw" sceneMemberID="viewController">
+                <viewController id="whR-yG-bEw" userLabel="Item 3" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="meC-JJ-Enf"/>
                         <viewControllerLayoutGuide type="bottom" id="qXc-vo-w74"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2v9-FJ-hJP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" selectedImage="AddNotes" id="P6E-d4-dXd"/>
+                    <tabBarItem key="tabBarItem" image="AddNotes" id="P6E-d4-dXd">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i61-C0-7i9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="-462"/>
+            <point key="canvasLocation" x="1074" y="725"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vfO-CW-su4">
@@ -59,11 +63,22 @@
                     <connections>
                         <segue destination="whR-yG-bEw" kind="relationship" relationship="viewControllers" id="tgy-wx-1ak"/>
                         <segue destination="tDw-ek-Laq" kind="relationship" relationship="viewControllers" id="YdP-Pd-SXD"/>
+                        <segue destination="BZO-rf-5BI" kind="relationship" relationship="viewControllers" id="UDl-7g-Cms"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deK-eJ-bTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-562" y="-18"/>
+        </scene>
+        <!--Notes-->
+        <scene sceneID="5e0-o6-hWk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notes" id="BZO-rf-5BI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="TAk-cw-ZAL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSx-wr-Nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1687" y="413"/>
         </scene>
     </scenes>
     <resources>
