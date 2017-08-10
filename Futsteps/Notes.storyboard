@@ -202,6 +202,12 @@
                             <constraint firstItem="u7r-zS-xLs" firstAttribute="top" secondItem="kCD-1q-Rle" secondAttribute="bottom" constant="8" id="yA1-k9-nCM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="memberNameTextField" destination="0CU-ui-fST" id="vGF-Cg-fZC"/>
+                        <outlet property="numberOfDoorsTextField" destination="XoP-Ln-dc1" id="yNz-EL-LI3"/>
+                        <outlet property="sideOfStreetSegmentedControl" destination="MWC-Ch-ADt" id="uTz-X3-cQO"/>
+                        <outlet property="timeElapsedTextField" destination="N0N-ri-C5I" id="FAp-PI-LeL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AL1-qW-Dn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
