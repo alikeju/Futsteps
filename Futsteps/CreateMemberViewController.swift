@@ -70,10 +70,6 @@ class CreateMemberViewController: UIViewController {
                 
                 
                 self.performSegue(withIdentifier: "findOrgsSegue", sender: self)
-//                let initialViewController = UIStoryboard.initialViewController(for: .main)
-//                print("Member was created.")
-//                self.view.window?.rootViewController = initialViewController
-//                self.view.window?.makeKeyAndVisible()
             
             }
         }
