@@ -9,6 +9,8 @@
 import UIKit
 
 class ListNotesTableViewController: UITableViewController {
+    
+    var streets = [Street]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +43,23 @@ class ListNotesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return streets.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
         
+        // 1
+        let row = indexPath.row
+        
         // 2
-        cell.streetNameLabel.text = "street's name"
-        cell.streetModificationTimeLabel.text = "modification time"
+        let street = streets[row]
+        
+        // 3
+        cell.streetNameLabel.text = street.streetName
+        
+        // 4
+        
         return cell
     }
 
