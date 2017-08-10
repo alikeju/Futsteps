@@ -20,6 +20,16 @@ class ListNotesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "displayNote" {
+                print("Table view cell tapped")
+            } else if identifier == "addNote" {
+                print("+ button tapped")
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,13 +46,11 @@ class ListNotesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
         
         // 2
-        cell.noteTitleLabel.text = "note's title"
-        cell.noteModificationTimeLabel.text = "note's modification time"
-        
+        cell.streetNameLabel.text = "street's name"
+        cell.streetModificationTimeLabel.text = "modification time"
         return cell
     }
 
