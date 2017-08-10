@@ -42,17 +42,17 @@ struct MemberService{
         })
     }
     
-    //make a add organization method
-    
+    static func posts(for member: Member, completion: @escaping ([Post]) -> Void){
+        let ref = Database.database().reference().child("posts").child(member.uid)
+        
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                    return completion([])
+                }
+        
+                let deposits = snapshot.reversed().flatMap(Post.init)
+                completion(deposits)
+            })
+    }
 }
-
-// parameter naming stuff
-//func yoWassup (inside : String){
-//    //print(outside)
-//    print(inside)
-//}
-//
-////yoWassup("Hey")
-////yoWassup(inside: "Hey")
-
 
