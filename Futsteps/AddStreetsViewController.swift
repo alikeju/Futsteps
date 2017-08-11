@@ -15,6 +15,7 @@ import Firebase
 
 class AddStreetsViewController: UIViewController{
     
+    
     @IBOutlet weak var streetNameTextField: UITextField!
     @IBOutlet weak var memberNameTextField: UITextField!
     @IBOutlet weak var numberOfDoorsTextField: UITextField!
@@ -27,15 +28,22 @@ class AddStreetsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        let myColor = UIColor.black
+        commentsTextView.layer.borderColor = myColor.cgColor
+        commentsTextView.layer.borderWidth = 1.0
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         commentsTextView.text = ""
+        
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
+    
+    
     
     @IBAction func enterButtonTapped(_ sender: Any) {
         let streetName = streetNameTextField.text
@@ -57,13 +65,16 @@ class AddStreetsViewController: UIViewController{
             let firUser = Auth.auth().currentUser
             PostListService.create(firUser: firUser!, postRef: key)
         }
+        print("Enter button Tapped")
+        
     }
-
 }
 
 extension AddStreetsViewController{
     func configureView(){
         applyKeyboardDismisser()
+        applyKeyboardPush()
+       
     }
 }
 
