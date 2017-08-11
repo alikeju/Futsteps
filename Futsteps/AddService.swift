@@ -11,11 +11,20 @@ import FirebaseDatabase
 
 struct AddService {
     private static func addOrg(_ org: Organization, forCurrentUserWithSuccess success: @escaping (Bool) -> Void) {
-        // 1
+//        let addAttrs = ["organization_name": org]
+//        let ref = Database.database().reference().child("member_profiles").child(org.uid)
         let currentUID = Member.current.uid
-        let addData = ["members_profiles/\(currentUID)/\(org.uid)" : true]
+        let addData = ["member_profiles/\(currentUID)/\(org.uid)" : true]
+     //WHAT IF: let addData = ["member_profiles/\(currentUID)/\": ]
+//        ref.updateChildValues(addAttrs) { (error, _) in
+//            if let error = error{
+//                assertionFailure(error.localizedDescription)
+//            }
+//                success(error == nil)
+//        }
+//        
+//    }
         
-        // 2
         let ref = Database.database().reference()
         ref.updateChildValues(addData) { (error, _) in
             if let error = error {
