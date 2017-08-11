@@ -223,7 +223,7 @@
         <scene sceneID="Hld-Vs-C5l">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fff-IE-SXJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="AddNotes" id="sAi-6u-nDC">
+                    <tabBarItem key="tabBarItem" title="" image="MembersIcon" id="sAi-6u-nDC">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -243,7 +243,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddNotes" width="25" height="25"/>
+        <image name="MembersIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kka-fc-t2o"/>
