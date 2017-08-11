@@ -29,6 +29,9 @@ class DisplayStreetsViewController: UIViewController{
         configureView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        commentsTextView.text = ""
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
