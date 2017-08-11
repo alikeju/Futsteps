@@ -161,6 +161,7 @@
                                                     <segment title="Even"/>
                                                     <segment title="Both"/>
                                                 </segments>
+                                                <color key="tintColor" red="0.3411764705882353" green="0.49803921568627452" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
@@ -177,6 +178,8 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1n-pG-xX2" userLabel="Enter">
                                         <rect key="frame" x="0.0" y="371" width="263" height="30"/>
+                                        <color key="backgroundColor" red="0.34121218323707581" green="0.49797764420509338" blue="0.67065703868865967" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Enter"/>
                                         <connections>
                                             <action selector="enterButtonTapped:" destination="IIk-JT-226" eventType="touchUpInside" id="0wL-f4-mrk"/>
@@ -250,6 +253,6 @@
         <image name="MembersIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kka-fc-t2o"/>
+        <segue reference="Fwi-Yp-EMj"/>
     </inferredMetricsTieBreakers>
 </document>
