@@ -53,11 +53,10 @@ extension AppDelegate {
         let initialViewController: UIViewController
         
         if Auth.auth().currentUser != nil,
-            let userData = defaults.object(forKey: "currentUser") as? Data,
-            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? Organization {
+        let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
+        let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? Member {
             
-            Organization.setCurrent(user)
-            
+            Member.setCurrent(user)
             initialViewController = UIStoryboard.initialViewController(for: .main)
         }
         else {
