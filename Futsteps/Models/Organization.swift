@@ -40,7 +40,7 @@ class Organization: NSObject {
     
     required init?(coder aDecoder: NSCoder) {
         guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String,
-            let organization = aDecoder.decodeObject(forKey: Constants.UserDefaults.user) as? String
+            let organization = aDecoder.decodeObject(forKey: Constants.UserDefaults.username) as? String
             else { return nil }
         
         self.uid = uid
@@ -78,7 +78,7 @@ class Organization: NSObject {
 extension Organization: NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(uid, forKey: Constants.UserDefaults.uid)
-        aCoder.encode(organization, forKey: Constants.UserDefaults.user)
+        aCoder.encode(organization, forKey: Constants.UserDefaults.username)
     }
 }
 

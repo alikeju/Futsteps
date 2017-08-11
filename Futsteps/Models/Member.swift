@@ -43,7 +43,7 @@ class Member: NSObject{
     
     required init?(coder aDecoder: NSCoder) {
         guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String,
-            let username = aDecoder.decodeObject(forKey: Constants.UserDefaults.user) as? String
+            let username = aDecoder.decodeObject(forKey: Constants.UserDefaults.username) as? String
            // let organization = aDecoder.decodeObject(forKey: Constants.UserDefaults.user) as? Organization
             else { return nil }
         
@@ -67,6 +67,7 @@ class Member: NSObject{
         return currentMember
     }
 
+
     
     class func setCurrent(_ member: Member, writeToUserDefaults: Bool = false) {
         // Checking if the boolean value for writeToUserDefaults is true.
@@ -88,6 +89,8 @@ extension Member: NSCoding {
     //Using NSCoding to enable user to keep the info on their phone when they leave the app and come back.
     func encode(with aCoder: NSCoder) {
         aCoder.encode(uid, forKey: Constants.UserDefaults.uid)
+        aCoder.encode(username, forKey: Constants.UserDefaults.username)
+
         //aCoder.encode(organization, forKey: Constants.UserDefaults.user)
     }
 }
