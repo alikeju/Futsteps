@@ -124,6 +124,8 @@ class OrgProfileViewController: UIViewController {
             
             addee.isAdded = !addee.isAdded
             
+            
+            
             let initialViewController = UIStoryboard.initialViewController(for: .main)
             print("Organization was added.")
             self.view.window?.rootViewController = initialViewController
