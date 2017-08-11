@@ -61,7 +61,7 @@ class AddStreetsViewController: UIViewController{
 
 }
 
-extension DisplayStreetsViewController{
+extension AddStreetsViewController{
     func configureView(){
         applyKeyboardDismisser()
     }
