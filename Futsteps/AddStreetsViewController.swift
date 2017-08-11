@@ -73,7 +73,7 @@ class AddStreetsViewController: UIViewController{
 extension AddStreetsViewController{
     func configureView(){
         applyKeyboardDismisser()
-        applyKeyboardPush()
+        
        
     }
 }
