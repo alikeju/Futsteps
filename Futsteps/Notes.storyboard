@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="-369" y="834"/>
         </scene>
-        <!--Display Streets View Controller-->
+        <!--Add Streets View Controller-->
         <scene sceneID="7JL-wX-In6">
             <objects>
-                <viewController id="IIk-JT-226" customClass="DisplayStreetsViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IIk-JT-226" customClass="AddStreetsViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kCD-1q-Rle"/>
                         <viewControllerLayoutGuide type="bottom" id="QYd-LF-3vD"/>
@@ -166,8 +166,12 @@
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FzP-pM-i5u" userLabel="Comments Text View">
                                         <rect key="frame" x="0.0" y="218" width="263" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Comments">
+                                            <accessibilityTraits key="traits" none="YES"/>
+                                        </accessibility>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -175,7 +179,7 @@
                                         <rect key="frame" x="0.0" y="371" width="263" height="30"/>
                                         <state key="normal" title="Enter"/>
                                         <connections>
-                                            <action selector="enterButtonTapped:" destination="IIk-JT-226" eventType="touchUpInside" id="maZ-Rn-Mf7"/>
+                                            <action selector="enterButtonTapped:" destination="IIk-JT-226" eventType="touchUpInside" id="0wL-f4-mrk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -207,12 +211,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="commentsTextView" destination="FzP-pM-i5u" id="ANs-s5-Mzc"/>
-                        <outlet property="memberNameTextField" destination="0CU-ui-fST" id="vGF-Cg-fZC"/>
-                        <outlet property="numberOfDoorsTextField" destination="XoP-Ln-dc1" id="yNz-EL-LI3"/>
-                        <outlet property="sideOfStreetSegmentedControl" destination="MWC-Ch-ADt" id="uTz-X3-cQO"/>
-                        <outlet property="streetNameTextField" destination="u7r-zS-xLs" id="oq7-8S-nUz"/>
-                        <outlet property="timeElapsedTextField" destination="N0N-ri-C5I" id="FAp-PI-LeL"/>
+                        <outlet property="commentsTextView" destination="FzP-pM-i5u" id="fkC-ei-bLA"/>
+                        <outlet property="memberNameTextField" destination="0CU-ui-fST" id="Cu0-fZ-Hqx"/>
+                        <outlet property="numberOfDoorsTextField" destination="XoP-Ln-dc1" id="HHj-YP-6Oh"/>
+                        <outlet property="sideOfStreetSegmentedControl" destination="MWC-Ch-ADt" id="e8G-06-ec8"/>
+                        <outlet property="streetNameTextField" destination="u7r-zS-xLs" id="tNl-b1-6Lu"/>
+                        <outlet property="timeElapsedTextField" destination="N0N-ri-C5I" id="HeQ-q3-lq7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AL1-qW-Dn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
