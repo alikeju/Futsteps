@@ -11,47 +11,38 @@ import UIKit
 import FirebaseDatabase.FIRDataSnapshot
 
 class Member: NSObject{
-    
-    //    var key: String?
-    //    let memberName: String
-    //
-    //    var dictValue: [String:Any]{
-    //        return["memberName" : memberName]
-    //    }
-    
+
     let uid: String
-    let orgUID: String
+    let organization_name: String
     var username: String
-    var organization: Organization?
     
-    
-    init(uid: String, username: String, orgUID: String){
+    init(uid: String, username: String, organization_name: String){
         self.uid = uid
         self.username = username
-        self.orgUID = orgUID
+        self.organization_name = organization_name
     }
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-        let username = dict["username"] as? String
+        let username = dict["username"] as? String,
+        let organization_name = dict["organization_name"] as? String
         else { return nil }
         
         self.uid = snapshot.key
         self.username = username
-        self.orgUID = snapshot.key
+        self.organization_name = organization_name
     }
     
     required init?(coder aDecoder: NSCoder) {
         guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String,
             let username = aDecoder.decodeObject(forKey: Constants.UserDefaults.username) as? String,
-            let orgUID = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String
+            let organization_name = aDecoder.decodeObject(forKey: Constants.UserDefaults.organization_name) as? String
             else { return nil }
         
         self.uid = uid
         self.username = username
-        self.orgUID = orgUID
-        //self.organization = organization
-        
+        self.organization_name = organization_name
+    
         super.init()
     }
     
