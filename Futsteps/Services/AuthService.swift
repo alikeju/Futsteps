@@ -20,10 +20,10 @@ struct AuthService {
             }
             return completion(user)
         }
-    }   
+    }
     
     static func createUser(controller : UIViewController, email: String, password: String, completion: @escaping (FIRUser?) -> Void){
-//        Auth.auth()
+        //        Auth.auth()
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
                 signUpErrors(error: error, controller: controller)
@@ -41,6 +41,29 @@ struct AuthService {
                 print("error: \(error.localizedDescription)")
                 return
             }
+        }
+    }
+    
+    static func presentLogOut(viewController : UIViewController){
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let signOutAction = UIAlertAction(title: "Log Out", style: .destructive) { _ in
+            logUserOut()
+        }
+        
+        alertController.addAction(signOutAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        viewController.present(alertController, animated: true)
+    }
+    
+    static func logUserOut(){
+        do {
+            try Auth.auth().signOut()
+        } catch let error as NSError {
+            assertionFailure("Error signing out: \(error.localizedDescription)")
         }
     }
     
@@ -89,6 +112,6 @@ struct AuthService {
             break;
         }
     }
-
+    
     
 }
