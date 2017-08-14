@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="VFL-6b-7bs">
             <objects>
-                <viewController id="LzF-CV-AhP" sceneMemberID="viewController">
+                <viewController id="LzF-CV-AhP" customClass="HomeViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4FL-JI-2JN"/>
                         <viewControllerLayoutGuide type="bottom" id="QrE-vP-S94"/>
@@ -20,7 +21,37 @@
                     <view key="view" contentMode="scaleToFill" id="TuR-HH-jC5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ciG-pX-xAr">
+                                <rect key="frame" x="20" y="325.66666666666669" width="374" height="85"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhO-4d-txm">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.34121218323707581" green="0.49797764420509338" blue="0.67065703868865967" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logOutButtonTapped:" destination="LzF-CV-AhP" eventType="touchUpInside" id="A6m-sl-M4i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdX-2c-jEb">
+                                        <rect key="frame" x="0.0" y="55" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.34121218323707581" green="0.49797764420509338" blue="0.67065703868865967" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Change Password">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ciG-pX-xAr" secondAttribute="trailing" id="FZq-FL-o8s"/>
+                            <constraint firstItem="ciG-pX-xAr" firstAttribute="leading" secondItem="TuR-HH-jC5" secondAttribute="leadingMargin" id="ViR-YC-UWI"/>
+                            <constraint firstItem="ciG-pX-xAr" firstAttribute="centerY" secondItem="TuR-HH-jC5" secondAttribute="centerY" id="afE-my-b7x"/>
+                            <constraint firstItem="ciG-pX-xAr" firstAttribute="centerX" secondItem="TuR-HH-jC5" secondAttribute="centerX" id="i9H-Yd-jpx"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="" image="tab_home_black" id="pTe-r0-S5O">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>

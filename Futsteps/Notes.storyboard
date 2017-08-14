@@ -43,7 +43,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="IIk-JT-226" kind="show" id="Fwi-Yp-EMj"/>
+                                    <segue destination="IIk-JT-226" kind="show" identifier="showDetails" id="Fwi-Yp-EMj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -55,7 +55,7 @@
                     <navigationItem key="navigationItem" title="Streets" id="jNU-WK-UHv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bdl-LK-7xd">
                             <connections>
-                                <segue destination="IIk-JT-226" kind="show" id="kka-fc-t2o"/>
+                                <segue destination="IIk-JT-226" kind="show" identifier="showDetails" id="kka-fc-t2o"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -183,6 +183,7 @@
                                         <state key="normal" title="Enter"/>
                                         <connections>
                                             <action selector="enterButtonTapped:" destination="IIk-JT-226" eventType="touchUpInside" id="0wL-f4-mrk"/>
+                                            <segue destination="Dy7-q0-MR9" kind="unwind" identifier="streets" unwindAction="unwindToListNotesTableViewController:" id="NXq-fK-qcQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -223,6 +224,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AL1-qW-Dn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Dy7-q0-MR9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="472.80000000000001" y="821.73913043478262"/>
         </scene>
@@ -253,6 +255,6 @@
         <image name="MembersIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fwi-Yp-EMj"/>
+        <segue reference="kka-fc-t2o"/>
     </inferredMetricsTieBreakers>
 </document>
