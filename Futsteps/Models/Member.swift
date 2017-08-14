@@ -13,7 +13,8 @@ import FirebaseDatabase.FIRDataSnapshot
 class Member: NSObject{
 
     let uid: String
-    let organization_name: String
+    let organization_name: String?
+    //set it to an optional because if there is no org when a member is created it will not go to the next screen.
     var username: String
     
     init(uid: String, username: String, organization_name: String){
@@ -24,13 +25,12 @@ class Member: NSObject{
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-        let username = dict["username"] as? String,
-        let organization_name = dict["organization_name"] as? String
+        let username = dict["username"] as? String
         else { return nil }
         
         self.uid = snapshot.key
         self.username = username
-        self.organization_name = organization_name
+        self.organization_name = dict["organization_name"] as? String
     }
     
     required init?(coder aDecoder: NSCoder) {

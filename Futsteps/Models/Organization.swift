@@ -20,6 +20,7 @@ class Organization: NSObject {
     
     let uid: String
     let organization: String
+
     
     // MARK: - Init
     
@@ -36,6 +37,7 @@ class Organization: NSObject {
         
         self.uid = snapshot.key
         self.organization = organization
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,7 +47,6 @@ class Organization: NSObject {
         
         self.uid = uid
         self.organization = organization
-        
         super.init()
     }
 
