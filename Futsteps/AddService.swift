@@ -12,7 +12,9 @@ import FirebaseDatabase
 struct AddService {
     private static func addOrg(_ org: Organization, forCurrentUserWithSuccess success: @escaping (Bool) -> Void) {
         let currentUID = Member.current.uid
-        let addData = ["member_profiles/\(currentUID)/organization_name" : org.organization]
+        
+        let addData = ["member_profiles/\(currentUID)/organization_name" : org.organization,
+                       "organizations_of_members/\(org.uid)/\(currentUID)/member" : "true"]
         
         let ref = Database.database().reference()
         ref.updateChildValues(addData) { (error, _) in
@@ -28,7 +30,7 @@ struct AddService {
     static func setIsAdded(_ isAdded: Bool, fromCurrentUserTo addee: Organization, success: @escaping (Bool) -> Void) {
         if isAdded {
             addOrg(addee, forCurrentUserWithSuccess: success)
-        } 
+        }
     }
     
     static func isOrgAdded(_ org: Organization, byCurrentUserWithCompletion completion: @escaping (Bool) -> Void) {
