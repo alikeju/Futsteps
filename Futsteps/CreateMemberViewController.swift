@@ -1,4 +1,4 @@
-//
+ //
 //  OrgProfileViewController.swift
 //  Futsteps
 //
@@ -20,7 +20,7 @@ class CreateMemberViewController: UIViewController {
     
     var loggedInUser:AnyObject?
     var databaseRef = Database.database().reference()
-    var loggedInUserData:NSDictionary?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ class CreateMemberViewController: UIViewController {
             guard let firMember = authMember else {
                 return
             }
-            
+        
             MemberService.create(firMember: firMember, email: email, username: username, password: password) { (member) in
                 guard let member = member else {
                     return
@@ -71,7 +71,7 @@ class CreateMemberViewController: UIViewController {
                 
                 self.performSegue(withIdentifier: "findOrgsSegue", sender: self)
             
-            }
+            }  
         }
     }
 }
