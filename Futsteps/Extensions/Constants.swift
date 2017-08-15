@@ -23,5 +23,6 @@ struct Constants {
         static let uid = "uid"
         static let username = "username"
         static let organization_name = "organization_name"
+        static let org_uid = "org_uid"
     }
 }
