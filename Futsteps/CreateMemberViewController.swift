@@ -21,7 +21,7 @@ class CreateMemberViewController: UIViewController {
     
     var loggedInUser:AnyObject?
     var databaseRef = Database.database().reference()
-    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +67,7 @@ class CreateMemberViewController: UIViewController {
                 }
                 
                 Member.setCurrent(member, writeToUserDefaults: true)
+                
                 self.loggedInUser = Auth.auth().currentUser
                 
                 
