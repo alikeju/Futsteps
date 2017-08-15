@@ -12,6 +12,7 @@ import Firebase
 
 class CreateMemberViewController: UIViewController {
     
+    //var activityIndicator: uI
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
