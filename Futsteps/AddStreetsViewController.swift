@@ -91,10 +91,13 @@ class AddStreetsViewController: UIViewController{
         default:
             break
         }
+        
+        
+        //previously this: Organization(uid: "", organization: "")
         PostService.create(streetName: streetName!, name: name!, numOfDoors: numOfDoors!, timeElapsed: timeElapsed!, sideOfStreet: side, comments: comments!) { (key) in
             let firUser = Auth.auth().currentUser
             
-            PostListService.create(firUser: firUser!, postRef: key)
+           // PostListService.create(firUser: firUser!, postRef: key, name: String)
         }
         print("Enter button Tapped")
         
