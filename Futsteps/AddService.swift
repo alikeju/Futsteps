@@ -17,6 +17,9 @@ struct AddService {
                        "member_profiles/\(currentUID)/org_uid" : org.uid,
                        "organizations_of_members/\(org.uid)/\(currentUID)/member" : "true"]
         
+        Member.setCurrent(Member(uid: Member.current.uid, username: Member.current.username, organization_name: org.organization, org_uid: org.uid))
+        
+        
         let ref = Database.database().reference()
         ref.updateChildValues(addData) { (error, _) in
             if let error = error {

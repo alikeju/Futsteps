@@ -27,6 +27,7 @@ struct MemberService{
                 completion(member)
             })
             print("Wassup")
+            print("Not much")
             
         }
     }
