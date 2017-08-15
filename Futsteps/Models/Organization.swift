@@ -14,6 +14,8 @@ class Organization: NSObject {
     
     var isAdded = false
     
+    
+    
     var orgs = [Organization]()
     
     // MARK: - Properties
@@ -49,6 +51,18 @@ class Organization: NSObject {
         self.organization = organization
         super.init()
     }
+    
+//    private static var _current: Organization?
+//    
+//    static var current: Organization {
+//        
+//        guard let currentOrg = _current else {
+//            fatalError("Error: current org doesn't exist")
+//        }
+//        
+//        // If _current isn't nil, it will be returned to the organization.
+//        return currentOrg
+//    }
 
     
     //MARK: - Class Methods

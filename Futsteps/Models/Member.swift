@@ -1,3 +1,4 @@
+
 //
 //  Member.swift
 //  Futsteps
@@ -14,13 +15,15 @@ class Member: NSObject{
 
     let uid: String
     let organization_name: String?
+    let org_uid: String?
     //set it to an optional because if there is no org when a member is created it will not go to the next screen.
     var username: String
     
-    init(uid: String, username: String, organization_name: String){
+    init(uid: String, username: String, organization_name: String, org_uid: String){
         self.uid = uid
         self.username = username
         self.organization_name = organization_name
+        self.org_uid = org_uid
     }
     
     init?(snapshot: DataSnapshot) {
@@ -31,18 +34,21 @@ class Member: NSObject{
         self.uid = snapshot.key
         self.username = username
         self.organization_name = dict["organization_name"] as? String
+        self.org_uid = dict["org_uid"] as? String
     }
     
     required init?(coder aDecoder: NSCoder) {
         guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String,
             let username = aDecoder.decodeObject(forKey: Constants.UserDefaults.username) as? String,
-            let organization_name = aDecoder.decodeObject(forKey: Constants.UserDefaults.organization_name) as? String
+            let organization_name = aDecoder.decodeObject(forKey: Constants.UserDefaults.organization_name) as? String,
+            let org_uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.org_uid) as? String
             else { return nil }
         
         self.uid = uid
         self.username = username
         self.organization_name = organization_name
-    
+        self.org_uid = org_uid
+        
         super.init()
     }
     
