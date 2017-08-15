@@ -14,6 +14,7 @@ struct AddService {
         let currentUID = Member.current.uid
         
         let addData = ["member_profiles/\(currentUID)/organization_name" : org.organization,
+                       "member_profiles/\(currentUID)/org_uid" : org.uid,
                        "organizations_of_members/\(org.uid)/\(currentUID)/member" : "true"]
         
         let ref = Database.database().reference()
@@ -33,16 +34,16 @@ struct AddService {
         }
     }
     
-    static func isOrgAdded(_ org: Organization, byCurrentUserWithCompletion completion: @escaping (Bool) -> Void) {
-        let currentUID = Member.current.uid
-        let ref = Database.database().reference().child("members").child(org.uid)
-        
-        ref.queryEqual(toValue: nil, childKey: currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? [String : Bool] {
-                completion(true)
-            } else {
-                completion(false)
-            }
-        })
-    }
+//    static func isOrgAdded(_ org: Organization, byCurrentUserWithCompletion completion: @escaping (Bool) -> Void) {
+//        let currentUID = Member.current.uid
+//        let ref = Database.database().reference().child("members").child(org.uid)
+//        
+//        ref.queryEqual(toValue: nil, childKey: currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let _ = snapshot.value as? [String : Bool] {
+//                completion(true)
+//            } else {
+//                completion(false)
+//            }
+//        })
+//    }
 }

@@ -11,45 +11,48 @@ import FirebaseDatabase
 import FirebaseAuth.FIRUser
 
 class PostService{
+
     static func create(streetName: String, name: String, numOfDoors: String, timeElapsed: String, sideOfStreet: String, comments: String, completion: @escaping(String) -> Void){
         
-     //   let currentUID = Member.current.uid
+        let member = Member.current.username
+       // let org_member = Member.
         
         let postAttrs = ["street_name": streetName,
-                         "name" : name,
+                         "name" : member,
                          "numDoors" : numOfDoors,
                          "timeElapsed" : ServerValue.timestamp(),
                          "sideOfStreet": sideOfStreet,
                          "comments": comments] as [String : Any]
+
+        // let ref = Database.database().reference().child("posts").childByAutoId()
         
+        var ref:DatabaseReference? = nil
         
-//        
-//        let currentUID = Member.current.uid
-//        
-//        let addData = ["member_profiles/\(currentUID)/organization_name" : org.organization,
-//                       "organizations_of_members/\(org.uid)/\(currentUID)/member" : "true"]
-//        
-//        let ref = Database.database().reference()
-//        ref.updateChildValues(addData) { (error, _) in
-//            if let error = error {
-//                assertionFailure(error.localizedDescription)
-//            }
-//            
-//            // 3
-//            success(error == nil)
-//        }
+        // DatabaseReference()
         
-        let ref = Database.database().reference().child("posts").childByAutoId()
-        ref.setValue(postAttrs) { (error, ref)  in
+        //you want a variable that stores the key of the post
+        ref = Database.database().reference().child("user_posts").child(Member.current.uid).childByAutoId()
+        let currentKey = ref?.key
+        ref?.setValue(postAttrs) { (error, ref)  in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+            }
+        }
+    
+       // let ref2 = Database.database().reference().child("org_posts").child(currentKey!)
+        
+        let ref2 = Database.database().reference().child("org_posts").child(Member.current.org_uid!).child(currentKey!)
+        
+        ref2.setValue(postAttrs) { (error, ref2)  in
             if let error = error {
                 assertionFailure(error.localizedDescription)
             }
         }
         
-        return completion(ref.key)
+        return completion(ref!.key)
     }
     
 }
 
 
-    
+
