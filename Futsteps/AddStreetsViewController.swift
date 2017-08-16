@@ -17,8 +17,9 @@ class AddStreetsViewController: UIViewController{
     
     var dictionary: [String:AnyObject]?
     
-    var postDetails: String?
+    var postDetails: [String: Any]?
     
+
     @IBOutlet weak var streetNameTextField: UITextField!
     @IBOutlet weak var memberNameTextField: UITextField!
     @IBOutlet weak var numberOfDoorsTextField: UITextField!
@@ -62,19 +63,8 @@ class AddStreetsViewController: UIViewController{
         self.view.endEditing(true)
         return false
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == "streets" {
-                print("Enter button tapped")
-                
-                
-//                viewController.productsValue = valueTopass
-//                print(productValues)
-            }
-        }
-    }
-    
+
+
     @IBAction func enterButtonTapped(_ sender: Any) {
         let streetName = streetNameTextField.text
         let name = memberNameTextField.text
@@ -97,7 +87,7 @@ class AddStreetsViewController: UIViewController{
         PostService.create(streetName: streetName!, name: name!, numOfDoors: numOfDoors!, timeElapsed: timeElapsed!, sideOfStreet: side, comments: comments!) { (key) in
             let firUser = Auth.auth().currentUser
             
-           // PostListService.create(firUser: firUser!, postRef: key, name: String)
+            // PostListService.create(firUser: firUser!, postRef: key, name: String)
         }
         print("Enter button Tapped")
         
@@ -126,7 +116,7 @@ class AddStreetsViewController: UIViewController{
         
         let updatedText = currentText?.replacingCharacters(in: range, with: text)
         //let updatedText = currentText?.replacingCharacters(in: range as Range, with: text)
-    
+        
         
         // If updated text view will be empty, add the placeholder
         // and set the cursor to the beginning of the text view
@@ -166,7 +156,7 @@ extension AddStreetsViewController{
     func configureView(){
         applyKeyboardDismisser()
         
-       
+        
     }
 }
 
