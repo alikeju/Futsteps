@@ -43,17 +43,65 @@ struct MemberService{
         })
     }
     
+    static func members(for member: Member, completion: @escaping ([String]) -> Void) {
+        let membersRef = Database.database().reference().child("organizations_of_members").child(member.uid)
+        
+        membersRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let membersDict = snapshot.value as? [String : Bool] else {
+                return completion([])
+            }
+            
+            let membersKeys = Array(membersDict.keys)
+            completion(membersKeys)
+        })
+    }
+    
     static func posts(for member: Member, completion: @escaping ([Post]) -> Void){
-        let ref = Database.database().reference().child("posts").child(member.uid)
+        let ref = Database.database().reference().child("user_posts").child(member.uid)
         
-            ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-                    return completion([])
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion([])
+            }
+            
+            let deposits = snapshot.reversed().flatMap(Post.init)
+            completion(deposits)
+        })
+    }
+    
+    static func timeline(completion: @escaping ([Post]) -> Void) {
+        let currentUser = Member.current
+        
+        let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
+        timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+                else { return completion([]) }
+            
+            let dispatchGroup = DispatchGroup()
+            
+            var posts = [Post]()
+            //posts is nil
+            for postSnap in snapshot {
+                guard let postDict = postSnap.value as? [String : Any],
+                    let posterUID = postDict["poster_uid"] as? String
+                    else { continue }
+                
+                dispatchGroup.enter()
+                
+                PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
+                    if let post = post {
+                        posts.append(post)
+                    }
+                    
+                    dispatchGroup.leave()
                 }
-        
-                let deposits = snapshot.reversed().flatMap(Post.init)
-                completion(deposits)
+            }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(posts.reversed())
             })
+        })
     }
 }
 
