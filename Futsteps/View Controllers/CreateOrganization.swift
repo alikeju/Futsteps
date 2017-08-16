@@ -52,17 +52,16 @@ class CreateOrganization: UIViewController{
                 return
             }
             
-            OrganizationService.create(firOrg, email: email, organization_name: organization, password: password) { (user) in
+            OrganizationService.createOrg(firOrg, email: email, organization_name: organization, password: password) { (user) in
                 guard let user = user else {
                     return
                 }
-                
+            
                 Organization.setCurrent(user, writeToUserDefaults: true)
                 
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
-                
                 
             }
         }
