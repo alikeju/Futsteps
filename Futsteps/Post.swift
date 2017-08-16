@@ -10,20 +10,34 @@ import Foundation
 import FirebaseDatabase
 
 class Post: NSObject{
+    
     var key: String?
-    let streetName: String
+    let streetname: String
     let name: String
-    let numOfDoors: Int
+    let numOfDoors: String
     let timeElapsed: String
     let sideOfStreet: String
     let comments: String
     var creationDate: Date
     
-    // MARK: - Init
     
-    init (streetName: String, name: String, numOfDoors: Int, timeElapsed: String, sideOfStreet: String, comments: String){
+    // MARK: - Init
+    var dictValue: [String : Any] {
+        let createdAgo = creationDate.timeIntervalSince1970
         
-        self.streetName = streetName
+        return ["streetname" : streetname,
+                "name" : name,
+                "numOfDoors" : numOfDoors,
+                "sideOfStreet" : sideOfStreet,
+                "comments" : comments,
+                "timeElapsed" : timeElapsed]
+                //"created_at" : createdAgo]
+    }
+    
+    
+    init (streetname: String, name: String, numOfDoors: String, timeElapsed: String, sideOfStreet: String, comments: String){
+        
+        self.streetname = streetname
         self.name = name
         self.numOfDoors = numOfDoors
         self.timeElapsed = timeElapsed
@@ -35,23 +49,28 @@ class Post: NSObject{
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-            let streetName = dict["street_name"] as? String,
-            let name = dict["name"] as? String,
-            let numOfDoors = dict["number_of_doors"] as? Int,
-            let timeElapsed = dict["time_elapsed"] as? String,
-            let sideOfStreet = dict["side_of_street"] as? String,
+            let timeElapsed = dict["timeElapsed"] as? String,
             let comments = dict["comments"] as? String,
-            let time = dict["time"] as? TimeInterval
+            let name = dict["name"] as? String,
+            let numOfDoors = dict["numOfDoors"] as? String,
+            let sideOfStreet = dict["sideOfStreet"] as? String,
+            let streetname = dict["streetname"] as? String
+           // let createdAgo = dict["created_at"] as? TimeInterval
+            
             else { return nil }
         
+        //UNABLE TO READ DATA (says console)
         self.key = snapshot.key
-        self.streetName = streetName
+        self.streetname = streetname
         self.name = name
         self.numOfDoors = numOfDoors
         self.timeElapsed = timeElapsed
         self.sideOfStreet = sideOfStreet
         self.comments = comments
-        self.creationDate = Date(timeIntervalSince1970: time)
+        self.creationDate = Date() //temp
+       // self.creationDate = Date(timeIntervalSince1970: createdAgo)
+        //        self.poster = Member(uid: uid, username: username, organization_name: organization_name, org_uid: org_uid)
+        //UNABLE TO READ AAAALLLLL THE DATA ABOVE
         
     }
 }
