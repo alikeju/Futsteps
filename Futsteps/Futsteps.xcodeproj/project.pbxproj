@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B31BF3F31F336C7E001E55F8 /* AddOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF3F21F336C7E001E55F8 /* AddOrganization.swift */; };
 		B31BF3F71F33727A001E55F8 /* AddOrgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF3F61F33727A001E55F8 /* AddOrgCell.swift */; };
-		B31BF3F91F337BC8001E55F8 /* AddOrganizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF3F81F337BC8001E55F8 /* AddOrganizationViewController.swift */; };
 		B31BF3FF1F36452F001E55F8 /* FindOrgsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF3FE1F36452F001E55F8 /* FindOrgsTableViewController.swift */; };
 		B31BF4101F369FDC001E55F8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31BF40F1F369FDC001E55F8 /* Login.storyboard */; };
+		B31BF4151F38C01D001E55F8 /* OrgProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF4141F38C01D001E55F8 /* OrgProfileViewController.swift */; };
+		B31BF4171F38D1EC001E55F8 /* AddService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF4161F38D1EC001E55F8 /* AddService.swift */; };
+		B31BF4281F3B84EF001E55F8 /* ListNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF4271F3B84EF001E55F8 /* ListNotesTableViewController.swift */; };
+		B31BF42A1F3B8623001E55F8 /* ListNotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF4291F3B8623001E55F8 /* ListNotesTableViewCell.swift */; };
 		B370A9AE1F27970B00197D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B370A9AD1F27970B00197D04 /* MapKit.framework */; };
+		B39586281F3CCD6C00CF1A4D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39586271F3CCD6C00CF1A4D /* Post.swift */; };
+		B395862A1F3CE0B600CF1A4D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39586291F3CE0B600CF1A4D /* PostService.swift */; };
 		B3AF1AFC1F2FA5630017A8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */; };
 		B3AF1B011F2FA56C0017A8EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */; };
 		B3AF1B021F2FA56C0017A8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */; };
@@ -32,19 +36,27 @@
 		B3AF1B261F2FA5C80017A8EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */; };
 		B3AF1B2E1F2FA6BE0017A8EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */; };
 		B3AF1B341F30249A0017A8EE /* CreateMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B331F30249A0017A8EE /* CreateMemberViewController.swift */; };
+		B3E9CDB21F3FE5570092D7C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9CDB11F3FE5570092D7C2 /* HomeViewController.swift */; };
+		B3E9CDB51F43895E0092D7C2 /* Date+converToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9CDB41F43895E0092D7C2 /* Date+converToString.swift */; };
+		B3F887B41F3BACEF00B7D6AE /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F887B31F3BACEF00B7D6AE /* Notes.storyboard */; };
+		B3F887B61F3BCE3F00B7D6AE /* AddStreetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F887B51F3BCE3F00B7D6AE /* AddStreetsViewController.swift */; };
 		D4810BE7D2DBBB76841CA7D9 /* Pods_Futsteps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6043ACFFD8B2B59F85D7633 /* Pods_Futsteps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		468E4E901B2CB846ABDD99A9 /* Pods-Futsteps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Futsteps.release.xcconfig"; path = "Pods/Target Support Files/Pods-Futsteps/Pods-Futsteps.release.xcconfig"; sourceTree = "<group>"; };
 		56B30D846B5DCDEC0072B15F /* Pods-Futsteps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Futsteps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Futsteps/Pods-Futsteps.debug.xcconfig"; sourceTree = "<group>"; };
-		B31BF3F21F336C7E001E55F8 /* AddOrganization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrganization.swift; sourceTree = SOURCE_ROOT; };
 		B31BF3F61F33727A001E55F8 /* AddOrgCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrgCell.swift; sourceTree = SOURCE_ROOT; };
-		B31BF3F81F337BC8001E55F8 /* AddOrganizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrganizationViewController.swift; sourceTree = SOURCE_ROOT; };
 		B31BF3FE1F36452F001E55F8 /* FindOrgsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindOrgsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		B31BF40F1F369FDC001E55F8 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = SOURCE_ROOT; };
+		B31BF4141F38C01D001E55F8 /* OrgProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrgProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		B31BF4161F38D1EC001E55F8 /* AddService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddService.swift; sourceTree = SOURCE_ROOT; };
+		B31BF4271F3B84EF001E55F8 /* ListNotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		B31BF4291F3B8623001E55F8 /* ListNotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B370A9871F26291300197D04 /* Futsteps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Futsteps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B370A9AD1F27970B00197D04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B39586271F3CCD6C00CF1A4D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = SOURCE_ROOT; };
+		B39586291F3CE0B600CF1A4D /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = SOURCE_ROOT; };
 		B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		B3AF1AFE1F2FA56C0017A8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		B3AF1B001F2FA56C0017A8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -65,6 +77,10 @@
 		B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "View Controllers/ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		B3AF1B331F30249A0017A8EE /* CreateMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMemberViewController.swift; sourceTree = SOURCE_ROOT; };
+		B3E9CDB11F3FE5570092D7C2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		B3E9CDB41F43895E0092D7C2 /* Date+converToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+converToString.swift"; sourceTree = SOURCE_ROOT; };
+		B3F887B31F3BACEF00B7D6AE /* Notes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = SOURCE_ROOT; };
+		B3F887B51F3BCE3F00B7D6AE /* AddStreetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStreetsViewController.swift; sourceTree = SOURCE_ROOT; };
 		F6043ACFFD8B2B59F85D7633 /* Pods_Futsteps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Futsteps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B31BF4111F38A759001E55F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B31BF3F61F33727A001E55F8 /* AddOrgCell.swift */,
+				B31BF4291F3B8623001E55F8 /* ListNotesTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		B370A97E1F26291300197D04 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +127,8 @@
 		B370A9891F26291300197D04 /* Futsteps */ = {
 			isa = PBXGroup;
 			children = (
+				B3E9CDB31F4389420092D7C2 /* Extensions */,
+				B31BF4111F38A759001E55F8 /* Views */,
 				B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */,
 				B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */,
 				B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */,
@@ -122,6 +149,7 @@
 			children = (
 				B3AF1B031F2FA57E0017A8EE /* Member.swift */,
 				B3AF1B041F2FA57E0017A8EE /* Organization.swift */,
+				B39586271F3CCD6C00CF1A4D /* Post.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -129,11 +157,11 @@
 		B3AF1B291F2FA5EA0017A8EE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B31BF3F21F336C7E001E55F8 /* AddOrganization.swift */,
 				B3AF1B0D1F2FA5A10017A8EE /* AuthService.swift */,
 				B3AF1B0E1F2FA5A10017A8EE /* MemberService.swift */,
 				B3AF1B0F1F2FA5A10017A8EE /* OrganizationService.swift */,
-				B31BF3F61F33727A001E55F8 /* AddOrgCell.swift */,
+				B31BF4161F38D1EC001E55F8 /* AddService.swift */,
+				B39586291F3CE0B600CF1A4D /* PostService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -152,6 +180,7 @@
 			children = (
 				B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */,
 				B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */,
+				B3F887B31F3BACEF00B7D6AE /* Notes.storyboard */,
 				B31BF40F1F369FDC001E55F8 /* Login.storyboard */,
 			);
 			name = Storyboards;
@@ -172,8 +201,11 @@
 			children = (
 				B3AF1B331F30249A0017A8EE /* CreateMemberViewController.swift */,
 				B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */,
-				B31BF3F81F337BC8001E55F8 /* AddOrganizationViewController.swift */,
 				B31BF3FE1F36452F001E55F8 /* FindOrgsTableViewController.swift */,
+				B31BF4141F38C01D001E55F8 /* OrgProfileViewController.swift */,
+				B31BF4271F3B84EF001E55F8 /* ListNotesTableViewController.swift */,
+				B3F887B51F3BCE3F00B7D6AE /* AddStreetsViewController.swift */,
+				B3E9CDB11F3FE5570092D7C2 /* HomeViewController.swift */,
 			);
 			name = "Member View Controllers";
 			sourceTree = "<group>";
@@ -185,6 +217,14 @@
 				B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */,
 			);
 			name = "Organization View Controllers";
+			sourceTree = "<group>";
+		};
+		B3E9CDB31F4389420092D7C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B3E9CDB41F43895E0092D7C2 /* Date+converToString.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		DFFF123AA12A64D30F9A3552 /* Frameworks */ = {
@@ -274,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F887B41F3BACEF00B7D6AE /* Notes.storyboard in Resources */,
 				B3AF1B021F2FA56C0017A8EE /* Main.storyboard in Resources */,
 				B3AF1B171F2FA5BD0017A8EE /* GoogleService-Info.plist in Resources */,
 				B31BF4101F369FDC001E55F8 /* Login.storyboard in Resources */,
@@ -344,16 +385,23 @@
 				B3AF1B061F2FA57E0017A8EE /* Organization.swift in Sources */,
 				B31BF3F71F33727A001E55F8 /* AddOrgCell.swift in Sources */,
 				B3AF1B231F2FA5C80017A8EE /* MemberLoginViewController.swift in Sources */,
+				B31BF42A1F3B8623001E55F8 /* ListNotesTableViewCell.swift in Sources */,
 				B3AF1B051F2FA57E0017A8EE /* Member.swift in Sources */,
 				B3AF1B0C1F2FA5920017A8EE /* ViewController+Utility.swift in Sources */,
 				B31BF3FF1F36452F001E55F8 /* FindOrgsTableViewController.swift in Sources */,
-				B31BF3F91F337BC8001E55F8 /* AddOrganizationViewController.swift in Sources */,
 				B3AF1B0A1F2FA5920017A8EE /* Constants.swift in Sources */,
 				B3AF1B221F2FA5C80017A8EE /* CreateOrganization.swift in Sources */,
 				B3AF1B0B1F2FA5920017A8EE /* Storyboard+Utility.swift in Sources */,
+				B3E9CDB21F3FE5570092D7C2 /* HomeViewController.swift in Sources */,
+				B31BF4151F38C01D001E55F8 /* OrgProfileViewController.swift in Sources */,
+				B395862A1F3CE0B600CF1A4D /* PostService.swift in Sources */,
 				B3AF1B101F2FA5A10017A8EE /* AuthService.swift in Sources */,
-				B31BF3F31F336C7E001E55F8 /* AddOrganization.swift in Sources */,
+				B3E9CDB51F43895E0092D7C2 /* Date+converToString.swift in Sources */,
+				B39586281F3CCD6C00CF1A4D /* Post.swift in Sources */,
+				B3F887B61F3BCE3F00B7D6AE /* AddStreetsViewController.swift in Sources */,
+				B31BF4281F3B84EF001E55F8 /* ListNotesTableViewController.swift in Sources */,
 				B3AF1B111F2FA5A10017A8EE /* MemberService.swift in Sources */,
+				B31BF4171F38D1EC001E55F8 /* AddService.swift in Sources */,
 				B3AF1B261F2FA5C80017A8EE /* ViewController.swift in Sources */,
 				B3AF1B241F2FA5C80017A8EE /* OrganizationLoginViewController.swift in Sources */,
 			);

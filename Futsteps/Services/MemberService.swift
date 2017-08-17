@@ -73,7 +73,8 @@ struct MemberService{
     static func timeline(completion: @escaping ([Post]) -> Void) {
         let currentUser = Member.current
         
-        let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
+//        let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
+         let timelineRef = Database.database().reference().child("timeline").child(currentUser.org_uid!)
         timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
