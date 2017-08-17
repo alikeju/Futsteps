@@ -11,20 +11,16 @@ import FirebaseDatabase
 import Firebase
 
 class ListNotesTableViewController: UIViewController {
-    //LOOPING BEFORE IT GOES TO THE INITIALIZER
     
     @IBOutlet var streetListTableView: UITableView!
     
     let refreshControl = UIRefreshControl()
     
-    //    var posts = [Post]() {
-    //        didSet {
-    //            streetListTableView.reloadData()
-    //
-    //        }
-    //    }
-    
-    var posts = [Post]()
+    var posts = [Post](){
+        didSet {
+            streetListTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         streetListTableView.delegate = self as? UITableViewDelegate
@@ -33,12 +29,15 @@ class ListNotesTableViewController: UIViewController {
         //configureTableView()
         //  reloadTimeline()
         
-        MemberService.timeline { (posts) in
-            self.posts = posts
-            self.streetListTableView.reloadData()
-        }
+
         super.viewDidLoad()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        MemberService.timeline { (posts) in
+            self.posts = posts
+        }
     }
     
     func configureTableView() {
@@ -57,29 +56,44 @@ class ListNotesTableViewController: UIViewController {
             if self.refreshControl.isRefreshing {
                 self.refreshControl.endRefreshing()
             }
-            
-            self.streetListTableView.reloadData()
+        
         }
     }
-    
-    //    override func viewDidAppear(_ animated: Bool) {
-    //        MemberService.posts(for: Member.current) { (posts) in
-    //            self.posts = posts
-    //            self.streetListTableView.reloadData()
-    //        }
-    //    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             if let indexPath = self.streetListTableView.indexPathForSelectedRow {
+                    print("Table view cell tapped")
                 let post = posts[indexPath.row] //as! [String: Any]
-                let postDetails = post.dictValue
-                // let postDetails = post["postID"] as? String
+            //    let postDetails = post.dictValue
                 let controller = segue.destination as! AddStreetsViewController
-                controller.postDetails = postDetails
+                //controller.postDetails = postDetails
+                controller.post = post
             }
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        if let identifier = segue.identifier {
+//            if identifier == "showDetails" {
+//                print("Table view cell tapped")
+//                
+//                
+//                let indexPath = tableView.indexPathForSelectedRow!
+    
+//                
+//                let post = posts[indexPath.row]
+//                
+//                let controller = segue.destination as! AddStreetsViewController
+//                
+//                controller.post = post
+//                
+//            }
+//        }
+//        
+//    }
     
     
     

@@ -19,13 +19,14 @@ class AddStreetsViewController: UIViewController{
     
     var postDetails: [String: Any]?
     
-
+    
     @IBOutlet weak var streetNameTextField: UITextField!
     @IBOutlet weak var memberNameTextField: UITextField!
     @IBOutlet weak var numberOfDoorsTextField: UITextField!
     @IBOutlet weak var timeElapsedTextField: UITextField!
     @IBOutlet weak var sideOfStreetSegmentedControl: UISegmentedControl!
     @IBOutlet weak var commentsTextView: UITextView!
+    @IBOutlet weak var enterButton: UIButton!
     
     var side = ""
     
@@ -34,12 +35,15 @@ class AddStreetsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        //Added those two below
+        textViewDidBeginEditing(commentsTextView)
+        textViewDidEndEditing(commentsTextView)
         
-        self.streetNameTextField.text = self.dictionary?["street_name"] as? String
-        self.memberNameTextField.text = self.dictionary?["member_name"] as? String
-        self.numberOfDoorsTextField.text = self.dictionary?["number_of_doors"] as? String
-        self.timeElapsedTextField.text = self.dictionary?["time_elapsed"] as? String
-        self.commentsTextView.text = self.dictionary?["comments"] as? String
+        self.streetNameTextField.text = post?.streetname
+        self.memberNameTextField.text = post?.name
+        self.numberOfDoorsTextField.text = post?.numOfDoors
+        self.timeElapsedTextField.text = post?.timeElapsed
+        self.commentsTextView.text = post?.comments
         
         let myColor = UIColor.black
         commentsTextView.layer.borderColor = myColor.cgColor
@@ -53,18 +57,75 @@ class AddStreetsViewController: UIViewController{
         
         commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
         
+        if post?.streetname != nil{
+            streetNameTextField.text = post?.streetname
+            streetNameTextField.isUserInteractionEnabled = false
+            enterButton.isUserInteractionEnabled = false
+        } else {
+            streetNameTextField.text = ""
+        }
+        
+        if post?.name != nil{
+            memberNameTextField.text = post?.name
+            memberNameTextField.isUserInteractionEnabled = false
+            enterButton.isUserInteractionEnabled = false
+        } else{
+            memberNameTextField.text = ""
+        }
+        
+        if post?.numOfDoors != nil{
+            numberOfDoorsTextField.text = post?.numOfDoors
+            numberOfDoorsTextField.isUserInteractionEnabled = false
+            enterButton.isUserInteractionEnabled = false
+        } else{
+            numberOfDoorsTextField.text = ""
+        }
+        
+        if post?.timeElapsed != nil{
+            timeElapsedTextField.text = post?.timeElapsed
+            timeElapsedTextField.isUserInteractionEnabled = false
+            enterButton.isUserInteractionEnabled = false
+            sideOfStreetSegmentedControl.isUserInteractionEnabled = true
+        } else{
+            timeElapsedTextField.text = ""
+        }
+        
+        if post?.comments != nil{
+            commentsTextView.text = post?.comments
+            commentsTextView.isUserInteractionEnabled = false
+            enterButton.isUserInteractionEnabled = false
+            sideOfStreetSegmentedControl.isUserInteractionEnabled = false
+        } else{
+            commentsTextView.text = ""
+        }
+        
+        
+        
+        //        if sideOfStreetSegmentedControl.selectedSegmentIndex != 0{
+        //          //  sideOfStreetSegmentedControl.selectedSegmentIndex = (post?.sideOfStreet as? Int)!
+        ////            sideOfStreetSegmentedControl.setEnabled(false, forSegmentAt: 0)
+        ////            sideOfStreetSegmentedControl.setEnabled(false, forSegmentAt: 1)
+        ////            sideOfStreetSegmentedControl.setEnabled(false, forSegmentAt: 2)
+        //
+        //        } else{
+        //            //If it is nothing enable interaction
+        //           // sideOfStreetSegmentedControl.isUserInteractionEnabled = true
+        //            sideOfStreetSegmentedControl.selectedSegmentIndex = 0
+        //        }
+        
+        //segmentedController.setEnabled(false, forSegmentAt: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        commentsTextView.text = ""
+        // commentsTextView.text = ""
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
-
-
+    
+    
     @IBAction func enterButtonTapped(_ sender: Any) {
         let streetName = streetNameTextField.text
         let name = memberNameTextField.text
@@ -85,7 +146,7 @@ class AddStreetsViewController: UIViewController{
         
         //previously this: Organization(uid: "", organization: "")
         PostService.create(streetName: streetName!, name: name!, numOfDoors: numOfDoors!, timeElapsed: timeElapsed!, sideOfStreet: side, comments: comments!) { (key) in
-            let firUser = Auth.auth().currentUser
+            //   let firUser = Auth.auth().currentUser
             
             // PostListService.create(firUser: firUser!, postRef: key, name: String)
         }
