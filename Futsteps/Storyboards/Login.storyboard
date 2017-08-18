@@ -23,55 +23,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnO-RS-26z">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnO-RS-26z">
                                 <rect key="frame" x="16" y="205" width="229" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Organization Icon"/>
                                 <connections>
                                     <action selector="organizationButton:" destination="AI4-fu-S6z" eventType="touchUpInside" id="4lo-WT-rw4"/>
                                     <segue destination="ccC-Mn-YTf" kind="show" identifier="goToOrgLogin" id="taB-lQ-9BR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gZ-aC-0iS">
-                                <rect key="frame" x="245" y="263" width="114" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gZ-aC-0iS">
+                                <rect key="frame" x="245" y="265" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mc-FL-RCs">
-                                <rect key="frame" x="255" y="481" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Futsteps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4G-99-qf4">
-                                <rect key="frame" x="117" y="104" width="142" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-bY-fNh">
-                                <rect key="frame" x="55" y="408" width="150" height="152"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-bY-fNh">
+                                <rect key="frame" x="60" y="409" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Individual"/>
                                 <connections>
                                     <action selector="memberButton:" destination="AI4-fu-S6z" eventType="touchUpInside" id="T00-X5-PsQ"/>
                                     <segue destination="LhE-Nb-DnO" kind="show" identifier="goToMemberLogin" id="G99-rp-T7q"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Futsteps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4G-99-qf4">
+                                <rect key="frame" x="116.5" y="104" width="142" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mc-FL-RCs">
+                                <rect key="frame" x="263" y="469" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="1gZ-aC-0iS" secondAttribute="trailing" id="0pM-Mg-ve7"/>
-                            <constraint firstItem="dnO-RS-26z" firstAttribute="centerY" secondItem="1gZ-aC-0iS" secondAttribute="centerY" id="5bZ-Pv-0an"/>
-                            <constraint firstItem="6mc-FL-RCs" firstAttribute="leading" secondItem="VGR-bY-fNh" secondAttribute="trailing" id="AaB-qV-ETX"/>
-                            <constraint firstItem="dnO-RS-26z" firstAttribute="leading" secondItem="Odf-M3-hKj" secondAttribute="leadingMargin" id="Idn-kq-11Z"/>
-                            <constraint firstItem="1gZ-aC-0iS" firstAttribute="leading" secondItem="dnO-RS-26z" secondAttribute="trailing" id="L0z-Np-V0L"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6mc-FL-RCs" secondAttribute="trailing" id="LVU-Bg-sgv"/>
-                            <constraint firstItem="a4G-99-qf4" firstAttribute="top" secondItem="caW-hl-rYO" secondAttribute="bottom" constant="40" id="goZ-TG-1pv"/>
-                            <constraint firstItem="1gZ-aC-0iS" firstAttribute="leading" secondItem="dnO-RS-26z" secondAttribute="trailing" id="lD1-Cv-jUy"/>
-                            <constraint firstItem="dnO-RS-26z" firstAttribute="top" secondItem="a4G-99-qf4" secondAttribute="bottom" constant="56" id="mO3-Jf-Q1g"/>
-                            <constraint firstItem="a4G-99-qf4" firstAttribute="centerX" secondItem="Odf-M3-hKj" secondAttribute="centerX" id="pkf-z3-oC1"/>
-                            <constraint firstItem="VGR-bY-fNh" firstAttribute="leading" secondItem="Odf-M3-hKj" secondAttribute="leadingMargin" id="qke-sy-6d1"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yXV-CJ-LeI"/>
                 </viewController>
