@@ -39,20 +39,6 @@ struct OrganizationService {
         })
     }
 
-    static func members(for org: Organization, completion: @escaping ([Member]) -> Void) {
-      
-        let ref = Database.database().reference().child("organizations_of_members").child(org.uid)
-        
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-                return completion([])
-            }
-            
-            let members = snapshot.reversed().flatMap(Member.init)
-            completion(members)
-        })
-    }
-    
     static func deleteOrganization(forUID uid: String, success: @escaping (Bool) -> Void) {
         let ref = Database.database().reference().child("members")
         let object = [uid : NSNull()]

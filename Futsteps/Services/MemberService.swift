@@ -43,18 +43,18 @@ struct MemberService{
         })
     }
     
-    static func members(for member: Member, completion: @escaping ([String]) -> Void) {
-        let membersRef = Database.database().reference().child("organizations_of_members").child(member.uid)
-        
-        membersRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let membersDict = snapshot.value as? [String : Bool] else {
-                return completion([])
-            }
-            
-            let membersKeys = Array(membersDict.keys)
-            completion(membersKeys)
-        })
-    }
+//    static func members(for member: Member, completion: @escaping ([String]) -> Void) {
+//        let membersRef = Database.database().reference().child("organizations_of_members").child(member.uid)
+//        
+//        membersRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//            guard let membersDict = snapshot.value as? [String : Bool] else {
+//                return completion([])
+//            }
+//            
+//            let membersKeys = Array(membersDict.keys)
+//            completion(membersKeys)
+//        })
+//    }
     
     static func posts(for member: Member, completion: @escaping ([Post]) -> Void){
         let ref = Database.database().reference().child("user_posts").child(member.uid)
@@ -99,6 +99,19 @@ struct MemberService{
                 completion(posts.reversed())
             })
         })
+    }
+    
+    static func deleteUser(forUID uid: String, success: @escaping (Bool) -> Void) {
+        let ref = Database.database().reference().child("users")
+        let object = [uid : NSNull()]
+        ref.updateChildValues(object) { (error, ref) -> Void in
+            if let error = error {
+                print("error : \(error.localizedDescription)")
+                return success(false)
+            }
+            return success(true)
+        }
+        
     }
 }
 
