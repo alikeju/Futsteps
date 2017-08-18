@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ciG-pX-xAr">
-                                <rect key="frame" x="16" y="291" width="343" height="85"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Cm1-Tg-BFb">
+                                <rect key="frame" x="16" y="263.5" width="343" height="140"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhO-4d-txm">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -42,15 +42,33 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77l-VK-cuP">
+                                        <rect key="frame" x="0.0" y="110" width="343" height="30"/>
+                                        <color key="backgroundColor" red="0.34121218323707581" green="0.49797764420509338" blue="0.67065703868865967" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Delete Account">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteAccountButtonTapped:" destination="LzF-CV-AhP" eventType="touchUpInside" id="rSz-PL-DfH"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="OhO-4d-txm" firstAttribute="leading" secondItem="Cm1-Tg-BFb" secondAttribute="leading" id="8e2-Vi-BCT"/>
+                                    <constraint firstAttribute="trailing" secondItem="FdX-2c-jEb" secondAttribute="trailing" id="N6D-ts-D9e"/>
+                                    <constraint firstAttribute="trailing" secondItem="OhO-4d-txm" secondAttribute="trailing" id="V1z-6C-W9E"/>
+                                    <constraint firstAttribute="trailing" secondItem="77l-VK-cuP" secondAttribute="trailing" id="ays-KP-klI"/>
+                                    <constraint firstItem="FdX-2c-jEb" firstAttribute="leading" secondItem="Cm1-Tg-BFb" secondAttribute="leading" id="bZm-N9-QCR"/>
+                                    <constraint firstItem="77l-VK-cuP" firstAttribute="leading" secondItem="Cm1-Tg-BFb" secondAttribute="leading" id="fR6-9Z-EPs"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ciG-pX-xAr" secondAttribute="trailing" id="FZq-FL-o8s"/>
-                            <constraint firstItem="ciG-pX-xAr" firstAttribute="leading" secondItem="TuR-HH-jC5" secondAttribute="leadingMargin" id="ViR-YC-UWI"/>
-                            <constraint firstItem="ciG-pX-xAr" firstAttribute="centerY" secondItem="TuR-HH-jC5" secondAttribute="centerY" id="afE-my-b7x"/>
-                            <constraint firstItem="ciG-pX-xAr" firstAttribute="centerX" secondItem="TuR-HH-jC5" secondAttribute="centerX" id="i9H-Yd-jpx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cm1-Tg-BFb" secondAttribute="trailing" id="JGK-Up-qY9"/>
+                            <constraint firstItem="Cm1-Tg-BFb" firstAttribute="leading" secondItem="TuR-HH-jC5" secondAttribute="leadingMargin" id="JaH-gk-q3A"/>
+                            <constraint firstItem="Cm1-Tg-BFb" firstAttribute="centerX" secondItem="TuR-HH-jC5" secondAttribute="centerX" id="hd7-0A-JLZ"/>
+                            <constraint firstItem="Cm1-Tg-BFb" firstAttribute="centerY" secondItem="TuR-HH-jC5" secondAttribute="centerY" id="kDg-vX-gq0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="" image="tab_home_black" id="pTe-r0-S5O">
