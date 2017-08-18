@@ -40,7 +40,7 @@ class Member: NSObject{
     required init?(coder aDecoder: NSCoder) {
         guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String,
             let username = aDecoder.decodeObject(forKey: Constants.UserDefaults.username) as? String,
-            let organization_name = aDecoder.decodeObject(forKey: Constants.UserDefaults.organization_name) as? String,
+            let organization_name = aDecoder.decodeObject(forKey: Constants.UserDefaults.organization_name) as? String, //error might be here, it doubled up
             let org_uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.org_uid) as? String
             else { return nil }
         
@@ -88,6 +88,10 @@ extension Member: NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(uid, forKey: Constants.UserDefaults.uid)
         aCoder.encode(username, forKey: Constants.UserDefaults.username)
+        aCoder.encode(organization_name, forKey: Constants.UserDefaults.organization_name)
+        aCoder.encode(org_uid, forKey: Constants.UserDefaults.org_uid)
+        
+        
         
         //aCoder.encode(organization, forKey: Constants.UserDefaults.user)
     }
