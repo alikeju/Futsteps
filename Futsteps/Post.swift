@@ -30,9 +30,9 @@ class Post: NSObject{
                 "numOfDoors" : numOfDoors,
                 "sideOfStreet" : sideOfStreet,
                 "comments" : comments,
-                "timeElapsed" : timeElapsed]
-                //"created_at" : createdAgo]
-    }
+                "timeElapsed" : timeElapsed,
+                "created_at" : createdAgo]
+            }
     
     
     init (streetname: String, name: String, numOfDoors: String, timeElapsed: String, sideOfStreet: String, comments: String){
@@ -54,12 +54,12 @@ class Post: NSObject{
             let name = dict["name"] as? String,
             let numOfDoors = dict["numOfDoors"] as? String,
             let sideOfStreet = dict["sideOfStreet"] as? String,
-            let streetname = dict["streetname"] as? String
-           // let createdAgo = dict["created_at"] as? TimeInterval
+            let streetname = dict["streetname"] as? String,
+             let createdAgo = dict["created_at"] as? TimeInterval
             
             else { return nil }
         
-        //UNABLE TO READ DATA (says console)
+ 
         self.key = snapshot.key
         self.streetname = streetname
         self.name = name
@@ -68,9 +68,8 @@ class Post: NSObject{
         self.sideOfStreet = sideOfStreet
         self.comments = comments
         self.creationDate = Date() //temp
-       // self.creationDate = Date(timeIntervalSince1970: createdAgo)
-        //        self.poster = Member(uid: uid, username: username, organization_name: organization_name, org_uid: org_uid)
-        //UNABLE TO READ AAAALLLLL THE DATA ABOVE
+         self.creationDate = Date(timeIntervalSince1970: createdAgo)
+
         
     }
 }
