@@ -74,7 +74,7 @@ struct MemberService{
         let currentUser = Member.current
         
 //        let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
-         let timelineRef = Database.database().reference().child("timeline").child(currentUser.org_uid!)
+        let timelineRef = Database.database().reference().child("org_posts").child(currentUser.org_uid!)
         timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
@@ -84,13 +84,9 @@ struct MemberService{
             var posts = [Post]()
             //posts is nil
             for postSnap in snapshot {
-                guard let postDict = postSnap.value as? [String : Any],
-                    let posterUID = postDict["poster_uid"] as? String
-                    else { continue }
-                
                 dispatchGroup.enter()
                 
-                PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
+                PostService.show(forKey: postSnap.key, posterUID: postSnap.key) { (post) in
                     if let post = post {
                         posts.append(post)
                     }
