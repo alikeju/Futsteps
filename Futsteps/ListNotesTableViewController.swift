@@ -59,7 +59,6 @@ class ListNotesTableViewController: UIViewController {
         
         }
     }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
@@ -73,30 +72,7 @@ class ListNotesTableViewController: UIViewController {
             }
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if let identifier = segue.identifier {
-//            if identifier == "showDetails" {
-//                print("Table view cell tapped")
-//                
-//                
-//                let indexPath = tableView.indexPathForSelectedRow!
-    
-//                
-//                let post = posts[indexPath.row]
-//                
-//                let controller = segue.destination as! AddStreetsViewController
-//                
-//                controller.post = post
-//                
-//            }
-//        }
-//        
-//    }
-    
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -133,13 +109,6 @@ extension ListNotesTableViewController: UITableViewDataSource {
         
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "showDetails", sender: self)
-//    }
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return posts.count
-//    }
 }
 
 

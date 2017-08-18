@@ -35,6 +35,8 @@ class AddStreetsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         //Added those two below
         textViewDidBeginEditing(commentsTextView)
         textViewDidEndEditing(commentsTextView)
@@ -61,6 +63,7 @@ class AddStreetsViewController: UIViewController{
             streetNameTextField.text = post?.streetname
             streetNameTextField.isUserInteractionEnabled = false
             enterButton.isUserInteractionEnabled = false
+            view.addGestureRecognizer(tap)
         } else {
             streetNameTextField.text = ""
         }
@@ -69,6 +72,7 @@ class AddStreetsViewController: UIViewController{
             memberNameTextField.text = post?.name
             memberNameTextField.isUserInteractionEnabled = false
             enterButton.isUserInteractionEnabled = false
+            view.addGestureRecognizer(tap)
         } else{
             memberNameTextField.text = ""
         }
@@ -77,6 +81,7 @@ class AddStreetsViewController: UIViewController{
             numberOfDoorsTextField.text = post?.numOfDoors
             numberOfDoorsTextField.isUserInteractionEnabled = false
             enterButton.isUserInteractionEnabled = false
+            view.addGestureRecognizer(tap)
         } else{
             numberOfDoorsTextField.text = ""
         }
@@ -86,6 +91,7 @@ class AddStreetsViewController: UIViewController{
             timeElapsedTextField.isUserInteractionEnabled = false
             enterButton.isUserInteractionEnabled = false
             sideOfStreetSegmentedControl.isUserInteractionEnabled = true
+            view.addGestureRecognizer(tap)
         } else{
             timeElapsedTextField.text = ""
         }
@@ -95,25 +101,10 @@ class AddStreetsViewController: UIViewController{
             commentsTextView.isUserInteractionEnabled = false
             enterButton.isUserInteractionEnabled = false
             sideOfStreetSegmentedControl.isUserInteractionEnabled = false
+            view.addGestureRecognizer(tap)
         } else{
             commentsTextView.text = ""
         }
-        
-        
-        
-        //        if sideOfStreetSegmentedControl.selectedSegmentIndex != 0{
-        //          //  sideOfStreetSegmentedControl.selectedSegmentIndex = (post?.sideOfStreet as? Int)!
-        ////            sideOfStreetSegmentedControl.setEnabled(false, forSegmentAt: 0)
-        ////            sideOfStreetSegmentedControl.setEnabled(false, forSegmentAt: 1)
-        ////            sideOfStreetSegmentedControl.setEnabled(false, forSegmentAt: 2)
-        //
-        //        } else{
-        //            //If it is nothing enable interaction
-        //           // sideOfStreetSegmentedControl.isUserInteractionEnabled = true
-        //            sideOfStreetSegmentedControl.selectedSegmentIndex = 0
-        //        }
-        
-        //segmentedController.setEnabled(false, forSegmentAt: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,11 +118,21 @@ class AddStreetsViewController: UIViewController{
     
     
     @IBAction func enterButtonTapped(_ sender: Any) {
-        let streetName = streetNameTextField.text
-        let name = memberNameTextField.text
-        let numOfDoors = numberOfDoorsTextField.text
-        let timeElapsed = timeElapsedTextField.text
-        let comments = commentsTextView.text
+        guard let streetName = streetNameTextField.text,
+            let name = memberNameTextField.text,
+            let numOfDoors = numberOfDoorsTextField.text,
+            let timeElapsed = timeElapsedTextField.text,
+            let comments = commentsTextView.text,
+            !streetName.isEmpty,
+            !name.isEmpty,
+            !numOfDoors.isEmpty,
+            !timeElapsed.isEmpty,
+            !comments.isEmpty
+            else {
+                print("Please fill all fields!")
+                return
+        }
+        
         switch sideOfStreetSegmentedControl.selectedSegmentIndex{
         case 0:
             side = "Odd"
@@ -142,10 +143,17 @@ class AddStreetsViewController: UIViewController{
         default:
             break
         }
-        
+        //        !email.isEmpty,
+        //        !organization.isEmpty,
+        //        !password.isEmpty
+        //
+        //        else {
+        //            print("Please fill all fields!")
+        //            return
+        //        }
         
         //previously this: Organization(uid: "", organization: "")
-        PostService.create(streetName: streetName!, name: name!, numOfDoors: numOfDoors!, timeElapsed: timeElapsed!, sideOfStreet: side, comments: comments!) { (key) in
+        PostService.create(streetName: streetName, name: name, numOfDoors: numOfDoors, timeElapsed: timeElapsed, sideOfStreet: side, comments: comments) { (key) in
             //   let firUser = Auth.auth().currentUser
             
             // PostListService.create(firUser: firUser!, postRef: key, name: String)
@@ -216,8 +224,6 @@ class AddStreetsViewController: UIViewController{
 extension AddStreetsViewController{
     func configureView(){
         applyKeyboardDismisser()
-        
-        
     }
 }
 
