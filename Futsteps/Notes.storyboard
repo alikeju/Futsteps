@@ -85,7 +85,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWI-EO-yPJ" userLabel="Name Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="263" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LW3-La-XaM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LW3-La-XaM">
                                                 <rect key="frame" x="0.0" y="0.0" width="178" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -166,7 +166,7 @@
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FzP-pM-i5u" userLabel="Comments Text View">
-                                        <rect key="frame" x="0.0" y="218" width="263" height="128"/>
+                                        <rect key="frame" x="0.0" y="218" width="263" height="53"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration" hint="Comments">
                                             <accessibilityTraits key="traits" none="YES"/>
@@ -177,7 +177,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1n-pG-xX2" userLabel="Enter">
-                                        <rect key="frame" x="0.0" y="371" width="263" height="30"/>
+                                        <rect key="frame" x="0.0" y="296" width="263" height="105"/>
                                         <color key="backgroundColor" red="0.34121218323707581" green="0.49797764420509338" blue="0.67065703868865967" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Enter"/>
@@ -216,6 +216,7 @@
                     </view>
                     <connections>
                         <outlet property="commentsTextView" destination="FzP-pM-i5u" id="fkC-ei-bLA"/>
+                        <outlet property="enterButton" destination="K1n-pG-xX2" id="110-EK-Kcn"/>
                         <outlet property="memberNameTextField" destination="0CU-ui-fST" id="Cu0-fZ-Hqx"/>
                         <outlet property="numberOfDoorsTextField" destination="XoP-Ln-dc1" id="HHj-YP-6Oh"/>
                         <outlet property="sideOfStreetSegmentedControl" destination="MWC-Ch-ADt" id="e8G-06-ec8"/>
