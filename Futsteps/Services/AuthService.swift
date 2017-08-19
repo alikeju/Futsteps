@@ -149,5 +149,22 @@ struct AuthService {
         }
     }
     
+    private static func invalidFieldsErrors(error: Error, controller: UIViewController) {
+        switch(error.localizedDescription) {
+        case "Invalid amount of fields filled.":
+            let invalidEmail = UIAlertController(title: "Please fill all fields.", message:
+                "Please fill all fields.", preferredStyle: UIAlertControllerStyle.alert)
+            invalidEmail.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+            controller.present(invalidEmail, animated: true, completion: nil)
+            break;
+        default:
+            let generalErrorAlert = UIAlertController(title: "Please fill all fields.", message:
+                "Please fill all fields.", preferredStyle: UIAlertControllerStyle.alert)
+            generalErrorAlert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+            controller.present(generalErrorAlert, animated: true, completion: nil)
+            break;
+        }
+    }
+
     
 }
