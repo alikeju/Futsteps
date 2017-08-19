@@ -117,6 +117,7 @@ class AddStreetsViewController: UIViewController{
     }
     
     
+    
     @IBAction func enterButtonTapped(_ sender: Any) {
         guard let streetName = streetNameTextField.text,
             let name = memberNameTextField.text,
@@ -130,6 +131,7 @@ class AddStreetsViewController: UIViewController{
             !comments.isEmpty
             else {
                 print("Please fill all fields!")
+                enterButton.isUserInteractionEnabled = false
                 return
         }
         
@@ -143,14 +145,6 @@ class AddStreetsViewController: UIViewController{
         default:
             break
         }
-        //        !email.isEmpty,
-        //        !organization.isEmpty,
-        //        !password.isEmpty
-        //
-        //        else {
-        //            print("Please fill all fields!")
-        //            return
-        //        }
         
         //previously this: Organization(uid: "", organization: "")
         PostService.create(streetName: streetName, name: name, numOfDoors: numOfDoors, timeElapsed: timeElapsed, sideOfStreet: side, comments: comments) { (key) in
