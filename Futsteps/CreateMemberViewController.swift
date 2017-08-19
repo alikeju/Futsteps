@@ -70,7 +70,6 @@ class CreateMemberViewController: UIViewController {
                 
                 self.loggedInUser = Auth.auth().currentUser
                 
-                
                 self.performSegue(withIdentifier: "findOrgsSegue", sender: self)
             
             }  
