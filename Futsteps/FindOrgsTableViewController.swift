@@ -22,7 +22,7 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         //allows the class to know when the text inside the search bar is changed
         searchController.searchResultsUpdater = self
@@ -31,7 +31,6 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
         //making sure that the search bar is only being shown on this view controller and not on another one.
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        
         
         databaseRef.child("organizations").queryOrdered(byChild: "organization_name").observe(.childAdded, with: { (snapshot) in
             //the key is the user's UID
@@ -53,11 +52,7 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
         }) { (error) in
             print(error.localizedDescription)
             
-        }// Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,8 +89,6 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
         
         cell.textLabel?.text = org?["organization_name"] as? String
         cell.detailTextLabel?.text = org?["type"] as? String
-        
-        
         
         return cell
     }

@@ -29,7 +29,6 @@ class ListNotesTableViewController: UIViewController {
         //configureTableView()
         //  reloadTimeline()
         
-
         super.viewDidLoad()
         
     }
@@ -108,6 +107,19 @@ extension ListNotesTableViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//        
+//            let comment = selectedPost.comments[indexPath.row]
+//            selectedPost.comments.remove(at: indexPath.row)
+//            selectedPost.commentAuthors.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            
+//            // Remove from Firebase
+//            FIRDatabase.database().reference().child("postComments").child(self.postID).child(comment.key).removeValue()
+//        }
+//    }
     
 }
 

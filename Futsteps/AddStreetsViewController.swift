@@ -64,6 +64,9 @@ class AddStreetsViewController: UIViewController{
             streetNameTextField.isUserInteractionEnabled = false
             enterButton.isUserInteractionEnabled = false
             view.addGestureRecognizer(tap)
+            disablesAutomaticKeyboardDismissal = false
+            
+            
         } else {
             streetNameTextField.text = ""
         }
@@ -102,6 +105,7 @@ class AddStreetsViewController: UIViewController{
             enterButton.isUserInteractionEnabled = false
             sideOfStreetSegmentedControl.isUserInteractionEnabled = false
             view.addGestureRecognizer(tap)
+            disablesAutomaticKeyboardDismissal = false
         } else{
             commentsTextView.text = ""
         }

@@ -15,7 +15,7 @@ class HomeViewController: UIViewController{
     var authHandle: AuthStateDidChangeListenerHandle?
     
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        AuthService.presentLogOut(viewController: self)
+        //AuthService.presentLogOut(viewController: self)
         
         let initialViewController = UIStoryboard.initialViewController(for: .login)
         print("Member was logged out.")

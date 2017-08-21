@@ -62,8 +62,6 @@ class OrgProfileViewController: UIViewController {
         
         databaseRef.child("organizations").child(self.orgProfile?["uid"] as! String).observe(.value, with: { (snapshot) in
             
-            
-            
             let uid = self.orgProfile?["uid"] as! String
             let organization = self.orgProfile?["organization_name"] as! String
             
