@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Cm1-Tg-BFb">
-                                <rect key="frame" x="16" y="263.5" width="343" height="140"/>
+                                <rect key="frame" x="16" y="291" width="343" height="85"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhO-4d-txm">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -35,15 +35,8 @@
                                             <action selector="logOutButtonTapped:" destination="LzF-CV-AhP" eventType="touchUpInside" id="A6m-sl-M4i"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdX-2c-jEb">
-                                        <rect key="frame" x="0.0" y="55" width="343" height="30"/>
-                                        <color key="backgroundColor" red="0.34121218323707581" green="0.49797764420509338" blue="0.67065703868865967" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Change Password">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77l-VK-cuP">
-                                        <rect key="frame" x="0.0" y="110" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="55" width="343" height="30"/>
                                         <color key="backgroundColor" red="0.34121218323707581" green="0.49797764420509338" blue="0.67065703868865967" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Delete Account">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,10 +48,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="OhO-4d-txm" firstAttribute="leading" secondItem="Cm1-Tg-BFb" secondAttribute="leading" id="8e2-Vi-BCT"/>
-                                    <constraint firstAttribute="trailing" secondItem="FdX-2c-jEb" secondAttribute="trailing" id="N6D-ts-D9e"/>
                                     <constraint firstAttribute="trailing" secondItem="OhO-4d-txm" secondAttribute="trailing" id="V1z-6C-W9E"/>
                                     <constraint firstAttribute="trailing" secondItem="77l-VK-cuP" secondAttribute="trailing" id="ays-KP-klI"/>
-                                    <constraint firstItem="FdX-2c-jEb" firstAttribute="leading" secondItem="Cm1-Tg-BFb" secondAttribute="leading" id="bZm-N9-QCR"/>
                                     <constraint firstItem="77l-VK-cuP" firstAttribute="leading" secondItem="Cm1-Tg-BFb" secondAttribute="leading" id="fR6-9Z-EPs"/>
                                 </constraints>
                             </stackView>
