@@ -133,10 +133,17 @@ struct AuthService {
     }
     
     private static func signUpErrors(error: Error, controller: UIViewController) {
+       print(error.localizedDescription)
         switch(error.localizedDescription) {
         case "The email address is badly formatted.":
             let invalidEmail = UIAlertController(title: "Email is not properly formatted.", message:
                 "Please enter a valid email to sign up with..", preferredStyle: UIAlertControllerStyle.alert)
+            invalidEmail.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+            controller.present(invalidEmail, animated: true, completion: nil)
+            break;
+        case "The password must be 6 characters long or more.":
+            let invalidEmail = UIAlertController(title: "Password is not strong enough.", message:
+                "Please enter a stronger password.", preferredStyle: UIAlertControllerStyle.alert)
             invalidEmail.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
             controller.present(invalidEmail, animated: true, completion: nil)
             break;
