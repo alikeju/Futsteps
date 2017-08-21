@@ -13,7 +13,6 @@
         <!--Choose User View Controller-->
         <scene sceneID="Omq-tw-ZH5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YK0-R2-o2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="AI4-fu-S6z" customClass="ChooseUserViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="caW-hl-rYO"/>
@@ -67,6 +66,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yXV-CJ-LeI"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YK0-R2-o2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1298.4000000000001" y="-363.86806596701655"/>
         </scene>
@@ -327,7 +327,6 @@
         <!--Organization Login View Controller-->
         <scene sceneID="sly-p0-fR0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jZE-rc-mF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ccC-Mn-YTf" userLabel="Organization Login View Controller" customClass="OrganizationLoginViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AkN-I0-nNO"/>
@@ -406,13 +405,13 @@
                         <outlet property="passwordTextField" destination="rSx-lz-t1W" id="S8H-hC-eYS"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jZE-rc-mF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2261.5999999999999" y="-364.7676161919041"/>
         </scene>
         <!--Create Organization-->
         <scene sceneID="OFV-BS-4Xd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KbM-vs-iOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="NKi-4d-quX" customClass="CreateOrganization" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QvN-Sg-W2u"/>
@@ -489,13 +488,13 @@
                         <outlet property="passwordTextField" destination="wUo-Ae-Puu" id="q4I-ri-bvq"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbM-vs-iOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3256.8000000000002" y="-364.7676161919041"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="drd-lT-rdI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eGD-gP-seD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e04-M6-hnw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nB4-N1-0bJ">
@@ -507,6 +506,7 @@
                         <segue destination="AI4-fu-S6z" kind="relationship" relationship="rootViewController" id="Ddq-ur-VU6"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGD-gP-seD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="359.19999999999999" y="-363.86806596701655"/>
         </scene>
