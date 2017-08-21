@@ -60,12 +60,13 @@
                 print("Please fill all fields!")
                 return
         }
+        enterButton.isUserInteractionEnabled = false
         self.showActivityIndicator()
         self.indicator.startAnimating()
         self.indicator.backgroundColor = UIColor.white
         
         print(self)
-        //
+    
         AuthService.createUser(controller: self, email: email, password: password) { (authMember) in
             guard let firMember = authMember else {
                 return
