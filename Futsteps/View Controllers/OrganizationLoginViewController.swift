@@ -38,10 +38,9 @@ class OrganizationLoginViewController: UIViewController{
                 if let org = org {
                     Organization.setCurrent(org, writeToUserDefaults: true)
                     
-                    //                    let storyboard = UIStoryboard(name: "OrgMain", bundle: .main)
-                    //                    initialViewController = storyboard.instantiateInitialViewController()!
-                    
-                    let initialViewController = UIStoryboard.initialViewController(for: .OrgMain)
+                    let storyboard = UIStoryboard(name: "OrgMain", bundle: .main)
+                    let initialViewController = storyboard.instantiateInitialViewController()!
+
                     self.view.window?.rootViewController = initialViewController
                     self.view.window?.makeKeyAndVisible()
                 }
@@ -50,7 +49,7 @@ class OrganizationLoginViewController: UIViewController{
                     return
                 }
                 
-                let initialViewController = UIStoryboard.initialViewController(for: .OrgMain)
+                let initialViewController = UIStoryboard.initialViewController(for: .main)
                 print("Organization was logged in.")
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()

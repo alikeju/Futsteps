@@ -11,7 +11,7 @@ import UIKit
 
 class CreateOrganization: UIViewController{
     
-     var indicator = UIActivityIndicatorView()
+    var indicator = UIActivityIndicatorView()
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var organizationNameTextField: UITextField!
@@ -28,7 +28,7 @@ class CreateOrganization: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
-            if identifier == "cancel" { 
+            if identifier == "cancel" {
                 print("Back to Login screen!")
             }
         }
@@ -70,19 +70,22 @@ class CreateOrganization: UIViewController{
                 guard let user = user else {
                     return
                 }
-            
+                
                 Organization.setCurrent(user, writeToUserDefaults: true)
                 
-                let initialViewController = UIStoryboard.initialViewController(for: .OrgMain)
+                let storyboard = UIStoryboard(name: "OrgMain", bundle: .main)
+                let initialViewController = storyboard.instantiateInitialViewController()!
+                
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
-                
-                self.indicator.stopAnimating()
-                self.indicator.hidesWhenStopped = true
             }
+            
+            self.indicator.stopAnimating()
+            self.indicator.hidesWhenStopped = true
         }
     }
 }
+
 
 extension CreateOrganization{
     func configureView(){
