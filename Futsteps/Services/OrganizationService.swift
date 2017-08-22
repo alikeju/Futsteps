@@ -52,9 +52,33 @@ struct OrganizationService {
         
     }
     
-
-
-
+    static func timeline(completion: @escaping ([Post]) -> Void) {
     
+        let timelineRef = Database.database().reference().child("org_posts").child(Organization.current.uid)
+        timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+                else { return completion([]) }
+            
+            let dispatchGroup = DispatchGroup()
+            
+            var posts = [Post]()
+            //posts is nil
+            for postSnap in snapshot {
+                dispatchGroup.enter()
+                
+                PostService.orgShow(forKey: postSnap.key, posterUID: postSnap.key) { (post) in
+                    if let post = post {
+                        posts.append(post)
+                    }
+                    
+                    dispatchGroup.leave()
+                }
+            }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(posts.reversed())
+            })
+        })
+    }
 }
 

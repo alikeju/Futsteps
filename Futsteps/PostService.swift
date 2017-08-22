@@ -37,6 +37,17 @@ class PostService{
         })
     }
     
+
+    static func orgShow(forKey postKey: String, posterUID: String, completion: @escaping (Post?) -> Void) {
+        
+        let newPostRef = Database.database().reference().child("org_posts").child(Organization.current.uid).child(postKey)
+        newPostRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            guard let post = Post(snapshot: snapshot)
+                else { return completion(nil) }
+            completion(post)
+        })
+    }
+    
 }
 
 

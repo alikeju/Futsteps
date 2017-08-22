@@ -36,17 +36,4 @@ struct AddService {
             addOrg(addee, forCurrentUserWithSuccess: success)
         }
     }
-    
-//    static func isOrgAdded(_ org: Organization, byCurrentUserWithCompletion completion: @escaping (Bool) -> Void) {
-//        let currentUID = Member.current.uid
-//        let ref = Database.database().reference().child("members").child(org.uid)
-//        
-//        ref.queryEqual(toValue: nil, childKey: currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let _ = snapshot.value as? [String : Bool] {
-//                completion(true)
-//            } else {
-//                completion(false)
-//            }
-//        })
-//    }
 }
