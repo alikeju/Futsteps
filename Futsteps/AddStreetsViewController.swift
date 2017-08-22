@@ -56,8 +56,11 @@ class AddStreetsViewController: UIViewController{
         
         commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
         
+        if post != nil{
+        
         if Member.current.uid != post!.memberUID{
-          //  print(Member.current.uid)
+            //  print(Member.current.uid)
+            
             streetNameTextField.isUserInteractionEnabled = false
             memberNameTextField.isUserInteractionEnabled = false
             numberOfDoorsTextField.isUserInteractionEnabled = false
@@ -70,6 +73,7 @@ class AddStreetsViewController: UIViewController{
         } else{
             print(Member.current.uid)
             print(post?.memberUID)
+            print(post) 
             streetNameTextField.isUserInteractionEnabled = true
             memberNameTextField.isUserInteractionEnabled = true
             numberOfDoorsTextField.isUserInteractionEnabled = true
@@ -79,59 +83,61 @@ class AddStreetsViewController: UIViewController{
             disablesAutomaticKeyboardDismissal = true
         }
         
-//        
-//        if post?.streetname != nil{
-//            streetNameTextField.text = post?.streetname
-//            streetNameTextField.isUserInteractionEnabled = false
-//            enterButton.isUserInteractionEnabled = false
-//            view.addGestureRecognizer(tap)
-//            disablesAutomaticKeyboardDismissal = false
-//            
-//            
-//        } else {
-//            streetNameTextField.text = ""
-//        }
-//        
-//        if post?.name != nil{
-//            memberNameTextField.text = post?.name
-//            memberNameTextField.isUserInteractionEnabled = false
-//            enterButton.isUserInteractionEnabled = false
-//            view.addGestureRecognizer(tap)
-//        } else{
-//            memberNameTextField.text = ""
-//        }
-//        
-//        if post?.numOfDoors != nil{
-//            numberOfDoorsTextField.text = post?.numOfDoors
-//            numberOfDoorsTextField.isUserInteractionEnabled = false
-//            enterButton.isUserInteractionEnabled = false
-//            view.addGestureRecognizer(tap)
-//        } else{
-//            numberOfDoorsTextField.text = ""
-//        }
-//        
-//        if post?.timeElapsed != nil{
-//            timeElapsedTextField.text = post?.timeElapsed
-//            timeElapsedTextField.isUserInteractionEnabled = false
-//            enterButton.isUserInteractionEnabled = false
-//            sideOfStreetSegmentedControl.isUserInteractionEnabled = true
-//            view.addGestureRecognizer(tap)
-//        } else{
-//            timeElapsedTextField.text = ""
-//        }
-//        
-//        if post?.comments != nil{
-//            commentsTextView.text = post?.comments
-//            commentsTextView.isUserInteractionEnabled = false
-//            enterButton.isUserInteractionEnabled = false
-//            sideOfStreetSegmentedControl.isUserInteractionEnabled = false
-//            view.addGestureRecognizer(tap)
-//            disablesAutomaticKeyboardDismissal = false
-//        } else{
-//            commentsTextView.text = ""
-//        }
+        }
+        
+        //
+        //        if post?.streetname != nil{
+        //            streetNameTextField.text = post?.streetname
+        //            streetNameTextField.isUserInteractionEnabled = false
+        //            enterButton.isUserInteractionEnabled = false
+        //            view.addGestureRecognizer(tap)
+        //            disablesAutomaticKeyboardDismissal = false
+        //
+        //
+        //        } else {
+        //            streetNameTextField.text = ""
+        //        }
+        //
+        //        if post?.name != nil{
+        //            memberNameTextField.text = post?.name
+        //            memberNameTextField.isUserInteractionEnabled = false
+        //            enterButton.isUserInteractionEnabled = false
+        //            view.addGestureRecognizer(tap)
+        //        } else{
+        //            memberNameTextField.text = ""
+        //        }
+        //
+        //        if post?.numOfDoors != nil{
+        //            numberOfDoorsTextField.text = post?.numOfDoors
+        //            numberOfDoorsTextField.isUserInteractionEnabled = false
+        //            enterButton.isUserInteractionEnabled = false
+        //            view.addGestureRecognizer(tap)
+        //        } else{
+        //            numberOfDoorsTextField.text = ""
+        //        }
+        //
+        //        if post?.timeElapsed != nil{
+        //            timeElapsedTextField.text = post?.timeElapsed
+        //            timeElapsedTextField.isUserInteractionEnabled = false
+        //            enterButton.isUserInteractionEnabled = false
+        //            sideOfStreetSegmentedControl.isUserInteractionEnabled = true
+        //            view.addGestureRecognizer(tap)
+        //        } else{
+        //            timeElapsedTextField.text = ""
+        //        }
+        //
+        //        if post?.comments != nil{
+        //            commentsTextView.text = post?.comments
+        //            commentsTextView.isUserInteractionEnabled = false
+        //            enterButton.isUserInteractionEnabled = false
+        //            sideOfStreetSegmentedControl.isUserInteractionEnabled = false
+        //            view.addGestureRecognizer(tap)
+        //            disablesAutomaticKeyboardDismissal = false
+        //        } else{
+        //            commentsTextView.text = ""
+        //        }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         // commentsTextView.text = ""
         
@@ -171,10 +177,10 @@ class AddStreetsViewController: UIViewController{
             break
         }
         
-        //previously this: Organization(uid: "", organization: "")
-        PostService.create(streetName: streetName, name: name, numOfDoors: numOfDoors, timeElapsed: timeElapsed, sideOfStreet: side, comments: comments) { (key) in
+        //OBSERVE LINE!!
+        PostService.create(streetName: streetName, name: name, numOfDoors: numOfDoors, timeElapsed: timeElapsed, sideOfStreet: side, comments: comments, memberUID: Member.current.uid) { (key) in
             //   let firUser = Auth.auth().currentUser
-            
+            //this is where you should close the screen
             // PostListService.create(firUser: firUser!, postRef: key, name: String)
         }
         print("Enter button Tapped")

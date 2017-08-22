@@ -87,6 +87,7 @@ extension ListNotesTableViewController: UITableViewDataSource {
         return posts.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -97,6 +98,25 @@ extension ListNotesTableViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = post.creationDate.convertToString()
         
         return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return posts[indexPath.row].memberUID == Member.current.uid || Organization.current != nil
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
+        if (editingStyle == .delete) {
+
+            Database.database().reference().child("org_posts").child(Member.current.org_uid!).child(posts[indexPath.row].key!).removeValue()
+            posts.remove(at: indexPath.item)
+            tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
