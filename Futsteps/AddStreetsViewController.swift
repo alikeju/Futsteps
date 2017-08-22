@@ -56,57 +56,80 @@ class AddStreetsViewController: UIViewController{
         
         commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
         
-        
-        if post?.streetname != nil{
-            streetNameTextField.text = post?.streetname
+        if Member.current.uid != post!.memberUID{
+          //  print(Member.current.uid)
             streetNameTextField.isUserInteractionEnabled = false
-            enterButton.isUserInteractionEnabled = false
-            view.addGestureRecognizer(tap)
-            disablesAutomaticKeyboardDismissal = false
-            
-            
-        } else {
-            streetNameTextField.text = ""
-        }
-        
-        if post?.name != nil{
-            memberNameTextField.text = post?.name
             memberNameTextField.isUserInteractionEnabled = false
-            enterButton.isUserInteractionEnabled = false
-            view.addGestureRecognizer(tap)
-        } else{
-            memberNameTextField.text = ""
-        }
-        
-        if post?.numOfDoors != nil{
-            numberOfDoorsTextField.text = post?.numOfDoors
             numberOfDoorsTextField.isUserInteractionEnabled = false
-            enterButton.isUserInteractionEnabled = false
-            view.addGestureRecognizer(tap)
-        } else{
-            numberOfDoorsTextField.text = ""
-        }
-        
-        if post?.timeElapsed != nil{
-            timeElapsedTextField.text = post?.timeElapsed
             timeElapsedTextField.isUserInteractionEnabled = false
+            commentsTextView.isUserInteractionEnabled = false
+            sideOfStreetSegmentedControl.isUserInteractionEnabled = false
             enterButton.isUserInteractionEnabled = false
-            sideOfStreetSegmentedControl.isUserInteractionEnabled = true
+            disablesAutomaticKeyboardDismissal = false
             view.addGestureRecognizer(tap)
         } else{
-            timeElapsedTextField.text = ""
+            print(Member.current.uid)
+            print(post?.memberUID)
+            streetNameTextField.isUserInteractionEnabled = true
+            memberNameTextField.isUserInteractionEnabled = true
+            numberOfDoorsTextField.isUserInteractionEnabled = true
+            timeElapsedTextField.isUserInteractionEnabled = true
+            commentsTextView.isUserInteractionEnabled = true
+            enterButton.isUserInteractionEnabled = true
+            disablesAutomaticKeyboardDismissal = true
         }
         
-        if post?.comments != nil{
-            commentsTextView.text = post?.comments
-            commentsTextView.isUserInteractionEnabled = false
-            enterButton.isUserInteractionEnabled = false
-            sideOfStreetSegmentedControl.isUserInteractionEnabled = false
-            view.addGestureRecognizer(tap)
-            disablesAutomaticKeyboardDismissal = false
-        } else{
-            commentsTextView.text = ""
-        }
+//        
+//        if post?.streetname != nil{
+//            streetNameTextField.text = post?.streetname
+//            streetNameTextField.isUserInteractionEnabled = false
+//            enterButton.isUserInteractionEnabled = false
+//            view.addGestureRecognizer(tap)
+//            disablesAutomaticKeyboardDismissal = false
+//            
+//            
+//        } else {
+//            streetNameTextField.text = ""
+//        }
+//        
+//        if post?.name != nil{
+//            memberNameTextField.text = post?.name
+//            memberNameTextField.isUserInteractionEnabled = false
+//            enterButton.isUserInteractionEnabled = false
+//            view.addGestureRecognizer(tap)
+//        } else{
+//            memberNameTextField.text = ""
+//        }
+//        
+//        if post?.numOfDoors != nil{
+//            numberOfDoorsTextField.text = post?.numOfDoors
+//            numberOfDoorsTextField.isUserInteractionEnabled = false
+//            enterButton.isUserInteractionEnabled = false
+//            view.addGestureRecognizer(tap)
+//        } else{
+//            numberOfDoorsTextField.text = ""
+//        }
+//        
+//        if post?.timeElapsed != nil{
+//            timeElapsedTextField.text = post?.timeElapsed
+//            timeElapsedTextField.isUserInteractionEnabled = false
+//            enterButton.isUserInteractionEnabled = false
+//            sideOfStreetSegmentedControl.isUserInteractionEnabled = true
+//            view.addGestureRecognizer(tap)
+//        } else{
+//            timeElapsedTextField.text = ""
+//        }
+//        
+//        if post?.comments != nil{
+//            commentsTextView.text = post?.comments
+//            commentsTextView.isUserInteractionEnabled = false
+//            enterButton.isUserInteractionEnabled = false
+//            sideOfStreetSegmentedControl.isUserInteractionEnabled = false
+//            view.addGestureRecognizer(tap)
+//            disablesAutomaticKeyboardDismissal = false
+//        } else{
+//            commentsTextView.text = ""
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
