@@ -12,7 +12,7 @@ import UIKit
 import FirebaseDatabase.FIRDataSnapshot
 
 class Member: NSObject{
-
+    
     let uid: String
     let organization_name: String?
     let org_uid: String?
@@ -28,8 +28,8 @@ class Member: NSObject{
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-        let username = dict["username"] as? String
-        else { return nil }
+            let username = dict["username"] as? String
+            else { return nil }
         
         self.uid = snapshot.key
         self.username = username
@@ -53,21 +53,19 @@ class Member: NSObject{
     }
     
     
-    private static var _current: Member?
+    private static var _current_member: Member?
     
     static var current: Member {
         
-        guard let currentMember = _current else {
+        guard let currentMember = _current_member else {
             fatalError("Error: current user doesn't exist")
         }
         
-        // If _current isn't nil, it will be returned to the organization.
+       //  If _current isn't nil, it will be returned to the organization.
         return currentMember
     }
     
-    
-    
-    class func setCurrent(_ member: Member, writeToUserDefaults: Bool = false) {
+    static func setCurrent(_ member: Member, writeToUserDefaults: Bool = false) {
         // Checking if the boolean value for writeToUserDefaults is true.
         //If so, we write the user object to UserDefaults.
         if writeToUserDefaults{
@@ -78,7 +76,7 @@ class Member: NSObject{
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentUser)
         }
         
-        _current = member
+        _current_member = member
     }
     
 }

@@ -13,9 +13,7 @@ import UIKit
 class Organization: NSObject {
     
     var isAdded = false
-    
-    
-    
+
     var orgs = [Organization]()
     
     // MARK: - Properties
@@ -23,7 +21,6 @@ class Organization: NSObject {
     let uid: String
     let organization: String
 
-    
     // MARK: - Init
     
     init(uid: String, organization: String) {
@@ -78,7 +75,7 @@ class Organization: NSObject {
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentUser)
         }
         
-       // _current = organization
+       _current = organization
     }
     
 //If something goes terribly wrong then uncomment. If not then delete.

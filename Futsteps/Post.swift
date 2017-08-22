@@ -32,7 +32,7 @@ class Post: NSObject{
                 "comments" : comments,
                 "timeElapsed" : timeElapsed,
                 "created_at" : createdAgo]
-            }
+    }
     
     
     init (streetname: String, name: String, numOfDoors: String, timeElapsed: String, sideOfStreet: String, comments: String){
@@ -55,11 +55,11 @@ class Post: NSObject{
             let numOfDoors = dict["numOfDoors"] as? String,
             let sideOfStreet = dict["sideOfStreet"] as? String,
             let streetname = dict["streetname"] as? String,
-             let createdAgo = dict["created_at"] as? TimeInterval
+            let createdAgo = dict["created_at"] as? TimeInterval
             
             else { return nil }
         
- 
+        
         self.key = snapshot.key
         self.streetname = streetname
         self.name = name
@@ -68,8 +68,8 @@ class Post: NSObject{
         self.sideOfStreet = sideOfStreet
         self.comments = comments
         self.creationDate = Date() //temp
-         self.creationDate = Date(timeIntervalSince1970: createdAgo)
-
+        self.creationDate = Date(timeIntervalSince1970: createdAgo)
+        
         
     }
 }
