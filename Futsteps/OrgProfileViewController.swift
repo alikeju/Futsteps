@@ -63,7 +63,7 @@ class OrgProfileViewController: UIViewController {
         databaseRef.child("organizations").child(self.orgProfile?["uid"] as! String).observe(.value, with: { (snapshot) in
             
             let uid = self.orgProfile?["uid"] as! String
-            let organization = self.orgProfile?["organization_name"] as! String
+         //   let organization = self.orgProfile?["organization_name"] as! String
             
             self.orgProfile = snapshot.value as? NSDictionary
             
@@ -107,7 +107,6 @@ class OrgProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func didTapAdd(_ sender: Any) {
         addButton.isUserInteractionEnabled = false
         let addee = orgProfile1!
@@ -121,8 +120,6 @@ class OrgProfileViewController: UIViewController {
             guard success else { return }
             
             addee.isAdded = !addee.isAdded
-            
-            
             
             let initialViewController = UIStoryboard.initialViewController(for: .main)
             print("Organization was added.")
