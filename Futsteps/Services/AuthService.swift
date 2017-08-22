@@ -120,7 +120,7 @@ struct AuthService {
     }
     
     static func deleteOrgAccount(user : FIRUser){
-        OrganizationService.deleteOrganization(forUID: Organization.current.uid, success: { (success) in
+        OrganizationService.deleteOrganization(forUID: (Organization.current?.uid)!, success: { (success) in
             if success {
                 logUserOut()
                 
