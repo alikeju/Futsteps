@@ -51,14 +51,16 @@ class Organization: NSObject {
     
     private static var _current: Organization?
     
-    static var current: Organization {
+    static var current: Organization? {
          
-        guard let currentOrg = _current else {
-            fatalError("Error: current org doesn't exist")
-        }
+//        guard let currentOrg = _current else {
+//            return nil
+//            fatalError("Error: current org doesn't exist")
+            
+//        }
         
         // If _current isn't nil, it will be returned to the organization.
-        return currentOrg
+        return _current
     }
 
     

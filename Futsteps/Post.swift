@@ -21,7 +21,7 @@ class Post: NSObject{
     let comments: String
     var creationDate: Date
     var memberUID: String
-    
+    var post : Post?
     // MARK: - Init
     var dictValue: [String : Any] {
         let createdAgo = creationDate.timeIntervalSince1970
@@ -33,11 +33,11 @@ class Post: NSObject{
                 "comments" : comments,
                 "timeElapsed" : timeElapsed,
                 "created_at" : createdAgo,
-                "memberUID" : Member.current.uid]
+                "memberUID" : memberUID]
     }
     
     
-    init (streetname: String, name: String, numOfDoors: String, timeElapsed: String, sideOfStreet: String, comments: String){
+    init (streetname: String, name: String, numOfDoors: String, timeElapsed: String, sideOfStreet: String, comments: String, memberUID: String){
         
         self.streetname = streetname
         self.name = name
@@ -46,7 +46,7 @@ class Post: NSObject{
         self.sideOfStreet = sideOfStreet
         self.comments = comments
         self.creationDate = Date()
-        self.memberUID = Member.current.uid
+        self.memberUID = memberUID
         super.init()
     }
     
@@ -58,8 +58,8 @@ class Post: NSObject{
             let numOfDoors = dict["numOfDoors"] as? String,
             let sideOfStreet = dict["sideOfStreet"] as? String,
             let streetname = dict["streetname"] as? String,
-            let createdAgo = dict["created_at"] as? TimeInterval
-            
+            let createdAgo = dict["created_at"] as? TimeInterval,
+            let memberUID = dict["memberUID"] as? String
             else { return nil }
         
         
@@ -72,7 +72,7 @@ class Post: NSObject{
         self.comments = comments
         self.creationDate = Date() //temp
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
-        self.memberUID = Member.current.uid
+        self.memberUID = memberUID
         
         
     }
