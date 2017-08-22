@@ -83,6 +83,22 @@ struct AuthService {
         viewController.present(alertController, animated: true)
     }
     
+    static func presentDeleteOrg(viewController : UIViewController, user : FIRUser, success: @escaping (Bool?) -> Void ){
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let signOutAction = UIAlertAction(title: "Delete Account", style: .destructive) { _ in
+            deleteOrgAccount(user: user)
+            success(true)
+        }
+        
+        alertController.addAction(signOutAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        viewController.present(alertController, animated: true)
+    }
+    
     static func removeAuthListener(authHandle : AuthStateDidChangeListenerHandle?){
         if let authHandle = authHandle {
             Auth.auth().removeStateDidChangeListener(authHandle)
@@ -103,6 +119,19 @@ struct AuthService {
         })
     }
     
+    static func deleteOrgAccount(user : FIRUser){
+        OrganizationService.deleteOrganization(forUID: Organization.current.uid, success: { (success) in
+            if success {
+                logUserOut()
+                
+                user.delete { error in
+                    if let error = error {
+                        print("DELETE ERROR \(error.localizedDescription)")
+                    }
+                }
+            }
+        })
+    }
     private static func loginErrors(error : Error, controller : UIViewController){
         switch (error.localizedDescription) {
         case "The email address is badly formatted.":

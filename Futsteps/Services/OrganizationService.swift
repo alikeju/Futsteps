@@ -40,7 +40,7 @@ struct OrganizationService {
     }
 
     static func deleteOrganization(forUID uid: String, success: @escaping (Bool) -> Void) {
-        let ref = Database.database().reference().child("members")
+        let ref = Database.database().reference().child("organizations")
         let object = [uid : NSNull()]
         ref.updateChildValues(object) { (error, ref) -> Void in
             if let error = error {
@@ -51,6 +51,8 @@ struct OrganizationService {
         }
         
     }
+    
+
     
     static func timeline(completion: @escaping ([Post]) -> Void) {
     

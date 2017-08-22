@@ -60,8 +60,7 @@ struct MemberService{
     
     static func timeline(completion: @escaping ([Post]) -> Void) {
         let currentUser = Member.current
-        
-//        let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
+
         let timelineRef = Database.database().reference().child("org_posts").child(currentUser.org_uid!)
         timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
@@ -90,7 +89,7 @@ struct MemberService{
     }
     
     static func deleteUser(forUID uid: String, success: @escaping (Bool) -> Void) {
-        let ref = Database.database().reference().child("users")
+        let ref = Database.database().reference().child("member_profiles")
         let object = [uid : NSNull()]
         ref.updateChildValues(object) { (error, ref) -> Void in
             if let error = error {
@@ -99,7 +98,6 @@ struct MemberService{
             }
             return success(true)
         }
-        
     }
 }
 
