@@ -98,6 +98,20 @@ extension OrgListNotesTableViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            Database.database().reference().child("org_posts").child((Organization.current?.uid)!).child(posts[indexPath.row].key!).removeValue()
+            posts.remove(at: indexPath.item)
+            tableView.reloadData()
+        }
+
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
     }
