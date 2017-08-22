@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 import FirebaseDatabase
 
 class Post: NSObject{
@@ -19,7 +20,7 @@ class Post: NSObject{
     let sideOfStreet: String
     let comments: String
     var creationDate: Date
-    
+    var memberUID: String
     
     // MARK: - Init
     var dictValue: [String : Any] {
@@ -31,7 +32,8 @@ class Post: NSObject{
                 "sideOfStreet" : sideOfStreet,
                 "comments" : comments,
                 "timeElapsed" : timeElapsed,
-                "created_at" : createdAgo]
+                "created_at" : createdAgo,
+                "memberUID" : Member.current.uid]
     }
     
     
@@ -44,6 +46,7 @@ class Post: NSObject{
         self.sideOfStreet = sideOfStreet
         self.comments = comments
         self.creationDate = Date()
+        self.memberUID = Member.current.uid
         super.init()
     }
     
@@ -69,6 +72,7 @@ class Post: NSObject{
         self.comments = comments
         self.creationDate = Date() //temp
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
+        self.memberUID = Member.current.uid
         
         
     }
