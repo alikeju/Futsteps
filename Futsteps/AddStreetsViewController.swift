@@ -56,6 +56,7 @@ class AddStreetsViewController: UIViewController{
         
         commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
         
+        
         if post?.streetname != nil{
             streetNameTextField.text = post?.streetname
             streetNameTextField.isUserInteractionEnabled = false
