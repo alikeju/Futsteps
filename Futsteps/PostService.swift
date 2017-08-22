@@ -13,11 +13,11 @@ import FirebaseAuth.FIRUser
 
 class PostService{
     
-    static func create(streetName: String, name: String, numOfDoors: String, timeElapsed: String, sideOfStreet: String, comments: String, completion: @escaping(String) -> Void){
+    static func create(streetName: String, name: String, numOfDoors: String, timeElapsed: String, sideOfStreet: String, comments: String, memberUID: String, completion: @escaping(String) -> Void){
        
         let currentMember = Member.current
         
-        let post = Post(streetname: streetName, name: name, numOfDoors: numOfDoors, timeElapsed: timeElapsed, sideOfStreet: sideOfStreet, comments: comments)
+        let post = Post(streetname: streetName, name: name, numOfDoors: numOfDoors, timeElapsed: timeElapsed, sideOfStreet: sideOfStreet, comments: comments, memberUID: memberUID)
         let rootRef = Database.database().reference()
         let newPostRef = rootRef.child("org_posts").child(currentMember.org_uid!).childByAutoId()
         
@@ -27,8 +27,9 @@ class PostService{
     }
     
     static func show(forKey postKey: String, posterUID: String, completion: @escaping (Post?) -> Void) {
+        var post : Post
         let currentMember = Member.current
-
+        //let currentMember = post.memberUID
         let newPostRef = Database.database().reference().child("org_posts").child(currentMember.org_uid!).child(postKey)
         newPostRef.observeSingleEvent(of: .value, with: {(snapshot) in
             guard let post = Post(snapshot: snapshot)
@@ -40,7 +41,7 @@ class PostService{
 
     static func orgShow(forKey postKey: String, posterUID: String, completion: @escaping (Post?) -> Void) {
         
-        let newPostRef = Database.database().reference().child("org_posts").child(Organization.current.uid).child(postKey)
+        let newPostRef = Database.database().reference().child("org_posts").child((Organization.current?.uid)!).child(postKey)
         newPostRef.observeSingleEvent(of: .value, with: {(snapshot) in
             guard let post = Post(snapshot: snapshot)
                 else { return completion(nil) }
