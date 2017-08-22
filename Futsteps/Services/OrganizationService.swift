@@ -56,7 +56,7 @@ struct OrganizationService {
     
     static func timeline(completion: @escaping ([Post]) -> Void) {
     
-        let timelineRef = Database.database().reference().child("org_posts").child(Organization.current.uid)
+        let timelineRef = Database.database().reference().child("org_posts").child((Organization.current?.uid)!)
         timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
