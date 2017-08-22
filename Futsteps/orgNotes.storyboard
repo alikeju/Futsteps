@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Members-->
+        <!--Streets-->
         <scene sceneID="nyA-Ia-1lJ">
             <objects>
                 <tableViewController id="94F-cb-UrT" customClass="OrgListNotesTableViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ctq-GF-fau" kind="show" id="rsy-hU-X5u"/>
+                                    <segue destination="ctq-GF-fau" kind="show" identifier="showDetails" id="rsy-hU-X5u"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -52,7 +52,7 @@
                             <outlet property="delegate" destination="94F-cb-UrT" id="w39-fk-neN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Members" id="7Wo-8d-meh"/>
+                    <navigationItem key="navigationItem" title="Streets" id="7Wo-8d-meh"/>
                     <connections>
                         <outlet property="streetListTableView" destination="0lf-JR-T4u" id="DM8-Ba-TZ5"/>
                     </connections>
@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="-1023.2" y="474.51274362818594"/>
         </scene>
-        <!--View Controller-->
+        <!--Org Add Streets View Controller-->
         <scene sceneID="wcR-pY-jzd">
             <objects>
-                <viewController id="ctq-GF-fau" sceneMemberID="viewController">
+                <viewController id="ctq-GF-fau" customClass="OrgAddStreetsViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MXL-Xc-uV3"/>
                         <viewControllerLayoutGuide type="bottom" id="5CQ-eD-L44"/>
@@ -161,6 +161,7 @@
                                                     <segment title="Even"/>
                                                     <segment title="Both"/>
                                                 </segments>
+                                                <color key="tintColor" red="0.27293369174003601" green="0.39678797125816345" blue="0.53733742237091064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
@@ -173,7 +174,10 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhP-dd-vrt">
                                         <rect key="frame" x="0.0" y="321" width="243" height="39"/>
-                                        <state key="normal" title="Button"/>
+                                        <color key="backgroundColor" red="0.3411764705882353" green="0.49803921568627452" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Enter">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -197,6 +201,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Ku8-XH-4De" secondAttribute="trailing" constant="50" id="Vpa-gB-nZ3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="commentsTextView" destination="zUE-bo-KfW" id="QTf-Wf-hGs"/>
+                        <outlet property="enterButton" destination="uhP-dd-vrt" id="HPv-y7-ojO"/>
+                        <outlet property="memberNameTextField" destination="jgt-hp-hG1" id="8g4-7G-ePn"/>
+                        <outlet property="numberOfDoorsTextField" destination="elv-yb-qBr" id="9jF-ia-dv5"/>
+                        <outlet property="sideOfStreetSegmentedControl" destination="88h-Kf-rhU" id="xho-a2-ql2"/>
+                        <outlet property="streetNameTextField" destination="hmn-Gb-hP6" id="o28-z1-b3d"/>
+                        <outlet property="timeElapsedTextField" destination="MPo-rW-l5q" id="A03-Df-Ha2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="By0-Zp-npi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

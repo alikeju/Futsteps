@@ -484,6 +484,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="esZ-Np-wPV" id="l5G-Fh-ab3"/>
+                        <outlet property="enterButton" destination="vA3-vg-Ud5" id="865-oQ-3X5"/>
                         <outlet property="organizationNameTextField" destination="3Bc-yX-KPo" id="iCq-d6-Uox"/>
                         <outlet property="passwordTextField" destination="wUo-Ae-Puu" id="q4I-ri-bvq"/>
                     </connections>
