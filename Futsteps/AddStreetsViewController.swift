@@ -17,8 +17,6 @@ class AddStreetsViewController: UIViewController{
     
     var dictionary: [String:AnyObject]?
     
-    var postDetails: [String: Any]?
-    
     @IBOutlet weak var streetNameTextField: UITextField!
     @IBOutlet weak var memberNameTextField: UITextField!
     @IBOutlet weak var numberOfDoorsTextField: UITextField!
