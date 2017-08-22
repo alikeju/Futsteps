@@ -11,10 +11,12 @@ import UIKit
 
 class CreateOrganization: UIViewController{
     
+     var indicator = UIActivityIndicatorView()
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var organizationNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet weak var enterButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -32,6 +34,13 @@ class CreateOrganization: UIViewController{
         }
     }
     
+    func showActivityIndicator() {
+        indicator = UIActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 80.0, height: 80.0))
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+    }
+    
     @IBAction func enterButton(_ sender: Any) {
         guard let email = emailTextField.text,
             let organization = organizationNameTextField.text,
@@ -44,6 +53,11 @@ class CreateOrganization: UIViewController{
                 print("Please fill all fields!")
                 return
         }
+        
+        enterButton.isUserInteractionEnabled = false
+        self.showActivityIndicator()
+        self.indicator.startAnimating()
+        self.indicator.backgroundColor = UIColor.white
         
         print(self)
         
@@ -59,10 +73,12 @@ class CreateOrganization: UIViewController{
             
                 Organization.setCurrent(user, writeToUserDefaults: true)
                 
-                let initialViewController = UIStoryboard.initialViewController(for: .main)
+                let initialViewController = UIStoryboard.initialViewController(for: .OrgMain)
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
                 
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
             }
         }
     }

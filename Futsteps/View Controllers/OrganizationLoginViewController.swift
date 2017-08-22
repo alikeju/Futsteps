@@ -11,8 +11,7 @@ import UIKit
 import FirebaseAuth
 
 class OrganizationLoginViewController: UIViewController{
-    
-    
+    //var initialViewController: UIViewController
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -38,7 +37,11 @@ class OrganizationLoginViewController: UIViewController{
             OrganizationService.show(forUID: org.uid) { (org) in
                 if let org = org {
                     Organization.setCurrent(org, writeToUserDefaults: true)
-                    let initialViewController = UIStoryboard.initialViewController(for: .main)
+                    
+                    //                    let storyboard = UIStoryboard(name: "OrgMain", bundle: .main)
+                    //                    initialViewController = storyboard.instantiateInitialViewController()!
+                    
+                    let initialViewController = UIStoryboard.initialViewController(for: .OrgMain)
                     self.view.window?.rootViewController = initialViewController
                     self.view.window?.makeKeyAndVisible()
                 }
@@ -47,7 +50,7 @@ class OrganizationLoginViewController: UIViewController{
                     return
                 }
                 
-                let initialViewController = UIStoryboard.initialViewController(for: .main)
+                let initialViewController = UIStoryboard.initialViewController(for: .OrgMain)
                 print("Organization was logged in.")
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
