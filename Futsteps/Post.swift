@@ -18,7 +18,8 @@ class Post: NSObject{
     let numOfDoors: String
     let timeElapsed: String
     let sideOfStreet: String
-    let comments: String
+    //was: let comments: String
+    var comments: String
     var creationDate: Date
     var memberUID: String
     var post : Post?
