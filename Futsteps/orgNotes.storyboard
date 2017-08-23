@@ -215,11 +215,11 @@
             </objects>
             <point key="canvasLocation" x="-156" y="474.51274362818594"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Entries-->
         <scene sceneID="gGm-8y-96D">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h0Z-k7-JKv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="MembersIcon" id="2ky-Sq-Izi"/>
+                    <tabBarItem key="tabBarItem" title="Entries" image="MembersIcon" id="2ky-Sq-Izi"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZTB-aO-6fI">
