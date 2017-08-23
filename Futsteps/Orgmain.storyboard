@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SdO-FD-SY5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Org Home View Controller-->
+        <scene sceneID="A9Z-w1-grW">
+            <objects>
+                <viewController id="HbI-FK-lYP" customClass="OrgHomeViewController" customModule="Futsteps" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k6w-8x-P5U"/>
+                        <viewControllerLayoutGuide type="bottom" id="9he-OB-5Df"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qAN-ip-p3m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="L1p-0K-bPV">
+                                <rect key="frame" x="16" y="291" width="343" height="85"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJd-Hy-KAt">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <color key="backgroundColor" red="0.14361806213855743" green="0.33500972390174866" blue="0.5647926926612854" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logOutButtonTapped:" destination="HbI-FK-lYP" eventType="touchUpInside" id="SAs-ax-eGz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-0p-QGF">
+                                        <rect key="frame" x="0.0" y="55" width="343" height="30"/>
+                                        <color key="backgroundColor" red="0.14361806213855743" green="0.33500972390174866" blue="0.5647926926612854" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Delete Account">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteAccountButtonTapped:" destination="HbI-FK-lYP" eventType="touchUpInside" id="X7o-aB-N7C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="L1p-0K-bPV" secondAttribute="trailing" id="1SJ-WV-03o"/>
+                            <constraint firstItem="L1p-0K-bPV" firstAttribute="centerY" secondItem="qAN-ip-p3m" secondAttribute="centerY" id="Q0j-69-uTI"/>
+                            <constraint firstItem="L1p-0K-bPV" firstAttribute="centerX" secondItem="qAN-ip-p3m" secondAttribute="centerX" id="cjR-yz-xnK"/>
+                            <constraint firstItem="L1p-0K-bPV" firstAttribute="leading" secondItem="qAN-ip-p3m" secondAttribute="leadingMargin" id="pnw-dF-Mo3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" systemItem="more" id="DEx-ki-wqZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Mx-iD-gYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="499"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5BP-ym-pOd">
+            <objects>
+                <tabBarController id="SdO-FD-SY5" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="1VV-va-gyH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gFz-BZ-UKT" kind="relationship" relationship="viewControllers" id="ayN-93-mDj"/>
+                        <segue destination="HbI-FK-lYP" kind="relationship" relationship="viewControllers" id="MI2-2b-1Zo"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wma-Bh-edG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1062" y="-287"/>
+        </scene>
+        <!--orgNotes-->
+        <scene sceneID="MGd-vQ-c6H">
+            <objects>
+                <viewControllerPlaceholder storyboardName="orgNotes" id="gFz-BZ-UKT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="GLh-eM-zys"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R3v-zF-blB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2143" y="212"/>
+        </scene>
+    </scenes>
+</document>
