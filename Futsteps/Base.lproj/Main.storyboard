@@ -62,7 +62,7 @@
                             <constraint firstItem="Cm1-Tg-BFb" firstAttribute="centerY" secondItem="TuR-HH-jC5" secondAttribute="centerY" id="kDg-vX-gq0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="" image="tab_home_black" id="pTe-r0-S5O">
+                    <tabBarItem key="tabBarItem" tag="1" title="" systemItem="more" id="pTe-r0-S5O">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                 </viewController>
@@ -99,7 +99,4 @@
             <point key="canvasLocation" x="-1806" y="441"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="tab_home_black" width="25" height="25"/>
-    </resources>
 </document>
