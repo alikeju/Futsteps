@@ -50,39 +50,13 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
             commentsTextView.text = "Comment(s)"
             commentsTextView.textColor = UIColor.lightGray
             
-//            commentsTextView.becomeFirstResponder()
-            
-//            commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        //Added those two below
-//        textViewDidBeginEditing(commentsTextView)
-//        textViewDidEndEditing(commentsTextView)
-        
-        //        let myColor = UIColor.black
-        //        commentsTextView.layer.borderColor = myColor.cgColor
-        //        commentsTextView.layer.borderWidth = 1.0
-        //
-        //        //To make place holder text in the text view
-        //          commentsTextView.text = "Comment(s)"
-        //         commentsTextView.textColor = UIColor.black
-        //
-        //        commentsTextView.becomeFirstResponder()
-        //
-        //        commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
-        
 
-        
         if post != nil{
             
             if Member.current.uid != post!.memberUID {
-                
-//                for subView in self.view.subviews {
-//                    if let theControl = subView as? UIControl {
-//                        theControl.isUserInteractionEnabled = false
-//                    }
-//                }
                 
                 streetNameTextField.isUserInteractionEnabled = false
                 memberNameTextField.isUserInteractionEnabled = false
@@ -90,7 +64,6 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
                 timeElapsedTextField.isUserInteractionEnabled = false
                 commentsTextView.isUserInteractionEnabled = false
                 sideOfStreetSegmentedControl.isUserInteractionEnabled = false
-//                enterButton.isUserInteractionEnabled = false
                 enterButton.setTitle("Done", for: UIControlState.normal)
                 
                 disablesAutomaticKeyboardDismissal = false
@@ -99,68 +72,11 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
                 print(Member.current.uid)
                 print(post?.memberUID)
                 print(post)
-//                streetNameTextField.isUserInteractionEnabled = true
-//                memberNameTextField.isUserInteractionEnabled = true
-//                numberOfDoorsTextField.isUserInteractionEnabled = true
-//                timeElapsedTextField.isUserInteractionEnabled = true
-//                commentsTextView.isUserInteractionEnabled = true
-//                enterButton.isUserInteractionEnabled = true
                 disablesAutomaticKeyboardDismissal = true
             }
             
         }
-        
-        //
-        //        if post?.streetname != nil{
-        //            streetNameTextField.text = post?.streetname
-        //            streetNameTextField.isUserInteractionEnabled = false
-        //            enterButton.isUserInteractionEnabled = false
-        //            view.addGestureRecognizer(tap)
-        //            disablesAutomaticKeyboardDismissal = false
-        //
-        //
-        //        } else {
-        //            streetNameTextField.text = ""
-        //        }
-        //
-        //        if post?.name != nil{
-        //            memberNameTextField.text = post?.name
-        //            memberNameTextField.isUserInteractionEnabled = false
-        //            enterButton.isUserInteractionEnabled = false
-        //            view.addGestureRecognizer(tap)
-        //        } else{
-        //            memberNameTextField.text = ""
-        //        }
-        //
-        //        if post?.numOfDoors != nil{
-        //            numberOfDoorsTextField.text = post?.numOfDoors
-        //            numberOfDoorsTextField.isUserInteractionEnabled = false
-        //            enterButton.isUserInteractionEnabled = false
-        //            view.addGestureRecognizer(tap)
-        //        } else{
-        //            numberOfDoorsTextField.text = ""
-        //        }
-        //
-        //        if post?.timeElapsed != nil{
-        //            timeElapsedTextField.text = post?.timeElapsed
-        //            timeElapsedTextField.isUserInteractionEnabled = false
-        //            enterButton.isUserInteractionEnabled = false
-        //            sideOfStreetSegmentedControl.isUserInteractionEnabled = true
-        //            view.addGestureRecognizer(tap)
-        //        } else{
-        //            timeElapsedTextField.text = ""
-        //        }
-        //
-        //        if post?.comments != nil{
-        //            commentsTextView.text = post?.comments
-        //            commentsTextView.isUserInteractionEnabled = false
-        //            enterButton.isUserInteractionEnabled = false
-        //            sideOfStreetSegmentedControl.isUserInteractionEnabled = false
-        //            view.addGestureRecognizer(tap)
-        //            disablesAutomaticKeyboardDismissal = false
-        //        } else{
-        //            commentsTextView.text = ""
-        //        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -209,9 +125,7 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
         
         //OBSERVE LINE!!
         PostService.create(streetName: streetName, name: name, numOfDoors: numOfDoors, timeElapsed: timeElapsed, sideOfStreet: side, comments: comments, memberUID: Member.current.uid) { (key) in
-            //   let firUser = Auth.auth().currentUser
-            //this is where you should close the screen
-            // PostListService.create(firUser: firUser!, postRef: key, name: String)
+
         }
         print("Enter button Tapped")
         
