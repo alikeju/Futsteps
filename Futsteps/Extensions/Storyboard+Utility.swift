@@ -13,6 +13,7 @@ extension UIStoryboard{
     enum FSType: String{
         case main
         case login
+        case OrgMain
         
         var filename: String{
             return rawValue.capitalized
