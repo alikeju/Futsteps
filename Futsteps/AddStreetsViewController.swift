@@ -13,7 +13,7 @@ import Firebase
 
 //post Struct was here moved to different location.
 
-class AddStreetsViewController: UIViewController{
+class AddStreetsViewController: UIViewController, UITextViewDelegate{
     
     var dictionary: [String:AnyObject]?
     
@@ -33,56 +33,81 @@ class AddStreetsViewController: UIViewController{
         super.viewDidLoad()
         configureView()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        //Added those two below
-        textViewDidBeginEditing(commentsTextView)
-        textViewDidEndEditing(commentsTextView)
+        self.commentsTextView.delegate = self
         
-        self.streetNameTextField.text = post?.streetname
-        self.memberNameTextField.text = post?.name
-        self.numberOfDoorsTextField.text = post?.numOfDoors
-        self.timeElapsedTextField.text = post?.timeElapsed
-        self.commentsTextView.text = post?.comments
-        
-        let myColor = UIColor.black
-        commentsTextView.layer.borderColor = myColor.cgColor
-        commentsTextView.layer.borderWidth = 1.0
-        
-        //To make place holder text in the text view
-        commentsTextView.text = "Comment(s)"
-        commentsTextView.textColor = UIColor.black
-        
-        commentsTextView.becomeFirstResponder()
-        
-        commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
-        
-        if post != nil{
-        
-        if Member.current.uid != post!.memberUID{
-            //  print(Member.current.uid)
+        if let post = self.post {
+            self.commentsTextView.text = post.comments
+            self.streetNameTextField.text = post.streetname
+            self.memberNameTextField.text = post.name
+            self.numberOfDoorsTextField.text = post.numOfDoors
+            self.timeElapsedTextField.text = post.timeElapsed
+        } else {
+            let myColor = UIColor.black
+            commentsTextView.layer.borderColor = myColor.cgColor
+            commentsTextView.layer.borderWidth = 1.0
             
-            streetNameTextField.isUserInteractionEnabled = false
-            memberNameTextField.isUserInteractionEnabled = false
-            numberOfDoorsTextField.isUserInteractionEnabled = false
-            timeElapsedTextField.isUserInteractionEnabled = false
-            commentsTextView.isUserInteractionEnabled = false
-            sideOfStreetSegmentedControl.isUserInteractionEnabled = false
-            enterButton.isUserInteractionEnabled = false
-            disablesAutomaticKeyboardDismissal = false
-            view.addGestureRecognizer(tap)
-        } else{
-            print(Member.current.uid)
-            print(post?.memberUID)
-            print(post) 
-            streetNameTextField.isUserInteractionEnabled = true
-            memberNameTextField.isUserInteractionEnabled = true
-            numberOfDoorsTextField.isUserInteractionEnabled = true
-            timeElapsedTextField.isUserInteractionEnabled = true
-            commentsTextView.isUserInteractionEnabled = true
-            enterButton.isUserInteractionEnabled = true
-            disablesAutomaticKeyboardDismissal = true
+            //To make place holder text in the text view
+            commentsTextView.text = "Comment(s)"
+            commentsTextView.textColor = UIColor.lightGray
+            
+//            commentsTextView.becomeFirstResponder()
+            
+//            commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
         }
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        //Added those two below
+//        textViewDidBeginEditing(commentsTextView)
+//        textViewDidEndEditing(commentsTextView)
+        
+        //        let myColor = UIColor.black
+        //        commentsTextView.layer.borderColor = myColor.cgColor
+        //        commentsTextView.layer.borderWidth = 1.0
+        //
+        //        //To make place holder text in the text view
+        //          commentsTextView.text = "Comment(s)"
+        //         commentsTextView.textColor = UIColor.black
+        //
+        //        commentsTextView.becomeFirstResponder()
+        //
+        //        commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
+        
+
+        
+        if post != nil{
+            
+            if Member.current.uid != post!.memberUID {
+                
+//                for subView in self.view.subviews {
+//                    if let theControl = subView as? UIControl {
+//                        theControl.isUserInteractionEnabled = false
+//                    }
+//                }
+                
+                streetNameTextField.isUserInteractionEnabled = false
+                memberNameTextField.isUserInteractionEnabled = false
+                numberOfDoorsTextField.isUserInteractionEnabled = false
+                timeElapsedTextField.isUserInteractionEnabled = false
+                commentsTextView.isUserInteractionEnabled = false
+                sideOfStreetSegmentedControl.isUserInteractionEnabled = false
+//                enterButton.isUserInteractionEnabled = false
+                enterButton.setTitle("Done", for: UIControlState.normal)
+                
+                disablesAutomaticKeyboardDismissal = false
+                view.addGestureRecognizer(tap)
+            } else {
+                print(Member.current.uid)
+                print(post?.memberUID)
+                print(post)
+//                streetNameTextField.isUserInteractionEnabled = true
+//                memberNameTextField.isUserInteractionEnabled = true
+//                numberOfDoorsTextField.isUserInteractionEnabled = true
+//                timeElapsedTextField.isUserInteractionEnabled = true
+//                commentsTextView.isUserInteractionEnabled = true
+//                enterButton.isUserInteractionEnabled = true
+                disablesAutomaticKeyboardDismissal = true
+            }
+            
         }
         
         //
@@ -137,7 +162,7 @@ class AddStreetsViewController: UIViewController{
         //            commentsTextView.text = ""
         //        }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         // commentsTextView.text = ""
         
@@ -150,6 +175,11 @@ class AddStreetsViewController: UIViewController{
     
     
     @IBAction func enterButtonTapped(_ sender: Any) {
+        if post != nil && Member.current.uid != post!.memberUID {
+            return
+        }
+        
+        
         guard let streetName = streetNameTextField.text,
             let name = memberNameTextField.text,
             let numOfDoors = numberOfDoorsTextField.text,
@@ -188,8 +218,8 @@ class AddStreetsViewController: UIViewController{
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
+        if textView.textColor != UIColor.black {
+            textView.text = ""
             textView.textColor = UIColor.black
         }
     }
@@ -235,15 +265,6 @@ class AddStreetsViewController: UIViewController{
         
         return true
     }
-    
-    func textViewDidChangeSelection(_ textView: UITextView) {
-        if self.view.window != nil {
-            if commentsTextView.textColor == UIColor.lightGray {
-                commentsTextView.selectedTextRange = commentsTextView.textRange(from: commentsTextView.beginningOfDocument, to: commentsTextView.beginningOfDocument)
-            }
-        }
-    }
-    
 }
 
 extension AddStreetsViewController{
