@@ -36,18 +36,16 @@ class OrgHomeViewController: UIViewController{
     
     @IBAction func deleteAccountButtonTapped(_ sender: Any) {
         guard let user = Auth.auth().currentUser else {
-            print("NO USER EXISTS???")
             return
         }
         
         AuthService.presentDeleteOrg(viewController: self, user : user, success: { success in
             if success! {
                 let initialViewController = UIStoryboard.initialViewController(for: .login)
-                print("Member deleted their account.")
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
             } else {
-                print("No bueno. User cancelled.")
+               
             }
             
         })
