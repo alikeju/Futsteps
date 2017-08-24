@@ -30,7 +30,7 @@ class OrganizationLoginViewController: UIViewController{
         }
         AuthService.signIn(controller: self, email: email, password: password) { (org) in
             guard let org = org else {
-                print("error: FIRUser does not exist!")
+                
                 return
             }
             

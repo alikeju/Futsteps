@@ -29,7 +29,7 @@ class CreateOrganization: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "cancel" {
-                print("Back to Login screen!")
+              
             }
         }
     }
@@ -50,7 +50,6 @@ class CreateOrganization: UIViewController{
             !password.isEmpty
             
             else {
-                print("Please fill all fields!")
                 return
         }
         
