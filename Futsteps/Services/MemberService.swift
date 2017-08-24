@@ -26,9 +26,6 @@ struct MemberService{
                 let member = Member(snapshot: snapshot)
                 completion(member)
             })
-            print("Wassup")
-            print("Not much")
-            
         }
     }
     
