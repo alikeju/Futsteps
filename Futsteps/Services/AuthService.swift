@@ -133,6 +133,7 @@ struct AuthService {
         })
     }
     private static func loginErrors(error : Error, controller : UIViewController){
+        print(error.localizedDescription)
         switch (error.localizedDescription) {
         case "The email address is badly formatted.":
             let invalidEmailAlert = UIAlertController(title: "Invalid Email", message:
@@ -152,6 +153,12 @@ struct AuthService {
             wrongPasswordAlert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
             controller.present(wrongPasswordAlert, animated: true, completion: nil)
             break;
+        case "The email address is already in useby another acount.":
+            let wrongPasswordAlert = UIAlertController(title: "Email Address is Already in Use.", message:
+                "It seems like this email address is already in use. Would you like to try another one?", preferredStyle: UIAlertControllerStyle.alert)
+            wrongPasswordAlert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+            controller.present(wrongPasswordAlert, animated: true, completion: nil)
+            break;
         default:
             let loginFailedAlert = UIAlertController(title: "Error Logging In", message:
                 "There was an error logging you in. Please try again soon.", preferredStyle: UIAlertControllerStyle.alert)
@@ -162,7 +169,7 @@ struct AuthService {
     }
     
     private static func signUpErrors(error: Error, controller: UIViewController) {
-       print(error.localizedDescription)
+        print(error.localizedDescription)
         switch(error.localizedDescription) {
         case "The email address is badly formatted.":
             let invalidEmail = UIAlertController(title: "Email is not properly formatted.", message:
@@ -175,6 +182,12 @@ struct AuthService {
                 "Please enter a stronger password.", preferredStyle: UIAlertControllerStyle.alert)
             invalidEmail.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
             controller.present(invalidEmail, animated: true, completion: nil)
+            break;
+        case "The email address is already in useby another acount.":
+            let wrongPasswordAlert = UIAlertController(title: "Email Address is Already in Use.", message:
+                "It seems like this email address is already in use. Would you like to try another one?", preferredStyle: UIAlertControllerStyle.alert)
+            wrongPasswordAlert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+            controller.present(wrongPasswordAlert, animated: true, completion: nil)
             break;
         default:
             let generalErrorAlert = UIAlertController(title: "We are having trouble signing you up.", message:
@@ -201,6 +214,6 @@ struct AuthService {
             break;
         }
     }
-
+    
     
 }
