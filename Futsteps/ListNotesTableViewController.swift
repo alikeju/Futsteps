@@ -62,7 +62,7 @@ class ListNotesTableViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             if let indexPath = self.streetListTableView.indexPathForSelectedRow {
-                    print("Table view cell tapped")
+                    
                 let post = posts[indexPath.row] //as! [String: Any]
             //    let postDetails = post.dictValue
                 let controller = segue.destination as! AddStreetsViewController

@@ -86,13 +86,13 @@ class OrgProfileViewController: UIViewController {
             if(snapshot.exists())
             {
                 self.addButton.setTitle("Delete", for: .normal)
-                print("You have not added the organization")
+                
                 
             }
             else
             {
                 self.addButton.setTitle("Add", for: .normal)
-                print("You have not added the organization")
+             
             }
             
         }) { (error) in
@@ -122,7 +122,7 @@ class OrgProfileViewController: UIViewController {
             addee.isAdded = !addee.isAdded
             
             let initialViewController = UIStoryboard.initialViewController(for: .main)
-            print("Organization was added.")
+            
             self.view.window?.rootViewController = initialViewController
             self.view.window?.makeKeyAndVisible()
             

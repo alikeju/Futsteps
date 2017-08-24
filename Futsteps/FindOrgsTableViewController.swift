@@ -41,7 +41,7 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
             
             if(key == self.loggedInUser?.uid)
             {
-                print("Same as logged in user, so don't show!")
+               
             }
             else
             {

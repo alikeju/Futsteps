@@ -69,9 +69,6 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
                 disablesAutomaticKeyboardDismissal = false
                 view.addGestureRecognizer(tap)
             } else {
-                print(Member.current.uid)
-                print(post?.memberUID)
-                print(post)
                 disablesAutomaticKeyboardDismissal = true
             }
             
@@ -107,7 +104,6 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
             !timeElapsed.isEmpty,
             !comments.isEmpty
             else {
-                print("Please fill all fields!")
                 enterButton.isUserInteractionEnabled = false
                 return
         }
@@ -127,7 +123,6 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
         PostService.create(streetName: streetName, name: name, numOfDoors: numOfDoors, timeElapsed: timeElapsed, sideOfStreet: side, comments: comments, memberUID: Member.current.uid) { (key) in
 
         }
-        print("Enter button Tapped")
         
     }
     

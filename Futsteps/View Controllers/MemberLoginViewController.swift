@@ -47,7 +47,6 @@ class MemberLoginViewController: UIViewController{
                 }
                 
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
-                print("Member was logged in.")
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
             }
