@@ -34,7 +34,6 @@ class AddOrgCell: UITableViewCell {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        print("Add Button Tapped")
         delegate?.didTapAddButton(sender as! UIButton, on: self)
     }
 
