@@ -14,9 +14,13 @@
 		B31BF4171F38D1EC001E55F8 /* AddService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF4161F38D1EC001E55F8 /* AddService.swift */; };
 		B31BF4281F3B84EF001E55F8 /* ListNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF4271F3B84EF001E55F8 /* ListNotesTableViewController.swift */; };
 		B31BF42A1F3B8623001E55F8 /* ListNotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF4291F3B8623001E55F8 /* ListNotesTableViewCell.swift */; };
-		B370A9AE1F27970B00197D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B370A9AD1F27970B00197D04 /* MapKit.framework */; };
 		B39586281F3CCD6C00CF1A4D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39586271F3CCD6C00CF1A4D /* Post.swift */; };
 		B395862A1F3CE0B600CF1A4D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39586291F3CE0B600CF1A4D /* PostService.swift */; };
+		B39C1B4C1F4B332900FD067A /* orgNotes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39C1B4B1F4B332900FD067A /* orgNotes.storyboard */; };
+		B39C1B4E1F4B340C00FD067A /* OrgListNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C1B4D1F4B340C00FD067A /* OrgListNotesTableViewController.swift */; };
+		B39C1B501F4B74AF00FD067A /* OrgMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39C1B4F1F4B74AF00FD067A /* OrgMain.storyboard */; };
+		B39C1B521F4BB34F00FD067A /* OrgAddStreetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C1B511F4BB34F00FD067A /* OrgAddStreetsViewController.swift */; };
+		B39C1B541F4BBE9A00FD067A /* OrgHomeViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C1B531F4BBE9A00FD067A /* OrgHomeViewcontroller.swift */; };
 		B3AF1AFC1F2FA5630017A8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */; };
 		B3AF1B011F2FA56C0017A8EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */; };
 		B3AF1B021F2FA56C0017A8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */; };
@@ -54,9 +58,13 @@
 		B31BF4271F3B84EF001E55F8 /* ListNotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		B31BF4291F3B8623001E55F8 /* ListNotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B370A9871F26291300197D04 /* Futsteps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Futsteps.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B370A9AD1F27970B00197D04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B39586271F3CCD6C00CF1A4D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = SOURCE_ROOT; };
 		B39586291F3CE0B600CF1A4D /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = SOURCE_ROOT; };
+		B39C1B4B1F4B332900FD067A /* orgNotes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = orgNotes.storyboard; sourceTree = SOURCE_ROOT; };
+		B39C1B4D1F4B340C00FD067A /* OrgListNotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrgListNotesTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		B39C1B4F1F4B74AF00FD067A /* OrgMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrgMain.storyboard; sourceTree = SOURCE_ROOT; };
+		B39C1B511F4BB34F00FD067A /* OrgAddStreetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrgAddStreetsViewController.swift; sourceTree = SOURCE_ROOT; };
+		B39C1B531F4BBE9A00FD067A /* OrgHomeViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrgHomeViewcontroller.swift; sourceTree = SOURCE_ROOT; };
 		B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		B3AF1AFE1F2FA56C0017A8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		B3AF1B001F2FA56C0017A8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -89,7 +97,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B370A9AE1F27970B00197D04 /* MapKit.framework in Frameworks */,
 				D4810BE7D2DBBB76841CA7D9 /* Pods_Futsteps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,10 +185,12 @@
 		B3AF1B2B1F2FA6090017A8EE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				B39C1B4F1F4B74AF00FD067A /* OrgMain.storyboard */,
 				B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */,
 				B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */,
 				B3F887B31F3BACEF00B7D6AE /* Notes.storyboard */,
 				B31BF40F1F369FDC001E55F8 /* Login.storyboard */,
+				B39C1B4B1F4B332900FD067A /* orgNotes.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -215,6 +224,9 @@
 			children = (
 				B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */,
 				B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */,
+				B39C1B4D1F4B340C00FD067A /* OrgListNotesTableViewController.swift */,
+				B39C1B531F4BBE9A00FD067A /* OrgHomeViewcontroller.swift */,
+				B39C1B511F4BB34F00FD067A /* OrgAddStreetsViewController.swift */,
 			);
 			name = "Organization View Controllers";
 			sourceTree = "<group>";
@@ -230,7 +242,6 @@
 		DFFF123AA12A64D30F9A3552 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B370A9AD1F27970B00197D04 /* MapKit.framework */,
 				F6043ACFFD8B2B59F85D7633 /* Pods_Futsteps.framework */,
 			);
 			name = Frameworks;
@@ -280,12 +291,12 @@
 				TargetAttributes = {
 					B370A9861F26291300197D04 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = N96E6ZNUMN;
+						DevelopmentTeam = RNS47D7E9E;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -317,8 +328,10 @@
 				B3F887B41F3BACEF00B7D6AE /* Notes.storyboard in Resources */,
 				B3AF1B021F2FA56C0017A8EE /* Main.storyboard in Resources */,
 				B3AF1B171F2FA5BD0017A8EE /* GoogleService-Info.plist in Resources */,
+				B39C1B4C1F4B332900FD067A /* orgNotes.storyboard in Resources */,
 				B31BF4101F369FDC001E55F8 /* Login.storyboard in Resources */,
 				B3AF1B011F2FA56C0017A8EE /* LaunchScreen.storyboard in Resources */,
+				B39C1B501F4B74AF00FD067A /* OrgMain.storyboard in Resources */,
 				B3AF1B2E1F2FA6BE0017A8EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,10 +413,13 @@
 				B39586281F3CCD6C00CF1A4D /* Post.swift in Sources */,
 				B3F887B61F3BCE3F00B7D6AE /* AddStreetsViewController.swift in Sources */,
 				B31BF4281F3B84EF001E55F8 /* ListNotesTableViewController.swift in Sources */,
+				B39C1B4E1F4B340C00FD067A /* OrgListNotesTableViewController.swift in Sources */,
 				B3AF1B111F2FA5A10017A8EE /* MemberService.swift in Sources */,
 				B31BF4171F38D1EC001E55F8 /* AddService.swift in Sources */,
 				B3AF1B261F2FA5C80017A8EE /* ViewController.swift in Sources */,
+				B39C1B521F4BB34F00FD067A /* OrgAddStreetsViewController.swift in Sources */,
 				B3AF1B241F2FA5C80017A8EE /* OrganizationLoginViewController.swift in Sources */,
+				B39C1B541F4BBE9A00FD067A /* OrgHomeViewcontroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,12 +544,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N96E6ZNUMN;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = RNS47D7E9E;
 				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AlikejuAdejo.Futsteps;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikejuadejo.Futsteps-ios";
 				PRODUCT_MODULE_NAME = Futsteps;
 				PRODUCT_NAME = Futsteps;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -545,12 +563,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N96E6ZNUMN;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = RNS47D7E9E;
 				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AlikejuAdejo.Futsteps;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alikejuadejo.Futsteps-ios";
 				PRODUCT_MODULE_NAME = Futsteps;
 				PRODUCT_NAME = Futsteps;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
