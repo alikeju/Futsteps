@@ -153,7 +153,7 @@ struct AuthService {
             wrongPasswordAlert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
             controller.present(wrongPasswordAlert, animated: true, completion: nil)
             break;
-        case "The email address is already in useby another acount.":
+        case "The email address is already in use by another account.":
             let wrongPasswordAlert = UIAlertController(title: "Email Address is Already in Use.", message:
                 "It seems like this email address is already in use. Would you like to try another one?", preferredStyle: UIAlertControllerStyle.alert)
             wrongPasswordAlert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
@@ -183,7 +183,7 @@ struct AuthService {
             invalidEmail.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
             controller.present(invalidEmail, animated: true, completion: nil)
             break;
-        case "The email address is already in useby another acount.":
+        case "The email address is already in use by another account.":
             let wrongPasswordAlert = UIAlertController(title: "Email Address is Already in Use.", message:
                 "It seems like this email address is already in use. Would you like to try another one?", preferredStyle: UIAlertControllerStyle.alert)
             wrongPasswordAlert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
