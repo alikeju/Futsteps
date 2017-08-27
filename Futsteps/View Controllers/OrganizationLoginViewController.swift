@@ -16,11 +16,21 @@ class OrganizationLoginViewController: UIViewController{
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var enterButton: UIButton!
+    
+    var indicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func showActivityIndicator() {
+        indicator = UIActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 80.0, height: 80.0))
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
     }
     
     @IBAction func enterButton(_ sender: Any) {
@@ -33,6 +43,11 @@ class OrganizationLoginViewController: UIViewController{
                 
                 return
             }
+            
+            self.enterButton.isUserInteractionEnabled = false
+            self.showActivityIndicator()
+            self.indicator.startAnimating()
+            self.indicator.backgroundColor = UIColor.white
             
             OrganizationService.show(forUID: org.uid) { (org) in
                 if let org = org {
