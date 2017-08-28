@@ -93,7 +93,6 @@ extension ListNotesTableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let post = posts[indexPath.row]
         cell.textLabel?.text = post.streetname
-        //note.modificationTime = Date() as NSDate
         cell.detailTextLabel?.text = post.creationDate.convertToString()
         
         return cell
