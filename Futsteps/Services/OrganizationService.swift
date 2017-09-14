@@ -1,7 +1,5 @@
-//
 //  OrganizationService.swift
 //  Futsteps
-//
 //  Created by Alikeju Adejo on 7/25/17.
 //  Copyright © 2017 Alikeju Adejo. All rights reserved.
 
@@ -10,8 +8,11 @@ import FirebaseAuth.FIRUser
 import FirebaseDatabase
 
 struct OrganizationService {
-    static func createOrg(_ firOrganization: FIRUser, email: String, organization_name: String, password: String, completion: @escaping (Organization?)-> Void){
-        let orgAttrs = ["organization_name": organization_name]
+    static func createOrg(_ firOrganization: FIRUser, username: String, organization_name: String, member_uid: String, completion: @escaping (Organization?)-> Void){
+   
+        
+        let orgAttrs = ["organization_name": organization_name,
+                        "member_uid": Member.current.uid]
         
         let ref = Database.database().reference().child("organizations").child(firOrganization.uid)
         ref.setValue(orgAttrs) { (error, ref) in
@@ -28,6 +29,8 @@ struct OrganizationService {
         }
     }
     
+    
+    
     static func show(forUID uid: String, completion: @escaping (Organization?) -> Void) {
         let ref = Database.database().reference().child("organizations").child(uid)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -38,7 +41,7 @@ struct OrganizationService {
             completion(organization)
         })
     }
-
+    
     static func deleteOrganization(forUID uid: String, success: @escaping (Bool) -> Void) {
         let ref = Database.database().reference().child("organizations")
         let object = [uid : NSNull()]
@@ -52,11 +55,11 @@ struct OrganizationService {
         
     }
     
-
+    
     
     static func timeline(completion: @escaping ([Post]) -> Void) {
-    
-        let timelineRef = Database.database().reference().child("org_posts").child((Organization.current?.uid)!)
+        
+        let timelineRef = Database.database().reference().child("org_posts").child(Member.current.uid)
         timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
