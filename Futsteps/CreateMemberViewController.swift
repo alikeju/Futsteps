@@ -65,7 +65,7 @@
         self.indicator.startAnimating()
         self.indicator.backgroundColor = UIColor.white
         
-    
+        
         AuthService.createUser(controller: self, email: email, password: password) { (authMember) in
             guard let firMember = authMember else {
                 return
@@ -89,6 +89,8 @@
     }
     
  }
+ 
+ 
  
  extension CreateMemberViewController{
     func configureView(){
