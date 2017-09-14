@@ -13,7 +13,6 @@ import FirebaseDatabase
 class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdating {
     
     @IBOutlet var findOrgsTableView: UITableView!
-    
     var loggedInUser:FIRUser?
     let searchController = UISearchController(searchResultsController: nil)
     var orgArray = [NSDictionary?]()
@@ -41,13 +40,13 @@ class FindOrgsTableViewController: UITableViewController, UISearchResultsUpdatin
             
             if(key == self.loggedInUser?.uid)
             {
-               
+                
             }
             else
             {
-            
-            self.orgArray.append(snapshot)
-            self.findOrgsTableView.insertRows(at: [IndexPath(row:self.orgArray.count-1, section:0)], with: UITableViewRowAnimation.automatic)
+                
+                self.orgArray.append(snapshot)
+                self.findOrgsTableView.insertRows(at: [IndexPath(row:self.orgArray.count-1, section:0)], with: UITableViewRowAnimation.automatic)
             }
         }) { (error) in
             print(error.localizedDescription)

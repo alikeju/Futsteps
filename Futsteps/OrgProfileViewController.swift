@@ -15,10 +15,11 @@ protocol OrgProfileViewDelegate: class {
     func didTapAdd()
 }
 
+
 class OrgProfileViewController: UIViewController {
     
-    weak var delegate: OrgProfileViewDelegate?
-
+    var delegate: OrgProfileViewDelegate?
+    
     var organizations = [Organization]()
     
     //Create an instance of an org with the profile that I got. From that org use the isAdded function.
@@ -43,7 +44,7 @@ class OrgProfileViewController: UIViewController {
             print("VALUE CHANGED IN MEMBER_PROFILES")
             //setting loggedInUserData
             self.loggedInUserData = snapshot.value as? NSDictionary
-        
+            
             //creating instance of org
             //self.orgProfile1 = Organization(snapshot: snapshot)
             
@@ -54,7 +55,7 @@ class OrgProfileViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-
+        
         
         //add an observer for the org that is being viewed
         //When the followers count is changed, it is updated here!
@@ -63,7 +64,7 @@ class OrgProfileViewController: UIViewController {
         databaseRef.child("organizations").child(self.orgProfile?["uid"] as! String).observe(.value, with: { (snapshot) in
             
             let uid = self.orgProfile?["uid"] as! String
-         //   let organization = self.orgProfile?["organization_name"] as! String
+            //   let organization = self.orgProfile?["organization_name"] as! String
             
             self.orgProfile = snapshot.value as? NSDictionary
             
@@ -87,12 +88,10 @@ class OrgProfileViewController: UIViewController {
             {
                 self.addButton.setTitle("Delete", for: .normal)
                 
-                
             }
             else
             {
                 self.addButton.setTitle("Add", for: .normal)
-             
             }
             
         }) { (error) in
@@ -128,7 +127,11 @@ class OrgProfileViewController: UIViewController {
             
         }
     }
+
 }
+
+
+
 
 
 

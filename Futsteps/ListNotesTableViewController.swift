@@ -102,7 +102,9 @@ extension ListNotesTableViewController: UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return posts[indexPath.row].memberUID == Member.current.uid || Organization.current != nil
+       // return posts[indexPath.row].memberUID == Member.current.uid || Organization.current != nil
+        return posts[indexPath.row].memberUID == Member.current.uid
+        
     }
     
     
@@ -110,11 +112,20 @@ extension ListNotesTableViewController: UITableViewDataSource {
         
         
         if (editingStyle == .delete) {
-
-            Database.database().reference().child("org_posts").child(Member.current.org_uid!).child(posts[indexPath.row].key!).removeValue()
+            
+            Database.database().reference().child("org_posts").child(Member.current.uid).child(posts[indexPath.row].key!).removeValue()
             posts.remove(at: indexPath.item)
             tableView.reloadData()
         }
+        
+//        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//            if (editingStyle == .delete) {
+//                Database.database().reference().child("org_posts").child((Member.current.uid)).child(posts[indexPath.row].key!).removeValue()
+//                posts.remove(at: indexPath.item)
+//                tableView.reloadData()
+//            }
+//            
+//        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
