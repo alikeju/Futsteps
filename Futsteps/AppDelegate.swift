@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
+      //  FirebaseApp.configure()
         configureInitialRootViewController(for: window)
         return true
     }
@@ -45,13 +45,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    override init() {
+        // Firebase Init
+        FirebaseApp.configure()
+    }
 }
 
 extension AppDelegate {
     func configureInitialRootViewController(for window: UIWindow?) {
+//        let defaults = UserDefaults.standard
+//        //was let initialViewController: UIViewController
+//        var initialViewController: UIViewController
+//        
+//        if Auth.auth().currentUser != nil,
+//            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
+//            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? Member {
+//            
+//            Member.setCurrent(user)
+//            
+//            initialViewController = UIStoryboard.initialViewController(for: .main)
+//        } else if Auth.auth().currentUser != nil,
+//            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
+//            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? Organization {
+//            
+//            Organization.setCurrent(user)
+//            let storyboard = UIStoryboard(name: "OrgMain", bundle: .main)
+//            initialViewController = storyboard.instantiateInitialViewController()!
+//        } else {
+//            initialViewController = UIStoryboard.initialViewController(for: .login)
+//        }
+//        
+//        window?.rootViewController = initialViewController
+//        window?.makeKeyAndVisible()
+//    }
+        
         let defaults = UserDefaults.standard
-        //was let initialViewController: UIViewController
-        var initialViewController: UIViewController
+        let initialViewController: UIViewController
         
         if Auth.auth().currentUser != nil,
             let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
@@ -60,13 +90,6 @@ extension AppDelegate {
             Member.setCurrent(user)
             
             initialViewController = UIStoryboard.initialViewController(for: .main)
-        } else if Auth.auth().currentUser != nil,
-            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
-            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? Organization {
-            
-            Organization.setCurrent(user)
-            let storyboard = UIStoryboard(name: "OrgMain", bundle: .main)
-            initialViewController = storyboard.instantiateInitialViewController()!
         } else {
             initialViewController = UIStoryboard.initialViewController(for: .login)
         }
