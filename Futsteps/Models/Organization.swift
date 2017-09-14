@@ -13,86 +13,40 @@ import UIKit
 class Organization: NSObject {
     
     var isAdded = false
-
+    
     var orgs = [Organization]()
+    let uid: String
     
     // MARK: - Properties
     
-    let uid: String
-    let organization: String
-
+    let organization_name: String
+    let member_uid: String
     // MARK: - Init
     
-    init(uid: String, organization: String) {
+    var dictValue: [String : Any] {
+        
+        return ["organizaiton_name" : organization_name,
+                "member_uid" : member_uid]
+    }
+    
+    init(organization_name: String, member_uid: String, uid: String) {
+        self.organization_name = organization_name
+        self.member_uid = member_uid
         self.uid = uid
-        self.organization = organization
         super.init()
     }
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-            let organization = dict["organization_name"] as? String
-            else { return nil }
+        let organization_name = dict["organization_name"] as? String,
+        let member_uid = dict["member_uid"] as? String
+        else { return nil }
         
+        self.organization_name = organization_name
+        self.member_uid = member_uid
         self.uid = snapshot.key
-        self.organization = organization
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String,
-            let organization = aDecoder.decodeObject(forKey: Constants.UserDefaults.username) as? String
-            else { return nil }
-        
-        self.uid = uid
-        self.organization = organization
-        super.init()
-    }
-    
-    private static var _current: Organization?
-    
-    static var current: Organization? {
-         
-//        guard let currentOrg = _current else {
-//            return nil
-//            fatalError("Error: current org doesn't exist")
-            
-//        }
-        
-        // If _current isn't nil, it will be returned to the organization.
-        return _current
-    }
-
-    
-    //MARK: - Class Methods
-    
-    class func setCurrent(_ organization: Organization, writeToUserDefaults: Bool = false) {
-        // Checking if the boolean value for writeToUserDefaults is true.
-        //If so, we write the user object to UserDefaults.
-        if writeToUserDefaults {
-            // We use NSKeyedArchiver to turn our user object into Data. We needed to implement the NSCoding protocol and inherit from NSObject to use NSKeyedArchiver.
-            let data = NSKeyedArchiver.archivedData(withRootObject: organization)
-            
-            // We store the data for our current user with the correct key in UserDefaults.
-            UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentUser)
-        }
-        
-       _current = organization
-    }
-    
-//If something goes terribly wrong then uncomment. If not then delete.
-//    func configure(cell: AddOrgCell, atIndexPath indexPath: IndexPath) {
-//        let org = orgs[indexPath.row]
-//        
-//        cell.orgNameLabel.text = org.organization
-//        cell.addButton.isSelected = org.isAdded
-//    }
-}
-
-extension Organization: NSCoding {
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(uid, forKey: Constants.UserDefaults.uid)
-        aCoder.encode(organization, forKey: Constants.UserDefaults.username)
     }
 }
+
+
 

@@ -1,17 +1,17 @@
-
-//
-//  Member.swift
-//  Futsteps
-//
-//  Created by Alikeju Adejo on 7/25/17.
-//  Copyright © 2017 Alikeju Adejo. All rights reserved.
-//
-
-import Foundation
-import UIKit
-import FirebaseDatabase.FIRDataSnapshot
-
-class Member: NSObject{
+  
+  //
+  //  Member.swift
+  //  Futsteps
+  //
+  //  Created by Alikeju Adejo on 7/25/17.
+  //  Copyright © 2017 Alikeju Adejo. All rights reserved.
+  //
+  
+  import Foundation
+  import UIKit
+  import FirebaseDatabase.FIRDataSnapshot
+  
+  class Member: NSObject{
     
     let uid: String
     let organization_name: String?
@@ -61,7 +61,7 @@ class Member: NSObject{
             fatalError("Error: current user doesn't exist")
         }
         
-       //  If _current isn't nil, it will be returned to the organization.
+        //  If _current isn't nil, it will be returned to the organization.
         return currentMember
     }
     
@@ -79,9 +79,9 @@ class Member: NSObject{
         _current_member = member
     }
     
-}
-
-extension Member: NSCoding {
+  }
+  
+  extension Member: NSCoding {
     //Using NSCoding to enable user to keep the info on their phone when they leave the app and come back.
     func encode(with aCoder: NSCoder) {
         aCoder.encode(uid, forKey: Constants.UserDefaults.uid)
@@ -89,8 +89,6 @@ extension Member: NSCoding {
         aCoder.encode(organization_name, forKey: Constants.UserDefaults.organization_name)
         aCoder.encode(org_uid, forKey: Constants.UserDefaults.org_uid)
         
-        
-        
         //aCoder.encode(organization, forKey: Constants.UserDefaults.user)
     }
-}
+  }
