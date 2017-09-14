@@ -34,6 +34,18 @@ struct AuthService {
         }
     }
     
+    static func createOrg(controller : UIViewController, organization_name: String, accessCode: String,  completion: @escaping (FIRUser?) -> Void){
+        
+        
+        Auth.auth().createUser(withEmail: organization_name, password: accessCode) { (user, error) in
+            if let error = error {
+                accessCodeErrors(error: error, controller: controller)
+                return completion(nil)
+            }
+            
+            return completion(Auth.auth().currentUser)
+        }
+    }
     static func passwordReset(email: String){
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
@@ -120,7 +132,7 @@ struct AuthService {
     }
     
     static func deleteOrgAccount(user : FIRUser){
-        OrganizationService.deleteOrganization(forUID: (Organization.current?.uid)!, success: { (success) in
+        OrganizationService.deleteOrganization(forUID: (Member.current.uid), success: { (success) in
             if success {
                 logUserOut()
                 
@@ -195,6 +207,24 @@ struct AuthService {
             generalErrorAlert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
             controller.present(generalErrorAlert, animated: true, completion: nil)
             break;
+        }
+    }
+    
+    private static func accessCodeErrors(error: Error, controller: UIViewController) {
+        switch(error.localizedDescription) {
+        case "The password must be 6 characters long or more.":
+        let invalidEmail = UIAlertController(title: "Access Code is not strong enough.", message:
+            "Please enter a stronger access code.", preferredStyle: UIAlertControllerStyle.alert)
+        invalidEmail.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+        controller.present(invalidEmail, animated: true, completion: nil)
+        break;
+        
+        default:
+        let generalErrorAlert = UIAlertController(title: "We are having trouble signing you up.", message:
+            "We are having trouble signing you up, please try again soon.", preferredStyle: UIAlertControllerStyle.alert)
+        generalErrorAlert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+        controller.present(generalErrorAlert, animated: true, completion: nil)
+        break;
         }
     }
     
