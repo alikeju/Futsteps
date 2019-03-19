@@ -11,5 +11,7 @@ target 'Futsteps' do
   	pod 'Firebase/Database'
   	pod 'Firebase/Storage'
 	pod 'IQKeyboardManagerSwift'
+        pod 'GoogleMaps'
+  	pod 'GooglePlaces'
 
 end

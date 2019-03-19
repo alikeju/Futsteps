@@ -9,10 +9,15 @@
 import UIKit
 import FirebaseDatabase
 import Firebase
+import MapKit
 
 class ListNotesTableViewController: UIViewController {
     
     @IBOutlet var streetListTableView: UITableView!
+    @IBOutlet weak var segControl: UISegmentedControl!
+//    @IBOutlet weak var navigationView: UINavigationItem!
+    
+    @IBOutlet weak var navigationView: MKMapView!
     
     let refreshControl = UIRefreshControl()
     
@@ -26,9 +31,6 @@ class ListNotesTableViewController: UIViewController {
         streetListTableView.delegate = self as? UITableViewDelegate
         streetListTableView.dataSource = self
         
-        //configureTableView()
-        //  reloadTimeline()
-        
         super.viewDidLoad()
         
     }
@@ -40,15 +42,15 @@ class ListNotesTableViewController: UIViewController {
     }
     
     func configureTableView() {
-        // remove separators for empty cells
-        streetListTableView.tableFooterView = UIView()
-        // remove separators from cells
-        streetListTableView.separatorStyle = .none
+        
+        streetListTableView.tableFooterView = UIView() // remove separators for empty cells
+        
+        streetListTableView.separatorStyle = .none // remove separators from cells
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         streetListTableView.addSubview(refreshControl)
     }
     
-    func reloadTimeline() {
+    @objc func reloadTimeline() {
         MemberService.timeline { (posts) in
             self.posts = posts
             
@@ -79,6 +81,17 @@ class ListNotesTableViewController: UIViewController {
     @IBAction func unwindToListNotesTableViewController(_ segue: UIStoryboardSegue) {
         
     }
+    
+    @IBAction func segmentedControlAction(_ sender: Any) {
+        switch segControl.selectedSegmentIndex{
+        case 0: streetListTableView.isHidden = false
+        case 1: streetListTableView.isHidden = true
+            
+        default:
+            navigationView.backgroundColor = UIColor.green
+        }
+    }
+    
     
 }
 
@@ -118,14 +131,6 @@ extension ListNotesTableViewController: UITableViewDataSource {
             tableView.reloadData()
         }
         
-//        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//            if (editingStyle == .delete) {
-//                Database.database().reference().child("org_posts").child((Member.current.uid)).child(posts[indexPath.row].key!).removeValue()
-//                posts.remove(at: indexPath.item)
-//                tableView.reloadData()
-//            }
-//            
-//        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

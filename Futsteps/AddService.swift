@@ -16,8 +16,6 @@ struct AddService {
                        "member_profiles/\(currentUID)/org_uid" : org.uid,
                        "organizations_of_members/\(org.uid)/\(currentUID)/member" : Member.current.username]
         
-//        Member.setCurrent(Member(uid: Member.current.uid, username: Member.current.username, organization_name: org.organization_name, org_uid: org.key!))
-        
          Member.setCurrent(Member(uid: Member.current.uid, username: Member.current.username, organization_name: org.organization_name, org_uid: org.uid))
         
         let ref = Database.database().reference()

@@ -27,9 +27,8 @@ class PostService{
     }
     
     static func show(forKey postKey: String, posterUID: String, completion: @escaping (Post?) -> Void) {
-        var post : Post
         let currentMember = Member.current
-        //let currentMember = post.memberUID
+     
         let newPostRef = Database.database().reference().child("org_posts").child(currentMember.org_uid!).child(postKey)
         newPostRef.observeSingleEvent(of: .value, with: {(snapshot) in
             guard let post = Post(snapshot: snapshot)

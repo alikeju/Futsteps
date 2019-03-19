@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleMaps
 
 typealias FIRUser = FirebaseAuth.User
 
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
       //  FirebaseApp.configure()
         configureInitialRootViewController(for: window)
+        GMSServices.provideAPIKey("AIzaSyAUvJWnUYjeBSodHNJpxEO1oQhgWsXNMqg")
         return true
     }
     

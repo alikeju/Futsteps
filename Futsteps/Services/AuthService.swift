@@ -23,7 +23,7 @@ struct AuthService {
     }
     
     static func createUser(controller : UIViewController, email: String, password: String, completion: @escaping (FIRUser?) -> Void){
-        //        Auth.auth()
+    
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
                 signUpErrors(error: error, controller: controller)
@@ -35,7 +35,6 @@ struct AuthService {
     }
     
     static func createOrg(controller : UIViewController, organization_name: String, accessCode: String,  completion: @escaping (FIRUser?) -> Void){
-        
         
         Auth.auth().createUser(withEmail: organization_name, password: accessCode) { (user, error) in
             if let error = error {

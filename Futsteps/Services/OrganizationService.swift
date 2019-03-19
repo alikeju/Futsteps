@@ -67,7 +67,7 @@ struct OrganizationService {
             let dispatchGroup = DispatchGroup()
             
             var posts = [Post]()
-            //posts is nil
+
             for postSnap in snapshot {
                 dispatchGroup.enter()
                 

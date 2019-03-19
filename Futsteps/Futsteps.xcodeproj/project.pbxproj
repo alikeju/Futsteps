@@ -16,11 +16,10 @@
 		B31BF42A1F3B8623001E55F8 /* ListNotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31BF4291F3B8623001E55F8 /* ListNotesTableViewCell.swift */; };
 		B39586281F3CCD6C00CF1A4D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39586271F3CCD6C00CF1A4D /* Post.swift */; };
 		B395862A1F3CE0B600CF1A4D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39586291F3CE0B600CF1A4D /* PostService.swift */; };
-		B39C1B4C1F4B332900FD067A /* orgNotes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39C1B4B1F4B332900FD067A /* orgNotes.storyboard */; };
-		B39C1B4E1F4B340C00FD067A /* OrgListNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C1B4D1F4B340C00FD067A /* OrgListNotesTableViewController.swift */; };
-		B39C1B501F4B74AF00FD067A /* OrgMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39C1B4F1F4B74AF00FD067A /* OrgMain.storyboard */; };
-		B39C1B521F4BB34F00FD067A /* OrgAddStreetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C1B511F4BB34F00FD067A /* OrgAddStreetsViewController.swift */; };
-		B39C1B541F4BBE9A00FD067A /* OrgHomeViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C1B531F4BBE9A00FD067A /* OrgHomeViewcontroller.swift */; };
+		B39D2AC11F57AAF300F406CF /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D2AC01F57AAF300F406CF /* CreateAccountViewController.swift */; };
+		B39D2AE11F5892C200F406CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D2AE01F5892C200F406CF /* LoginViewController.swift */; };
+		B39D2AE31F58A18400F406CF /* AddOrgTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D2AE21F58A18400F406CF /* AddOrgTableViewController.swift */; };
+		B39D2AE51F5DBB1D00F406CF /* ShowMembersVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D2AE41F5DBB1D00F406CF /* ShowMembersVIewController.swift */; };
 		B3AF1AFC1F2FA5630017A8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */; };
 		B3AF1B011F2FA56C0017A8EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */; };
 		B3AF1B021F2FA56C0017A8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */; };
@@ -34,16 +33,14 @@
 		B3AF1B121F2FA5A10017A8EE /* OrganizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B0F1F2FA5A10017A8EE /* OrganizationService.swift */; };
 		B3AF1B171F2FA5BD0017A8EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1B151F2FA5BD0017A8EE /* GoogleService-Info.plist */; };
 		B3AF1B201F2FA5C80017A8EE /* ChooseUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */; };
-		B3AF1B221F2FA5C80017A8EE /* CreateOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */; };
 		B3AF1B231F2FA5C80017A8EE /* MemberLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */; };
-		B3AF1B241F2FA5C80017A8EE /* OrganizationLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */; };
 		B3AF1B261F2FA5C80017A8EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */; };
 		B3AF1B2E1F2FA6BE0017A8EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */; };
 		B3AF1B341F30249A0017A8EE /* CreateMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF1B331F30249A0017A8EE /* CreateMemberViewController.swift */; };
 		B3E9CDB21F3FE5570092D7C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9CDB11F3FE5570092D7C2 /* HomeViewController.swift */; };
 		B3E9CDB51F43895E0092D7C2 /* Date+converToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9CDB41F43895E0092D7C2 /* Date+converToString.swift */; };
-		B3F887B41F3BACEF00B7D6AE /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F887B31F3BACEF00B7D6AE /* Notes.storyboard */; };
 		B3F887B61F3BCE3F00B7D6AE /* AddStreetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F887B51F3BCE3F00B7D6AE /* AddStreetsViewController.swift */; };
+		B3F9A0FA1FF226C60069F39B /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9A0F91FF226C60069F39B /* AdminTableViewCell.swift */; };
 		D4810BE7D2DBBB76841CA7D9 /* Pods_Futsteps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6043ACFFD8B2B59F85D7633 /* Pods_Futsteps.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,11 +57,10 @@
 		B370A9871F26291300197D04 /* Futsteps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Futsteps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39586271F3CCD6C00CF1A4D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = SOURCE_ROOT; };
 		B39586291F3CE0B600CF1A4D /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = SOURCE_ROOT; };
-		B39C1B4B1F4B332900FD067A /* orgNotes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = orgNotes.storyboard; sourceTree = SOURCE_ROOT; };
-		B39C1B4D1F4B340C00FD067A /* OrgListNotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrgListNotesTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		B39C1B4F1F4B74AF00FD067A /* OrgMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrgMain.storyboard; sourceTree = SOURCE_ROOT; };
-		B39C1B511F4BB34F00FD067A /* OrgAddStreetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrgAddStreetsViewController.swift; sourceTree = SOURCE_ROOT; };
-		B39C1B531F4BBE9A00FD067A /* OrgHomeViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrgHomeViewcontroller.swift; sourceTree = SOURCE_ROOT; };
+		B39D2AC01F57AAF300F406CF /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = SOURCE_ROOT; };
+		B39D2AE01F5892C200F406CF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		B39D2AE21F58A18400F406CF /* AddOrgTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrgTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		B39D2AE41F5DBB1D00F406CF /* ShowMembersVIewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMembersVIewController.swift; sourceTree = SOURCE_ROOT; };
 		B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		B3AF1AFE1F2FA56C0017A8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		B3AF1B001F2FA56C0017A8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -79,16 +75,14 @@
 		B3AF1B151F2FA5BD0017A8EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Support/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B3AF1B161F2FA5BD0017A8EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Support/Info.plist; sourceTree = SOURCE_ROOT; };
 		B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseUserViewController.swift; path = "View Controllers/ChooseUserViewController.swift"; sourceTree = SOURCE_ROOT; };
-		B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateOrganization.swift; path = "View Controllers/CreateOrganization.swift"; sourceTree = SOURCE_ROOT; };
 		B3AF1B1C1F2FA5C80017A8EE /* MemberLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberLoginViewController.swift; path = "View Controllers/MemberLoginViewController.swift"; sourceTree = SOURCE_ROOT; };
-		B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationLoginViewController.swift; path = "View Controllers/OrganizationLoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "View Controllers/ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B3AF1B2D1F2FA6BE0017A8EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		B3AF1B331F30249A0017A8EE /* CreateMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMemberViewController.swift; sourceTree = SOURCE_ROOT; };
 		B3E9CDB11F3FE5570092D7C2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		B3E9CDB41F43895E0092D7C2 /* Date+converToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+converToString.swift"; sourceTree = SOURCE_ROOT; };
-		B3F887B31F3BACEF00B7D6AE /* Notes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = SOURCE_ROOT; };
 		B3F887B51F3BCE3F00B7D6AE /* AddStreetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStreetsViewController.swift; sourceTree = SOURCE_ROOT; };
+		B3F9A0F91FF226C60069F39B /* AdminTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		F6043ACFFD8B2B59F85D7633 /* Pods_Futsteps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Futsteps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -109,6 +103,7 @@
 			children = (
 				B31BF3F61F33727A001E55F8 /* AddOrgCell.swift */,
 				B31BF4291F3B8623001E55F8 /* ListNotesTableViewCell.swift */,
+				B3F9A0F91FF226C60069F39B /* AdminTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -140,7 +135,6 @@
 				B3AF1AFB1F2FA5630017A8EE /* AppDelegate.swift */,
 				B3AF1B191F2FA5C80017A8EE /* ChooseUserViewController.swift */,
 				B3AF1B1F1F2FA5C80017A8EE /* ViewController.swift */,
-				B3AF1B301F2FBE210017A8EE /* Organization View Controllers */,
 				B3AF1B2F1F2FBDFA0017A8EE /* Member View Controllers */,
 				B3AF1B281F2FA5E40017A8EE /* Models */,
 				B3AF1B291F2FA5EA0017A8EE /* Services */,
@@ -185,12 +179,9 @@
 		B3AF1B2B1F2FA6090017A8EE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				B39C1B4F1F4B74AF00FD067A /* OrgMain.storyboard */,
 				B3AF1AFD1F2FA56C0017A8EE /* LaunchScreen.storyboard */,
 				B3AF1AFF1F2FA56C0017A8EE /* Main.storyboard */,
-				B3F887B31F3BACEF00B7D6AE /* Notes.storyboard */,
 				B31BF40F1F369FDC001E55F8 /* Login.storyboard */,
-				B39C1B4B1F4B332900FD067A /* orgNotes.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -215,20 +206,12 @@
 				B31BF4271F3B84EF001E55F8 /* ListNotesTableViewController.swift */,
 				B3F887B51F3BCE3F00B7D6AE /* AddStreetsViewController.swift */,
 				B3E9CDB11F3FE5570092D7C2 /* HomeViewController.swift */,
+				B39D2AC01F57AAF300F406CF /* CreateAccountViewController.swift */,
+				B39D2AE01F5892C200F406CF /* LoginViewController.swift */,
+				B39D2AE21F58A18400F406CF /* AddOrgTableViewController.swift */,
+				B39D2AE41F5DBB1D00F406CF /* ShowMembersVIewController.swift */,
 			);
 			name = "Member View Controllers";
-			sourceTree = "<group>";
-		};
-		B3AF1B301F2FBE210017A8EE /* Organization View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				B3AF1B1D1F2FA5C80017A8EE /* OrganizationLoginViewController.swift */,
-				B3AF1B1B1F2FA5C80017A8EE /* CreateOrganization.swift */,
-				B39C1B4D1F4B340C00FD067A /* OrgListNotesTableViewController.swift */,
-				B39C1B531F4BBE9A00FD067A /* OrgHomeViewcontroller.swift */,
-				B39C1B511F4BB34F00FD067A /* OrgAddStreetsViewController.swift */,
-			);
-			name = "Organization View Controllers";
 			sourceTree = "<group>";
 		};
 		B3E9CDB31F4389420092D7C2 /* Extensions */ = {
@@ -292,7 +275,7 @@
 					B370A9861F26291300197D04 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RNS47D7E9E;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -325,13 +308,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3F887B41F3BACEF00B7D6AE /* Notes.storyboard in Resources */,
 				B3AF1B021F2FA56C0017A8EE /* Main.storyboard in Resources */,
 				B3AF1B171F2FA5BD0017A8EE /* GoogleService-Info.plist in Resources */,
-				B39C1B4C1F4B332900FD067A /* orgNotes.storyboard in Resources */,
 				B31BF4101F369FDC001E55F8 /* Login.storyboard in Resources */,
 				B3AF1B011F2FA56C0017A8EE /* LaunchScreen.storyboard in Resources */,
-				B39C1B501F4B74AF00FD067A /* OrgMain.storyboard in Resources */,
 				B3AF1B2E1F2FA6BE0017A8EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,13 +325,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Futsteps-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7C72DCFAB1465A93AFD6411E /* [CP] Embed Pods Frameworks */ = {
@@ -360,9 +343,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Futsteps/Pods-Futsteps-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -375,9 +367,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Futsteps/Pods-Futsteps-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -399,11 +398,14 @@
 				B31BF3F71F33727A001E55F8 /* AddOrgCell.swift in Sources */,
 				B3AF1B231F2FA5C80017A8EE /* MemberLoginViewController.swift in Sources */,
 				B31BF42A1F3B8623001E55F8 /* ListNotesTableViewCell.swift in Sources */,
+				B3F9A0FA1FF226C60069F39B /* AdminTableViewCell.swift in Sources */,
 				B3AF1B051F2FA57E0017A8EE /* Member.swift in Sources */,
 				B3AF1B0C1F2FA5920017A8EE /* ViewController+Utility.swift in Sources */,
+				B39D2AC11F57AAF300F406CF /* CreateAccountViewController.swift in Sources */,
+				B39D2AE31F58A18400F406CF /* AddOrgTableViewController.swift in Sources */,
 				B31BF3FF1F36452F001E55F8 /* FindOrgsTableViewController.swift in Sources */,
+				B39D2AE11F5892C200F406CF /* LoginViewController.swift in Sources */,
 				B3AF1B0A1F2FA5920017A8EE /* Constants.swift in Sources */,
-				B3AF1B221F2FA5C80017A8EE /* CreateOrganization.swift in Sources */,
 				B3AF1B0B1F2FA5920017A8EE /* Storyboard+Utility.swift in Sources */,
 				B3E9CDB21F3FE5570092D7C2 /* HomeViewController.swift in Sources */,
 				B31BF4151F38C01D001E55F8 /* OrgProfileViewController.swift in Sources */,
@@ -411,15 +413,12 @@
 				B3AF1B101F2FA5A10017A8EE /* AuthService.swift in Sources */,
 				B3E9CDB51F43895E0092D7C2 /* Date+converToString.swift in Sources */,
 				B39586281F3CCD6C00CF1A4D /* Post.swift in Sources */,
+				B39D2AE51F5DBB1D00F406CF /* ShowMembersVIewController.swift in Sources */,
 				B3F887B61F3BCE3F00B7D6AE /* AddStreetsViewController.swift in Sources */,
 				B31BF4281F3B84EF001E55F8 /* ListNotesTableViewController.swift in Sources */,
-				B39C1B4E1F4B340C00FD067A /* OrgListNotesTableViewController.swift in Sources */,
 				B3AF1B111F2FA5A10017A8EE /* MemberService.swift in Sources */,
 				B31BF4171F38D1EC001E55F8 /* AddService.swift in Sources */,
 				B3AF1B261F2FA5C80017A8EE /* ViewController.swift in Sources */,
-				B39C1B521F4BB34F00FD067A /* OrgAddStreetsViewController.swift in Sources */,
-				B3AF1B241F2FA5C80017A8EE /* OrganizationLoginViewController.swift in Sources */,
-				B39C1B541F4BBE9A00FD067A /* OrgHomeViewcontroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +552,8 @@
 				PRODUCT_NAME = Futsteps;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -571,7 +571,8 @@
 				PRODUCT_MODULE_NAME = Futsteps;
 				PRODUCT_NAME = Futsteps;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
