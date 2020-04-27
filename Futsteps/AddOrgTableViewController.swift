@@ -181,14 +181,6 @@ class AddOrgTableViewController: UITableViewController, UISearchResultsUpdating 
             }
         })
         
-//        alert.addTextField { (textField: UITextField) in
-//            textField.keyboardAppearance = .dark
-//            textField.keyboardType = .default
-//            textField.placeholder = "Enter Access Code"
-//            textField.isSecureTextEntry = true
-//            textField.textColor = UIColor.black
-//        }
-        
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
         
         alert.addAction(joinAction)
