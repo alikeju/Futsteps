@@ -20,9 +20,7 @@ class CreateAccountViewController: UIViewController{
     @IBOutlet weak var enterButton: UIButton!
     
     var loggedInUser:AnyObject?
-    
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -65,7 +63,6 @@ class CreateAccountViewController: UIViewController{
         self.indicator.startAnimating()
         self.indicator.backgroundColor = UIColor.white
         
-        
         AuthService.createUser(controller: self, email: email, password: password) { (authMember) in
             guard let firMember = authMember else {
                 return
@@ -79,17 +76,14 @@ class CreateAccountViewController: UIViewController{
                 Member.setCurrent(member, writeToUserDefaults: true)
                 
                 self.loggedInUser = Auth.auth().currentUser
-                
                 self.performSegue(withIdentifier: "joinOrg", sender: self)
-                
                 self.indicator.stopAnimating()
                 self.indicator.hidesWhenStopped = true
             }
         }
     }
 }
-    
-    
+   
 extension CreateAccountViewController{
         func configureView(){
             applyKeyboardDismisser()
