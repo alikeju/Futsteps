@@ -47,15 +47,10 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
                 memberNameTextField.isUserInteractionEnabled = false
                 numberOfDoorsTextField.isUserInteractionEnabled = false
                 timeElapsedTextField.isUserInteractionEnabled = false
-            //    commentsTextView.isUserInteractionEnabled = false
                 sideOfStreetSegmentedControl.isUserInteractionEnabled = false
                 enterButton.setTitle("Done", for: UIControlState.normal)
                 
-//                disablesAutomaticKeyboardDismissal = false
-                
                 view.addGestureRecognizer(tap)
-            } else {
-//                disablesAutomaticKeyboardDismissal = true
             }
             
         }
@@ -76,7 +71,6 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
             let name = memberNameTextField.text,
             let numOfDoors = numberOfDoorsTextField.text,
             let timeElapsed = timeElapsedTextField.text,
-           // let comments = commentsTextView.text,
             !streetName.isEmpty,
             !name.isEmpty,
             !numOfDoors.isEmpty,
