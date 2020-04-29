@@ -93,8 +93,7 @@ class ListNotesTableViewController: UIViewController {
        
         view.addSubview(mapView)
     }
-    
-
+   
     @IBAction func segmentedControlAction(_ sender: Any) {
         switch segControl.selectedSegmentIndex{
         case 0: streetListTableView.isHidden = false
@@ -104,8 +103,6 @@ class ListNotesTableViewController: UIViewController {
             navigationView.backgroundColor = UIColor.green
         }
     }
-    
-    
 }
 
 extension ListNotesTableViewController: UITableViewDataSource {  
