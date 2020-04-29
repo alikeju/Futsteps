@@ -14,9 +14,7 @@ import MapKit
 class ListNotesTableViewController: UIViewController {
     
     @IBOutlet var streetListTableView: UITableView!
-    @IBOutlet weak var segControl: UISegmentedControl!
-//    @IBOutlet weak var navigationView: UINavigationItem!
-    
+    @IBOutlet weak var segControl: UISegmentedControl! 
     @IBOutlet weak var navigationView: MKMapView!
     
     let refreshControl = UIRefreshControl()
@@ -42,9 +40,7 @@ class ListNotesTableViewController: UIViewController {
     }
     
     func configureTableView() {
-        
         streetListTableView.tableFooterView = UIView() // remove separators for empty cells
-        
         streetListTableView.separatorStyle = .none // remove separators from cells
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         streetListTableView.addSubview(refreshControl)
@@ -64,11 +60,8 @@ class ListNotesTableViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             if let indexPath = self.streetListTableView.indexPathForSelectedRow {
-                    
                 let post = posts[indexPath.row] //as! [String: Any]
-            //    let postDetails = post.dictValue
                 let controller = segue.destination as! AddStreetsViewController
-                //controller.postDetails = postDetails
                 controller.post = post
             }
         }
@@ -84,7 +77,6 @@ class ListNotesTableViewController: UIViewController {
     
     func openMap(){
         let mapView = MKMapView()
-        
         let leftMargin:CGFloat = 10
         let topMargin:CGFloat = 60
         let mapWidth:CGFloat = view.frame.size.width-20
@@ -135,23 +127,19 @@ extension ListNotesTableViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-       // return posts[indexPath.row].memberUID == Member.current.uid || Organization.current != nil
         return posts[indexPath.row].memberUID == Member.current.uid
         
     }
     
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-        
         if (editingStyle == .delete) {
-            
             Database.database().reference().child("org_posts").child(Member.current.uid).child(posts[indexPath.row].key!).removeValue()
             posts.remove(at: indexPath.item)
             tableView.reloadData()
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -162,5 +150,4 @@ extension ListNotesTableViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
-
 }
