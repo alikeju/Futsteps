@@ -53,7 +53,6 @@ class ListNotesTableViewController: UIViewController {
             if self.refreshControl.isRefreshing {
                 self.refreshControl.endRefreshing()
             }
-        
         }
     }
     
@@ -83,12 +82,9 @@ class ListNotesTableViewController: UIViewController {
         let mapHeight:CGFloat = 300
         
         mapView.frame = CGRect(x: leftMargin, y: topMargin, width: mapWidth, height: mapHeight)
-        
         mapView.mapType = MKMapType.standard
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
-        
-        // Or, if needed, we can position map in the center of the view
         mapView.center = view.center
        
         view.addSubview(mapView)
@@ -110,7 +106,6 @@ extension ListNotesTableViewController: UITableViewDataSource {
         return posts.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -129,8 +124,7 @@ extension ListNotesTableViewController: UITableViewDataSource {
         return posts[indexPath.row].memberUID == Member.current.uid
         
     }
-    
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             Database.database().reference().child("org_posts").child(Member.current.uid).child(posts[indexPath.row].key!).removeValue()
