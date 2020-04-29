@@ -23,7 +23,6 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
     @IBOutlet weak var enterButton: UIButton!
     
     var side = ""
-    
     var post : Post?
 
     override func viewDidLoad() {
@@ -42,19 +41,15 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
         if post != nil{
             
             if Member.current.uid != post!.memberUID {
-                
                 streetNameTextField.isUserInteractionEnabled = false
                 memberNameTextField.isUserInteractionEnabled = false
                 numberOfDoorsTextField.isUserInteractionEnabled = false
                 timeElapsedTextField.isUserInteractionEnabled = false
                 sideOfStreetSegmentedControl.isUserInteractionEnabled = false
                 enterButton.setTitle("Done", for: UIControlState.normal)
-                
                 view.addGestureRecognizer(tap)
             }
-            
-        }
-        
+        }  
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -95,9 +90,7 @@ class AddStreetsViewController: UIViewController, UITextViewDelegate{
         PostService.create(streetName: streetName, name: name, numOfDoors: numOfDoors, timeElapsed: timeElapsed, sideOfStreet: side, memberUID: Member.current.uid) { (key) in
             
         }
-        
-    }
-    
+    } 
 }
 
 extension AddStreetsViewController{
@@ -105,5 +98,3 @@ extension AddStreetsViewController{
         applyKeyboardDismisser()
     }
 }
-
-
